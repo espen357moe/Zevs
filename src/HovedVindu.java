@@ -13,7 +13,7 @@ public class HovedVindu extends JFrame {
 		setTitle("Zevs");
 		
 		Container hovedContainer = getContentPane();
-		hovedContainer.setLayout(new GridLayout(0,4));
+		hovedContainer.setLayout(new GridLayout(4,0));
 		
 		JMenuBar menylinje = new JMenuBar();
         JMenu meny = new JMenu("Valg");
@@ -28,7 +28,16 @@ public class HovedVindu extends JFrame {
         meny.add(m1);
         meny.add(m2);
 
-        setJMenuBar(menylinje);		
+        setJMenuBar(menylinje);	
+        
+        SoekePanel soekePanel = new SoekePanel();
+        hovedContainer.add(soekePanel);
+        
+        GeografiPanel geografiPanel = new GeografiPanel();
+        hovedContainer.add(geografiPanel);
+        
+        MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
+        hovedContainer.add(meteorologiPanel);
 		
 		setVisible(true);
 	}
