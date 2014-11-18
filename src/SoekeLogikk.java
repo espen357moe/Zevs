@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javahjelp.Konsoll;
 
-
 public class SoekeLogikk {
 	
 	public SoekeLogikk() {
