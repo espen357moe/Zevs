@@ -24,6 +24,7 @@ public class VaerApplikasjon {
         }
 		
 		new HovedVindu();
+		new SoekeLogikk();
 	}
 
 }
