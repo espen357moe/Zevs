@@ -1,5 +1,7 @@
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
@@ -27,6 +29,12 @@ public class HovedVindu extends JFrame {
         menylinje.add(meny);
         meny.add(m1);
         meny.add(m2);
+        
+        m2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                    System.exit(0);
+            }
+        });
 
         setJMenuBar(menylinje);	
         
