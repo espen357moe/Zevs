@@ -6,7 +6,7 @@ import javax.swing.JTextField;
 
 public class SoekePanel extends JPanel {
 	SoekePanel() {
-		JTextField soekeFelt = new JTextField();
+		JTextField soekeFelt = new JTextField(10);
 		this.add(soekeFelt);
 	}
 
