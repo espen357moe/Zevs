@@ -6,34 +6,40 @@ import javahjelp.Konsoll;
 
 
 public class SoekeLogikk {
+	
 	public SoekeLogikk() {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"SoekeInfo.txt"));
 			String line;
-			String df = Konsoll.readLine("Navn på sted");
+			String df = Konsoll.readLine("Navn pï¿½ sted");
 			while ((line = bf.readLine()) != null) {
 
 				int indexfound = line.indexOf(df);
 				if (df.isEmpty()) {
-					break;}
+					System.out.println("Ingen sï¿½k gjort ");
+					break;
+					}
 				
 				if (indexfound > -1) {
-					System.out.println("Funnet " + df + " " + line + " ganger" + " på  ");
+					System.out.println("Funnet " + " " + line + " ganger" + " pï¿½  ");
 					
-//					Omgjøring til Array testing.  
-					System.out.println (java.util.Arrays.toString(line.split(" 	")));
-
+//					Omgjï¿½ring til Array testing.  
+//					System.out.println (java.util.Arrays.toString(line.split(" 	")));
 				}
-				
 				if (indexfound == 0) {
 					System.out.println("Ingen funn");
 				}
-
-			}
+			}	
+			
 			bf.close();
 			} catch (IOException e) {
 				System.out.println("IO Error Occurred: " + e.toString());
+				
+				
+				
 			}
+		
+		
 	}
 }

@@ -25,6 +25,7 @@ public class VaerApplikasjon {
 		
 		new HovedVindu();
 		new SoekeLogikk();
+		new Dagvarsel();
 	}
 
 }
