@@ -10,5 +10,9 @@ public class MeteorologiPanel extends JPanel {
 		JButton meteorologiKnapp = new JButton("Her kommer meteorologidata etterhvert");
 		this.add(meteorologiKnapp);
 	}
+	
+	public void skrivMeteorologiInfo(MeteorologiInfo mi) {
+		System.out.println("Geografiinfo kommer etterhvert");
+	}
 
 }
