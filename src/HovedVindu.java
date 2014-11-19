@@ -48,6 +48,12 @@ public class HovedVindu extends JFrame {
         hovedContainer.add(meteorologiPanel);
 		
 		setVisible(true);
+		
+		 m2.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent ev) {
+	                    System.exit(0);
+	            }
+	        });
 	}
 	
 }
