@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -14,7 +15,10 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
-		this.add(soekeFelt);
+		this.add(soekeFelt);	
+
+		JLabel soekeTreffLabel = new JLabel();
+		this.add(soekeTreffLabel);
 		
 		JButton soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);
