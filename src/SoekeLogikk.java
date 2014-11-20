@@ -4,17 +4,21 @@ import java.io.IOException;
 
 public class SoekeLogikk {
 
-	public SoekeLogikk() {
+	public SoekeLogikk(String soekeStreng) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void startSoek(String soekeStreng) {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"SoekeInfo.txt"));
 			String line;
-			String df = Konsoll.readLine("Navn på sted");
+			String df = soekeStreng;
 			while ((line = bf.readLine()) != null) {
 
 				int indexfound = line.indexOf(df);
 				if (df.isEmpty()) {
-					System.out.println("Ingen s�k gjort ");
+					System.out.println("Ingen søk utført");
 					break;
 				}
 
@@ -22,12 +26,12 @@ public class SoekeLogikk {
 					System.out.println("Funnet " + " " + line + " ganger"
 							+ " på ");
 
-					// Omgj�ring til Array testing.
+					// Omgjøring til Array testing.
 					// System.out.println
 					// (java.util.Arrays.toString(line.split(" 	")));
 				}
 				if (indexfound == 0) {
-					System.out.println("Ingen funn");
+					System.out.println("Ingen treff");
 				}
 			}
 
