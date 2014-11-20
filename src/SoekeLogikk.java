@@ -2,8 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import javahjelp.Konsoll;
-
 public class SoekeLogikk {
 	
 	public SoekeLogikk() {
@@ -21,7 +19,9 @@ public class SoekeLogikk {
 					}
 				
 				if (indexfound > -1) {
+
 					System.out.println("Funnet " + " " + line + " ganger" + " på  ");
+					
 					
 //					Omgj�ring til Array testing.  
 //			System.out.println (java.util.Arrays.toString(line.split(";")));
