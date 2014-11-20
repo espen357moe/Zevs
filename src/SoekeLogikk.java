@@ -11,7 +11,7 @@ public class SoekeLogikk {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"SoekeInfo.txt"));
 			String line;
-			String df = Konsoll.readLine("Navn p� sted");
+			String df = Konsoll.readLine("Navn på sted");
 			while ((line = bf.readLine()) != null) {
 
 				int indexfound = line.indexOf(df);
@@ -21,10 +21,11 @@ public class SoekeLogikk {
 					}
 				
 				if (indexfound > -1) {
-					System.out.println("Funnet " + " " + line + " ganger" + " p�  ");
+					System.out.println("Funnet " + " " + line + " ganger" + " på  ");
 					
 //					Omgj�ring til Array testing.  
-//					System.out.println (java.util.Arrays.toString(line.split(" 	")));
+//			System.out.println (java.util.Arrays.toString(line.split(";")));
+					
 				}
 				if (indexfound == 0) {
 					System.out.println("Ingen funn");
