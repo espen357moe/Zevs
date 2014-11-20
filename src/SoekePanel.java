@@ -21,6 +21,10 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeKnapp.addActionListener(this);
 	}	
 	
+	public String getSoekeStreng() {
+		return soekeStreng;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
