@@ -19,7 +19,7 @@ public class SoekeLogikk {
 				}
 
 				if (indexfound > -1) {
-					System.out.println("Funnet " + " " + line + " ganger"
+					System.out.println(line + " ganger"
 							+ " på ");
 
 					// Omgjøring til Array testing.

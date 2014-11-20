@@ -36,7 +36,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		String event = e.getActionCommand();
 		if(event.equals("Søk")) {
 			soekeStreng = soekeFelt.getText();
-			System.out.println("Søkeknappen trykket på - " + soekeStreng);
+			System.out.println("Søker etter - " + soekeStreng);
 			soekeLogikk.startSoek(soekeStreng);
 		}
 		
