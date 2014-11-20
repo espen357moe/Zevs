@@ -10,34 +10,25 @@ import javax.swing.JTextField;
 public class SoekePanel extends JPanel implements ActionListener {
 	
 	public String soekeStreng;	
-	
-	//SoekeLogikk soekeLogikk = new SoekeLogikk();
+	private JTextField soekeFelt;
 	
 	public SoekePanel() {
-		JTextField soekeFelt = new JTextField(30);
+		this.soekeFelt = new JTextField(30);
 		this.add(soekeFelt);
 		
 		JButton soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);
 		soekeKnapp.addActionListener(this);
-		soekeStreng = soekeFelt.getText();
 	}	
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
 		if(event.equals("Søk")) {
-			
-			getSoekeStreng();
-			System.out.println("Trykket på søkeknappen - " + soekeStreng);
-				
-			//soekeLogikk.startSoek(soekeStreng);
+			soekeStreng = soekeFelt.getText();
+			System.out.println("Søkeknappen trykket på - " + soekeStreng);
 		}
 		
-	}
-	
-	public String getSoekeStreng() {
-		return soekeStreng;
 	}
 
 }
