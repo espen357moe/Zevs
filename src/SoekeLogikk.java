@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class SoekeLogikk {
-	
+
 	public SoekeLogikk() {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
@@ -16,27 +16,26 @@ public class SoekeLogikk {
 				if (df.isEmpty()) {
 					System.out.println("Ingen s�k gjort ");
 					break;
-					}
-				
+				}
+
 				if (indexfound > -1) {
-					System.out.println("Funnet " + " " + line + " ganger" + " på ");
-					
-//					Omgj�ring til Array testing.  
-//					System.out.println (java.util.Arrays.toString(line.split(" 	")));
+					System.out.println("Funnet " + " " + line + " ganger"
+							+ " på ");
+
+					// Omgj�ring til Array testing.
+					// System.out.println
+					// (java.util.Arrays.toString(line.split(" 	")));
 				}
 				if (indexfound == 0) {
 					System.out.println("Ingen funn");
 				}
-			}	
-			
-			bf.close();
-			} catch (IOException e) {
-				System.out.println("IO Error Occurred: " + e.toString());
-				
-				
-				
 			}
-		
-		
+
+			bf.close();
+		} catch (IOException e) {
+			System.out.println("IO Error Occurred: " + e.toString());
+
+		}
+
 	}
 }
