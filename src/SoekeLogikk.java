@@ -4,10 +4,6 @@ import java.io.IOException;
 
 public class SoekeLogikk {
 
-	public SoekeLogikk(String soekeStreng) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public void startSoek(String soekeStreng) {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(

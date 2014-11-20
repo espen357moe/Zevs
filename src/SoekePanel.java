@@ -9,9 +9,9 @@ import javax.swing.JTextField;
 
 public class SoekePanel extends JPanel implements ActionListener {
 	
-	private String soekeStreng;	
+	public String soekeStreng;	
 	
-	SoekeLogikk soekeLogikk = new SoekeLogikk(soekeStreng);
+	//SoekeLogikk soekeLogikk = new SoekeLogikk();
 	
 	public SoekePanel() {
 		JTextField soekeFelt = new JTextField(30);
@@ -19,22 +19,25 @@ public class SoekePanel extends JPanel implements ActionListener {
 		
 		JButton soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);
-		
+		soekeKnapp.addActionListener(this);
 		soekeStreng = soekeFelt.getText();
-	}
-	
-	public String getSoekeStreng() {
-		return soekeStreng;
-	}
+	}	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
 		if(event.equals("Søk")) {
-			getSoekeStreng();	
-			soekeLogikk.startSoek(soekeStreng);
+			
+			getSoekeStreng();
+			System.out.println("Trykket på søkeknappen - " + soekeStreng);
+				
+			//soekeLogikk.startSoek(soekeStreng);
 		}
 		
+	}
+	
+	public String getSoekeStreng() {
+		return soekeStreng;
 	}
 
 }
