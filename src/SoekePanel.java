@@ -8,8 +8,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class SoekePanel extends JPanel implements ActionListener {
 	
+	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 	public String soekeStreng;	
 	private JTextField soekeFelt;
 	
@@ -35,6 +37,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		if(event.equals("Søk")) {
 			soekeStreng = soekeFelt.getText();
 			System.out.println("Søkeknappen trykket på - " + soekeStreng);
+			soekeLogikk.startSoek(soekeStreng);
 		}
 		
 	}
