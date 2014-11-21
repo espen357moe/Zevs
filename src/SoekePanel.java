@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
+=======
+>>>>>>> 74eb3e73232ec88d7e7fa98c149ad00928ec1135
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
+@SuppressWarnings("serial")
 public class SoekePanel extends JPanel implements ActionListener {
 	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
