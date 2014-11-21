@@ -1,5 +1,3 @@
-import java.awt.Container;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
+@SuppressWarnings("serial")
 public class SoekePanel extends JPanel implements ActionListener {
 	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
