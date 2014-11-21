@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
-		this.add(soekeFelt);	
+		this.add(soekeFelt);
+		this.setBackground(Color.GRAY);
 
 		JLabel soekeTreffLabel = new JLabel();
 		this.add(soekeTreffLabel);

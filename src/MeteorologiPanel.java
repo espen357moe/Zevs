@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class MeteorologiPanel extends JPanel {
 	
 	MeteorologiPanel() {
-		setBackground(Color.GREEN);
+		setBackground(Color.DARK_GRAY);
 		JButton meteorologiKnapp = new JButton("Her kommer meteorologidata etterhvert");
 		this.add(meteorologiKnapp);
 	}
