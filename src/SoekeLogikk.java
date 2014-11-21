@@ -10,22 +10,29 @@ public class SoekeLogikk {
 					"SoekeInfo.txt"));
 
 			String brukerInput = soekeStreng;
-			String resultatAvSøk;
-			while ((resultatAvSøk = bf.readLine()) != null) {
+			String resultatAvSok;
+			
+			
+			while ((resultatAvSok = bf.readLine()) == null) {
+				int resultatFunnet = resultatAvSok.indexOf(brukerInput);
+				if (resultatFunnet == 0) {
+					System.out.println("Ingen treff på  "+resultatAvSok);
+				}
+			}
+			
+			while ((resultatAvSok = bf.readLine()) != null) {
 
-				int resultatFunnet = resultatAvSøk.indexOf(brukerInput);
+				int resultatFunnet = resultatAvSok.indexOf(brukerInput);
 				if (brukerInput.isEmpty()) {
 					System.out.println("Ingen søk utført");
 					break;
 				}
+				
 				if (resultatFunnet > -1) {
-					System.out.println("Funnet " + " " + resultatAvSøk + " ganger"
+					System.out.println("Funnet " + " " + resultatAvSok + " ganger"
 							+ " på  ");
 				}
-				if (resultatFunnet < 0) {
-					System.out.println("Ingen treff");
-					break;
-				}
+
 			}
 
 			bf.close();
