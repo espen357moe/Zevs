@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
@@ -27,11 +28,16 @@ public class OmVindu extends JFrame
 		JPanel tekstFeltPanel = new JPanel();
 		JPanel lukkKnappPanel = new JPanel();
 		
+		tekstFeltPanel.setBackground(Color.DARK_GRAY);
+		lukkKnappPanel.setBackground(Color.DARK_GRAY);
+		
 		JTextArea tekstFelt = new JTextArea("Laget av:\n Inger Horn, Marianne Løvdok,\n Thor-Arne Høiland-Hallingrød, Espen moe,\n Rune Grønli, Øystein Paulsen");
 		tekstFelt.setEditable(false);
-		tekstFelt.setBackground(Color.YELLOW);
-
-
+		
+		Font font = new Font("Calibri", Font.PLAIN, 14);
+		
+		tekstFelt.setFont(font);
+		tekstFelt.setBackground(Color.ORANGE);
 		
 		JButton lukkKnapp = new JButton("Lukk");
 		
