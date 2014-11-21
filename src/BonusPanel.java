@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -10,18 +11,11 @@ import javax.swing.border.TitledBorder;
 public class BonusPanel extends JPanel {
 
 	BonusPanel() {
-		setBackground(Color.LIGHT_GRAY);		
-		
-		TitledBorder title;
-		title = BorderFactory.createTitledBorder(getBorder(), "Tilleggsdata");
-		title.setTitleJustification(TitledBorder.RIGHT);
-		setBorder(title);
-		
-
-
-
-
+		setBackground(Color.DARK_GRAY);			
+		setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));		
 		JLabel bonusLabel = new JLabel("Tilleggsdata");
+		bonusLabel.setForeground(Color.ORANGE);
+		
 		this.add(bonusLabel);
 		
 	}

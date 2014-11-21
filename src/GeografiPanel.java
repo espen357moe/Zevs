@@ -12,6 +12,7 @@ public class GeografiPanel extends JPanel {
 		setBackground(Color.DARK_GRAY);
 		setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
 		JLabel geografiLabel = new JLabel("Geografiske data");
+		geografiLabel.setForeground(Color.ORANGE);
 		this.add(geografiLabel);
 		
 	}

@@ -12,6 +12,7 @@ public class MeteorologiPanel extends JPanel {
 		setBackground(Color.DARK_GRAY);
 		setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
 		JLabel meteorologiLabel = new JLabel("Meteorologiske data");
+		meteorologiLabel.setForeground(Color.ORANGE);
 		this.add(meteorologiLabel);
 	}
 	
