@@ -4,13 +4,23 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class BonusPanel extends JPanel {
 
 	BonusPanel() {
-		setBackground(Color.DARK_GRAY);
-		setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
+		setBackground(Color.LIGHT_GRAY);		
+		
+		TitledBorder title;
+		title = BorderFactory.createTitledBorder(getBorder(), "Tilleggsdata");
+		title.setTitleJustification(TitledBorder.RIGHT);
+		setBorder(title);
+		
+
+
+
+
 		JLabel bonusLabel = new JLabel("Tilleggsdata");
 		this.add(bonusLabel);
 		
