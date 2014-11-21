@@ -27,8 +27,12 @@ public class OmVindu extends JFrame
 		JPanel tekstFeltPanel = new JPanel();
 		JPanel lukkKnappPanel = new JPanel();
 		
-		JTextArea tekstFelt = new JTextArea("Laget av");
-		tekstFelt.setText("Laget av:\n Inger Horn, Øystein Paulsen, Rune Grønli,\nThor Høiland, Espen Moe, Marianne Løvdok");
+		JTextArea tekstFelt = new JTextArea("Laget av:\n Inger Horn, Marianne Løvdok,\n Thor-Arne Høiland-Hallingrød, Espen moe,\n Rune Grønli, Øystein Paulsen");
+		tekstFelt.setEditable(false);
+		tekstFelt.setBackground(Color.YELLOW);
+
+
+		
 		JButton lukkKnapp = new JButton("Lukk");
 		
 		mainContainer.add(tekstFeltPanel);
@@ -47,4 +51,9 @@ public class OmVindu extends JFrame
 	  setVisible(true);
       
           }
+
+	private void Tex() {
+		// TODO Auto-generated method stub
+		
+	}
           };
