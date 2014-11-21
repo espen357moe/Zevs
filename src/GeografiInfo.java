@@ -3,9 +3,9 @@ public class GeografiInfo {
 	public class MeteorologiInfo {
 		//Dette er kun placeholders for infotyper
 		private float meterOverHavet;
-		private String[] koordinater = new String[2];
+		private String koordinater;
 		
-		public MeteorologiInfo(float meterOverHavet, String[] koordinater) {
+		public MeteorologiInfo(float meterOverHavet, String koordinater) {
 			this.meterOverHavet = meterOverHavet;
 			this.koordinater = koordinater;
 		}
@@ -14,7 +14,7 @@ public class GeografiInfo {
 			return this.meterOverHavet;
 		}
 		
-		public String[] getKoordinater(){
+		public String getKoordinater(){
 			return this.koordinater;
 		}	
 	}
