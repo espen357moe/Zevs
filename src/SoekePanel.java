@@ -1,10 +1,10 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,7 +21,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
 		this.add(soekeFelt);
-		this.setBackground(Color.GRAY);
+		this.setBackground(Color.LIGHT_GRAY);
+		this.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
 
 		JLabel soekeTreffLabel = new JLabel();
 		this.add(soekeTreffLabel);

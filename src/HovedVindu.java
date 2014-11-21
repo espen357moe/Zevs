@@ -66,12 +66,12 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
+        BonusPanel bonusPanel = new BonusPanel();
+        hovedContainer.add(bonusPanel);       
 		
 		setVisible(true);
 	}
 
-	
-	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub

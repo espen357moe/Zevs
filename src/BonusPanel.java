@@ -6,18 +6,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class GeografiPanel extends JPanel {
+public class BonusPanel extends JPanel {
 
-	GeografiPanel() {
+	BonusPanel() {
 		setBackground(Color.DARK_GRAY);
 		setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
-		JLabel geografiLabel = new JLabel("Geografiske data");
-		this.add(geografiLabel);
+		JLabel bonusLabel = new JLabel("Tilleggsdata");
+		this.add(bonusLabel);
 		
 	}
 	
-	public void skrivGeografiInfo(GeografiInfo gi) {
-		System.out.println("Geografiinfo kommer etterhvert");
-	}
+//	public void skrivBonusInfo(BonusInfo bi) {
+//		System.out.println("Bonusinfo kommer etterhvert");
+//	}
 }
-
