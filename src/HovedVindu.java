@@ -4,12 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-<<<<<<< HEAD
 import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
-=======
->>>>>>> 74eb3e73232ec88d7e7fa98c149ad00928ec1135
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
