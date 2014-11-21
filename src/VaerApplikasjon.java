@@ -6,21 +6,20 @@ public class VaerApplikasjon {
 
 	public static void main(String[] args) {
 		try {
-            // Set System L&F
             UIManager.setLookAndFeel(
                     UIManager.getSystemLookAndFeelClassName());
         }
         catch (UnsupportedLookAndFeelException e) {
-            // handle exception
+        	e.printStackTrace();
         }
         catch (ClassNotFoundException e) {
-            // handle exception
+        	e.printStackTrace();
         }
         catch (InstantiationException e) {
-            // handle exception
+        	e.printStackTrace();
         }
         catch (IllegalAccessException e) {
-            // handle exception
+        	e.printStackTrace();
         }
 		
 		new HovedVindu();

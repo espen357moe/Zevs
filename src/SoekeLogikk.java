@@ -12,14 +12,6 @@ public class SoekeLogikk {
 			String brukerInput = soekeStreng;
 			String resultatAvSok;
 			
-			
-			while ((resultatAvSok = bf.readLine()) == null) {
-				int resultatFunnet = resultatAvSok.indexOf(brukerInput);
-				if (resultatFunnet == 0) {
-					System.out.println("Ingen treff på  "+resultatAvSok);
-				}
-			}
-			
 			while ((resultatAvSok = bf.readLine()) != null) {
 
 				int resultatFunnet = resultatAvSok.indexOf(brukerInput);
@@ -28,11 +20,9 @@ public class SoekeLogikk {
 					break;
 				}
 				
-				if (resultatFunnet > -1) {
-					System.out.println("Funnet " + " " + resultatAvSok + " ganger"
-							+ " på  ");
+				if(resultatFunnet > -1) {
+					System.out.println(resultatAvSok);
 				}
-
 			}
 
 			bf.close();
@@ -40,6 +30,5 @@ public class SoekeLogikk {
 			System.out.println("IO Error Occurred: " + e.toString());
 
 		}
-
 	}
 }
