@@ -8,36 +8,23 @@ public class SoekeLogikk {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"SoekeInfo.txt"));
-			String line;
-			String df = soekeStreng;
-			while ((line = bf.readLine()) != null) {
 
-				int indexfound = line.indexOf(df);
-				if (df.isEmpty()) {
+			String brukerInput = soekeStreng;
+			String resultatAvSøk;
+			while ((resultatAvSøk = bf.readLine()) != null) {
+
+				int resultatFunnet = resultatAvSøk.indexOf(brukerInput);
+				if (brukerInput.isEmpty()) {
 					System.out.println("Ingen søk utført");
 					break;
 				}
-
-				if (indexfound > -1) {
-
-
-					System.out.println("Funnet " + " " + line + " ganger" + " på  ");
-					
-					
-//					Omgjøring til Array testing.  
-//			System.out.println (java.util.Arrays.toString(line.split(";")));
-					
-
-					System.out.println(line + " ganger"
-							+ " på ");
-
-					// Omgjøring til Array testing.
-					// System.out.println
-					// (java.util.Arrays.toString(line.split(" 	")));
-
+				if (resultatFunnet > -1) {
+					System.out.println("Funnet " + " " + resultatAvSøk + " ganger"
+							+ " på  ");
 				}
-				if (indexfound == 0) {
+				if (resultatFunnet < 0) {
 					System.out.println("Ingen treff");
+					break;
 				}
 			}
 
