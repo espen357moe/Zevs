@@ -52,8 +52,7 @@ public class HovedVindu extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent ev) {
                     System.exit(0);
             }
-        });
-  
+        }); 
         
         setJMenuBar(menylinje);	
         
@@ -67,8 +66,8 @@ public class HovedVindu extends JFrame implements ActionListener {
         hovedContainer.add(meteorologiPanel);
         
         BonusPanel bonusPanel = new BonusPanel();
-        hovedContainer.add(bonusPanel);       
-		
+        hovedContainer.add(bonusPanel);  
+        		
 		setVisible(true);
 	}
 
