@@ -54,4 +54,5 @@ public class SoekeLogikk {
 		} catch (IOException e) {
 			System.out.println("IO Error Occurred: " + e.toString());}
 	}
+	
 }
