@@ -23,7 +23,7 @@ public class VaerApplikasjon {
 //        catch (IllegalAccessException e) {
 //            // handle exception
 //        }
-//		
+		
 		new HovedVindu();
 		//new Dagvarsel();
 	}
