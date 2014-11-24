@@ -12,6 +12,7 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("serial")
 public class OmVindu extends JFrame {
+	
 	public OmVindu() {
 		setTitle("Zevs");
 		setSize(500, 200);
@@ -43,13 +44,13 @@ public class OmVindu extends JFrame {
 		lukkKnappPanel.add(lukkKnapp);
 
 		lukkKnapp.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent ev) {
 				dispose();
 			}
 		});
 
 		setVisible(true);
-
 	}
 
 };

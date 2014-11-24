@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 public class DataPanel extends JPanel {
 	
 	public JLabel panelEtikett = new JLabel();
+	
 	public JTextArea dataTekstFelt = new JTextArea();
 	
 	public DataPanel() {
@@ -31,4 +32,5 @@ public class DataPanel extends JPanel {
 	public void lagEtikett(String tekst) {
 		panelEtikett.setText(tekst);
 	}
+	
 }

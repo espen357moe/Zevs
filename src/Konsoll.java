@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 
 public class Konsoll {
 
-
    public static int readInt(String ledetekst) {
 	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	   while(true) {
@@ -20,12 +19,11 @@ public class Konsoll {
    		 System.out.print(ledetekst+":");
             try {return br.readLine().trim();}
             catch(Exception e) {}
-         	}
-   }
+         	}   
+   		}
 
 
 public static double readDouble(String ledetekst) {
-
 	   while(true) {
          try {return Double.valueOf(readLine(ledetekst).trim()).doubleValue();}
          catch(Exception e) {}

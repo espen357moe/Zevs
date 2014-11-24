@@ -1,25 +1,25 @@
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class SoekeLogikk {
 
-	@SuppressWarnings("unused")
 	public void startSoek(String soekeStreng) {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"SoekeInfo.txt"));
+			String line;
+			String df = soekeStreng;
+			while ((line = bf.readLine()) != null) {
 
-			String brukerInput = soekeStreng;
-			String resultatAvSok;
-
-			while ((resultatAvSok = bf.readLine()) != null) {
-				int resultatFunnet = resultatAvSok.indexOf(brukerInput);
-				if (brukerInput.isEmpty()) {
+				int indexfound = line.indexOf(df);
+				if (df.isEmpty()) {
 					System.out.println("Ingen søk utført");
 					break;
 				}
 
+<<<<<<< HEAD
 				if (resultatFunnet > -1) {
 					String strArray[] = resultatAvSok.split("\t");
 					for (int i = 0; i < strArray.length;) {
@@ -48,11 +48,34 @@ public class SoekeLogikk {
 						
 
 					}
+=======
+				if (indexfound > -1) {
+
+
+					System.out.println("Funnet " + " " + line + " ganger" + " på  ");
+					
+					
+//					Omgjøring til Array testing.  
+//			System.out.println (java.util.Arrays.toString(line.split(";")));
+					
+					System.out.println(line + " ganger"
+							+ " på ");
+					// Omgjøring til Array testing.
+					// System.out.println
+					// (java.util.Arrays.toString(line.split(" 	")));
+
+				}
+				if (indexfound == 0) {
+					System.out.println("Ingen treff");
+>>>>>>> 66c572fe8d37d2dcd4b0f3a7ecb8418c70624309
 				}
 			}
 
 			bf.close();
 		} catch (IOException e) {
-			System.out.println("IO Error Occurred: " + e.toString());}
+			System.out.println("IO Error Occurred: " + e.toString());
+
+		}
+
 	}
 }

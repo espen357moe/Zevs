@@ -1,15 +1,15 @@
-import java.awt.Color;
+
+import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-@SuppressWarnings("serial")
 public class SoekePanel extends JPanel implements ActionListener {
 	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
@@ -18,9 +18,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
-		this.add(soekeFelt);
-		this.setBackground(Color.DARK_GRAY);
-		this.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
+		this.add(soekeFelt);	
 
 		JLabel soekeTreffLabel = new JLabel();
 		this.add(soekeTreffLabel);
@@ -39,6 +37,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		String event = e.getActionCommand();
 		if(event.equals("Søk")) {
 			soekeStreng = soekeFelt.getText();
+			System.out.println("Søker etter - " + soekeStreng);
 			soekeLogikk.startSoek(soekeStreng);
 		}
 		

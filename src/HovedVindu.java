@@ -43,12 +43,14 @@ public class HovedVindu extends JFrame implements ActionListener {
         
         
         m1.addActionListener(new ActionListener(){
+        	
         public void actionPerformed(ActionEvent ev) {
             new OmVindu();
         }
         });
         
         m2.addActionListener(new ActionListener() {
+        	
             public void actionPerformed(ActionEvent ev) {
                     System.exit(0);
             }

@@ -5,4 +5,5 @@ public class MeteorologiPanel extends DataPanel {
 		lagEtikett("Meteorologiske data");
 		skrivUtData("Her kommer meteorologiske data etterhvert");
 	}
+	
 }
