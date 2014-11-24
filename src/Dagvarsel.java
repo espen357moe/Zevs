@@ -43,15 +43,16 @@ public class Dagvarsel {
 					System.out.println("V�r :		"
 							+ weatherdata.getElementsByTagName("body").item(0)
 									.getTextContent());
+					
 					System.out
-							.println("Linker : " + weatherdata.getNodeValue());
+						.println("Linker : " + weatherdata.getNodeValue());
 				}
 
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		
 	}
-
+	}
 }
