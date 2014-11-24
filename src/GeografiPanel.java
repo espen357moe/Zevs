@@ -5,4 +5,5 @@ public class GeografiPanel extends DataPanel {
 		lagEtikett("Geografiske data");
 		skrivUtData("Her komme geografiske data etterhvert");
 	}
+	
 }
