@@ -19,7 +19,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
 		this.add(soekeFelt);
-		this.setBackground(Color.LIGHT_GRAY);
+		this.setBackground(Color.DARK_GRAY);
 		this.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.BLACK));
 
 		JLabel soekeTreffLabel = new JLabel();
