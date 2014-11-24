@@ -23,13 +23,13 @@ public class SoekeLogikk {
 				if (resultatFunnet > -1) {
 					String strArray[] = resultatAvSok.split("\t");
 					for (int i = 0; i < strArray.length;) {
-						String komunenummer 	= strArray[0];
+						String kommunenummer 	= strArray[0];
 						String stedsnavn 		= strArray[1];
 						String prioritet 		= strArray[2];
 						String stedtypeNynorsk 	= strArray[3];
-						String stedtypeBokmål 	= strArray[4];
-						String stedEngelsn 		= strArray[5];
-						String komune 			= strArray[6];
+						String stedtypeBokmaal 	= strArray[4];
+						String stedEngelsk 		= strArray[5];
+						String kommune 			= strArray[6];
 						String fylke 			= strArray[7];
 						String lengdeGrad 		= strArray[8];
 						String breddeGrad 		= strArray[9];
@@ -39,7 +39,7 @@ public class SoekeLogikk {
 						String urlEngelsk 		= strArray[13];
 
 						System.out.print("Sted: "+stedsnavn+"    ");
-						System.out.print("Komune: "+komune +"    ");
+						System.out.print("Kommune: "+kommune +"    ");
 						System.out.println("Fylke: "+fylke);
 						System.out.println("URL: " +urlNorsk);
 						System.out.println("------------------------------------------------------------------");
