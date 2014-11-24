@@ -1,4 +1,4 @@
-package zevsTest;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -50,14 +50,32 @@ public class TeamTvilsomAtributes {
 		// get the number of nodes in this map
 		int numAttrs = attributes.getLength();
 
-		for (int i = 0; i < numAttrs; i++) {
-			Attr attr = (Attr) attributes.item(i);
+		for (int i = 0; i < numAttrs;) {
 			
-			String attrName = attr.getNodeName();
-			String attrValue = attr.getNodeValue();
 			
-			System.out.println("Found attribute: " + attrName + " with value: " + attrValue);
 			
+			Attr altitude = (Attr) attributes.item(0);
+			Attr latitude = (Attr) attributes.item(3);
+			Attr longitude = (Attr) attributes.item(4);
+			
+			String altitudeName = altitude.getNodeName();
+			String altitudeValue = altitude.getNodeValue();
+			
+			String latitudeName = latitude.getNodeName();
+			String latitudeValue = latitude.getNodeValue();
+			
+			String longitudeName = longitude.getNodeName();
+			String longitudeValue = longitude.getNodeValue();
+			
+	
+			System.out.println(altitudeName + "verdi: " + altitudeValue);
+			System.out.println(latitudeName + "verdi " + latitudeValue);
+			System.out.println(longitudeName + "verdi "+ longitudeValue);
+			
+			break;
+			
+	
+		   
 		}
 	}
 
