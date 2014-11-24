@@ -10,7 +10,6 @@ public class Dagvarsel {
 
 	public Dagvarsel() {
 		try {
-
 			DocumentBuilderFactory factory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -18,7 +17,6 @@ public class Dagvarsel {
 					.parse("http://www.yr.no/sted/Norge/Telemark/Sauherad/Gvarv/varsel.xml");
 			doc.getDocumentElement().normalize();
 			NodeList nodeList = doc.getElementsByTagName("weatherdata");
-
 			System.out.println("Root element :"
 					+ doc.getDocumentElement().getNodeName());
 
@@ -43,16 +41,15 @@ public class Dagvarsel {
 					System.out.println("V�r :		"
 							+ weatherdata.getElementsByTagName("body").item(0)
 									.getTextContent());
-					
 					System.out
 						.println("Linker : " + weatherdata.getNodeValue());
 				}
-
 			}
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 		
 	}
+		
 	}
 }

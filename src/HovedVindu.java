@@ -1,19 +1,20 @@
 import java.awt.Container;
 import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.FileInputStream;
+
+import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+@SuppressWarnings("serial")
 public class HovedVindu extends JFrame implements ActionListener {
 	
 	HovedVindu() {
@@ -42,17 +43,18 @@ public class HovedVindu extends JFrame implements ActionListener {
         
         
         m1.addActionListener(new ActionListener(){
+        	
         public void actionPerformed(ActionEvent ev) {
             new OmVindu();
         }
         });
         
         m2.addActionListener(new ActionListener() {
+        	
             public void actionPerformed(ActionEvent ev) {
                     System.exit(0);
             }
-        });
-  
+        }); 
         
         setJMenuBar(menylinje);	
         
@@ -65,12 +67,12 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
-		
+        BonusPanel bonusPanel = new BonusPanel();
+        hovedContainer.add(bonusPanel);  
+        		
 		setVisible(true);
 	}
 
-	
-	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub

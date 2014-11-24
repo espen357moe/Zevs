@@ -1,18 +1,9 @@
-import java.awt.Color;
+@SuppressWarnings("serial")
+public class MeteorologiPanel extends DataPanel {
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
-public class MeteorologiPanel extends JPanel {
-	
 	MeteorologiPanel() {
-		setBackground(Color.GREEN);
-		JButton meteorologiKnapp = new JButton("Her kommer meteorologidata etterhvert");
-		this.add(meteorologiKnapp);
+		lagEtikett("Meteorologiske data");
+		skrivUtData("Her kommer meteorologiske data etterhvert");
 	}
 	
-	public void skrivMeteorologiInfo(MeteorologiInfo mi) {
-		System.out.println("Geografiinfo kommer etterhvert");
-	}
-
 }
