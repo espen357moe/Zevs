@@ -5,4 +5,5 @@ public class BonusPanel extends DataPanel {
 		lagEtikett("Tilleggsdata");
 		skrivUtData("Her kommer tilleggsdata etterhvert");
 	}
+	
 }
