@@ -20,7 +20,7 @@ public class SoekeTreff {
 		return this.kommune;
 	}
 	
-	public String getAntallAar(){
+	public String getStedsNavn(){
 		return this.stedsNavn;
 	}
 	
