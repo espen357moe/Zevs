@@ -42,8 +42,6 @@ public class TeamTvilsomAtributes {
 
 	public static void listAllAttributes(Element element) {
 		
-		System.out.println("List attributes for node: " + element.getNodeName());
-		
 		// get a map containing the attributes of this node 
 		NamedNodeMap attributes = element.getAttributes();
 
@@ -58,23 +56,25 @@ public class TeamTvilsomAtributes {
 			Attr latitude = (Attr) attributes.item(3);
 			Attr longitude = (Attr) attributes.item(4);
 			
-			String altitudeName = altitude.getNodeName();
-			String altitudeValue = altitude.getNodeValue();
 			
+			if(latitude != null) {
 			String latitudeName = latitude.getNodeName();
 			String latitudeValue = latitude.getNodeValue();
+			System.out.println(latitudeName + " : " + latitudeValue);
+			}
 			
+			if (longitude != null){
 			String longitudeName = longitude.getNodeName();
 			String longitudeValue = longitude.getNodeValue();
+			System.out.println(longitudeName + " : " + longitudeValue);
+			}
 			
-	
-			System.out.println(altitudeName + "verdi: " + altitudeValue);
-			System.out.println(latitudeName + "verdi " + latitudeValue);
-			System.out.println(longitudeName + "verdi "+ longitudeValue);
-			
-			break;
-			
-	
+			if (altitude != null){
+			String altitudeName = altitude.getNodeName();
+			String altitudeValue = altitude.getNodeValue();
+			System.out.println(altitudeName  + " : " + altitudeValue);
+			}
+		break;
 		   
 		}
 	}
