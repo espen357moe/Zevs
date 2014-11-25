@@ -1,4 +1,5 @@
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -14,10 +15,10 @@ import javax.swing.JTextField;
 public class SoekePanel extends JPanel implements ActionListener {
 	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
-	public String soekeStreng;
-	public String[] resultatListe = new String[5];
+	private String soekeStreng;
+	private String[] resultatListe = new String[5];
 	private JTextField soekeFelt;
-	private JComboBox nedtrekksResultatListe;
+	private JComboBox<?> nedtrekksResultatListe;
 	
 	public SoekePanel() {
 		this.soekeFelt = new JTextField(30);
@@ -47,7 +48,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			soekeStreng = soekeFelt.getText();
 			System.out.println("Søker etter - " + soekeStreng);
 			soekeLogikk.startSoek(soekeStreng);
-			System.out.println("SoekeTreff-objekt: " + soekeLogikk.getSoekeTreff());
+			System.out.println("SoekePanel: Minneadresse til SoekeTreff-objekt: " + soekeLogikk.getSoekeTreff());
 		}
 		
 	}

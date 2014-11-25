@@ -52,7 +52,11 @@ public class SoekeLogikk {
 						
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
 						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
+
 						System.out.print(link.sendtLink(urlNorsk));
+
+						System.out.println("SoekeLogikk: Minneadresse til SoekeTreff-objekt: "+soekeTreff);
+
 						break;
 						
 					}

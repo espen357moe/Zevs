@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,34 +13,32 @@ import org.xml.sax.SAXException;
 
 public class TeamTvilsomAttributes {
 
-
-	public static void listAllAttributes(Element element) {
+	public static void listAllAttributes(Element element) throws IOException {
 		NamedNodeMap attributes = element.getAttributes();
 		int antallAttrs = attributes.getLength();
-		for (int i = 0; i < antallAttrs;){	
+		for (int i = 0; i < antallAttrs;) {
 			Attr høyde = (Attr) attributes.item(0);
 			Attr bredde = (Attr) attributes.item(3);
 			Attr lengde = (Attr) attributes.item(4);
-			
-			if (høyde != null){
-			String høydeName = høyde.getNodeName();
-			String høydeValue = høyde.getNodeValue();
-			System.out.println(høydeName + " : " + høydeValue);
-			} 
-			
-			if(bredde != null) {
-			String breddeName = bredde.getNodeName();
-			String breddeValue = bredde.getNodeValue();
-			System.out.println(breddeName + " : " + breddeValue);
+
+			if (høyde != null) {
+				String høydeName = høyde.getNodeName();
+				String høydeValue = høyde.getNodeValue();
+				System.out.println(høydeName + " : " + høydeValue);
 			}
-			
-			if (lengde != null){
-			String lengdeName = lengde.getNodeName();
-			String lengdeValue = lengde.getNodeValue();
-			System.out.println(lengdeName + " : " + lengdeValue);
-			}			
-		 break; 
-		   
+
+			if (bredde != null) {
+				String breddeName = bredde.getNodeName();
+				String breddeValue = bredde.getNodeValue();
+				System.out.println(breddeName + " : " + breddeValue);
+			}
+
+			if (lengde != null) {
+				String lengdeName = lengde.getNodeName();
+				String lengdeValue = lengde.getNodeValue();
+				System.out.println(lengdeName + " : " + lengdeValue);
+			}
+			break;
 		}
 	}
 
@@ -52,16 +48,15 @@ public class TeamTvilsomAttributes {
 			DocumentBuilderFactory factory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder
-					.parse(urlNorsk);
+			Document doc = builder.parse(urlNorsk);
 			doc.getDocumentElement().normalize();
 			NodeList nodeList = doc.getElementsByTagName("location");
 			System.out.println("Root element :"
 					+ doc.getDocumentElement().getNodeName());
-			
+
 			int num = nodeList.getLength();
-			
-			for (int i=0; i<num; i++) {
+
+			for (int i = 0; i < num; i++) {
 				Element node = (Element) nodeList.item(i);
 				listAllAttributes(node);
 			}
@@ -75,8 +70,8 @@ public class TeamTvilsomAttributes {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return null;
-	}
 
+		return null;
+
+	}
 }
