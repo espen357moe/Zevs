@@ -1,5 +1,5 @@
 
-public class GeografiInfo {
+public class GeografiData {
 	
 	public class MeteorologiInfo {
 		//Dette er kun placeholders for infotyper

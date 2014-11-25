@@ -1,5 +1,5 @@
 
-public class MeteorologiInfo {
+public class MeteorologiData {
 	
 	//Dette er kun placeholders for infotyper
 	private float hoyesteTemperatur;
@@ -7,7 +7,7 @@ public class MeteorologiInfo {
 	private float vindHastighet;
 	private float nedbor;
 	
-	public MeteorologiInfo(float hoyesteTemperatur, float lavesteTemperatur, float vindHastighet, float nedbor) {
+	public MeteorologiData(float hoyesteTemperatur, float lavesteTemperatur, float vindHastighet, float nedbor) {
 		this.hoyesteTemperatur = hoyesteTemperatur;
 		this.lavesteTemperatur = lavesteTemperatur;
 		this.vindHastighet = vindHastighet;
