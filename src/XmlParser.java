@@ -14,6 +14,8 @@
 	public class XmlParser {
 	// all datatypes we would like to get out of the XML parsing
 	public String clouds; // Main weather depiction for clouds and sun.
+	// Symbol
+	public int symbol;
 	//Temperature data:
 	public String celsius; // For displaying temperature in degrees celsius.
 	public String fahrenheit; // For displaying temperature in degrees Fahrenheit.
@@ -60,6 +62,7 @@
 	//Get relevant data from XML:
 	if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 	Element eElement = (Element) nNode;
+	symbol = Integer.parseInt(eElement.getElementsByTagName("symbol").item(0).getAttributes().getNamedItem("numberEx").getTextContent());
 	precipitation = Double.parseDouble(eElement.getElementsByTagName("precipitation").item(0).getAttributes().getNamedItem("value").getTextContent());
 	lastUpdate = (eElement.getElementsByTagName("lastupdate").item(0).getTextContent());
 	nextUpdate = (eElement.getElementsByTagName("nextupdate").item(0).getTextContent());
@@ -73,6 +76,7 @@
 	fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + ""; // Convert Celsius to Fahrenheit.
 	// Display weather data in the console. For test purposes, Can be commented out:
 	System.out.println(clouds);
+	System.out.println(symbol);
 	System.out.println("Vind: "+windText +", " + wind + " m/s");
 	System.out.println("Vindretning: "+windDirection);
 	System.out.println("Temperatur: " + celsius + "¡C / " + fahrenheit+ "¡F");
@@ -85,6 +89,9 @@
 	// Methods for getting data:
 	public String getClouds() {
 	return clouds;
+	}
+	public int getSymbol(){
+	return symbol;
 	}
 	public Double getWind() {
 	return wind;
@@ -124,4 +131,4 @@
 	public static void main(String[] args) {
 		new XmlParser();
 	}
-	}
+}
