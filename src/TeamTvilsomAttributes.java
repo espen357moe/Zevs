@@ -27,10 +27,6 @@ public class TeamTvilsomAttributes {
 	/*	System.out.println("Root element :"
 				+ doc.getDocumentElement().getNodeName()); */
 		
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		dbf.setValidating(false);
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		
 		int num = nodeList.getLength();
 		
 		for (int i=0; i<num; i++) {
