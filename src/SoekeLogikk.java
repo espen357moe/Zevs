@@ -10,7 +10,7 @@ public class SoekeLogikk {
 	public void startSoek(String soekeStreng) {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
-					"SoekeInfo.txt"));
+					"NoregInfo.txt"));
 
 			String brukerInput = soekeStreng;
 			String resultatAvSoek;
@@ -49,7 +49,7 @@ public class SoekeLogikk {
 						
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
 						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
-						
+						System.out.println("SoekeLogikk: Minneadresse til SoekeTreff-objekt: "+soekeTreff);
 						break;
 						
 					}

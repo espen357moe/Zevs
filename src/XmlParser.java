@@ -22,6 +22,8 @@
 	public String windText; // Wind speed textual content. e.g "Fresh breeze".
 	public Double wind; // Wind speed m/s.
 	public String windDirection; // wind Direction textual content.
+	//Precipitation
+	public Double precipitation; //precipitation in mm.
 	//Seasonal data:
 	public String season; // Used to depict seasonal ground changes in main program.
 	public int seasons; //Used to set season
@@ -41,7 +43,7 @@
 	e.printStackTrace();
 	}
 	try {
-	document = builder.parse(new URL("http://www.yr.no/sted/Norge/Vestfold/Larvik/Stavernsodden/varsel.xml").openStream()); // Try to load xml from url.
+	document = builder.parse(new URL("http://www.yr.no/sted/Norge/Nordland/Br%C3%B8nn%C3%B8y/Br%C3%B8nn%C3%B8ysund/varsel.xml").openStream()); // Try to load xml from url.
 	} catch (FileNotFoundException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
@@ -58,6 +60,7 @@
 	//Get relevant data from XML:
 	if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 	Element eElement = (Element) nNode;
+	precipitation = Double.parseDouble(eElement.getElementsByTagName("precipitation").item(0).getAttributes().getNamedItem("value").getTextContent());
 	lastUpdate = (eElement.getElementsByTagName("lastupdate").item(0).getTextContent());
 	nextUpdate = (eElement.getElementsByTagName("nextupdate").item(0).getTextContent());
 	seasons = Integer.parseInt(month = Character.toString(lastUpdate.charAt(5)) + Character.toString(lastUpdate.charAt(6)));
@@ -73,6 +76,7 @@
 	System.out.println("Vind: "+windText +", " + wind + " m/s");
 	System.out.println("Vindretning: "+windDirection);
 	System.out.println("Temperatur: " + celsius + "¡C / " + fahrenheit+ "¡F");
+	System.out.println("Nedbør: "+precipitation);
 	System.out.println("Sist oppdatert: " + lastUpdate);
 	System.out.println("Neste oppdatering: " + nextUpdate);
 	//System.out.println(season);
@@ -84,6 +88,9 @@
 	}
 	public Double getWind() {
 	return wind;
+	}
+	public Double getPrecipitation(){
+	return precipitation;
 	}
 	public String getCelsius() {
 	return celsius;
