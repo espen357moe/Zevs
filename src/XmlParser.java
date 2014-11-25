@@ -76,7 +76,7 @@
 	System.out.println("Vind: "+windText +", " + wind + " m/s");
 	System.out.println("Vindretning: "+windDirection);
 	System.out.println("Temperatur: " + celsius + "¡C / " + fahrenheit+ "¡F");
-	System.out.println("Nedbør: "+precipitation);
+	System.out.println("Nedbor: "+precipitation);
 	System.out.println("Sist oppdatert: " + lastUpdate);
 	System.out.println("Neste oppdatering: " + nextUpdate);
 	//System.out.println(season);
