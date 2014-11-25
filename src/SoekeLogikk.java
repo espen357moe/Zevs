@@ -47,8 +47,8 @@ public class SoekeLogikk {
 						System.out.println("------------------------------------------------------------------");
 						System.out.println("");
 						
-						SoekeTreff soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
-						System.out.println("Søketreff fra inni SoekeLogikk : " +soekeTreff);
+						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
+						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
 						
 						break;
 						
