@@ -31,7 +31,6 @@ public class TeamTvilsomAttributes {
 			Element node = (Element) nodeList.item(i);
 			listAllAttributes(node);
 		}
-		
 	}
 
 	public static void listAllAttributes(Element element) {
