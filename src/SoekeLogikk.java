@@ -3,6 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class SoekeLogikk {
+	
+	public SoekeTreff soekeTreff;
 
 	@SuppressWarnings("unused")
 	public void startSoek(String soekeStreng) {
@@ -39,13 +41,17 @@ public class SoekeLogikk {
 						String urlEngelsk 		= strArray[13];
 
 						System.out.print("Sted: "+stedsNavn+"    ");
-						System.out.print("Komune: "+kommune +"    ");
+						System.out.print("Kommune: "+kommune +"    ");
 						System.out.println("Fylke: "+fylke);
 						System.out.println("URL: " +urlNorsk);
 						System.out.println("------------------------------------------------------------------");
 						System.out.println("");
+						
+						SoekeTreff soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
+						System.out.println("Søketreff fra inni SoekeLogikk : " +soekeTreff);
+						
 						break;
-
+						
 					}
 				}
 			}
@@ -53,6 +59,10 @@ public class SoekeLogikk {
 			bf.close();
 		} catch (IOException e) {
 			System.out.println("IO Error Occurred: " + e.toString());}
+	}
+	
+	public SoekeTreff getSoekeTreff() {
+		return(this.soekeTreff);
 	}
 	
 }
