@@ -48,9 +48,7 @@ public class TeamTvilsomAttributes {
 		// get the number of nodes in this map
 		int antallAttrs = attributes.getLength();
 
-		for (int i = 0; i < antallAttrs;) {
-			
-			
+		for (int i = 1; i < antallAttrs;){
 			
 			Attr høyde = (Attr) attributes.item(0);
 			Attr bredde = (Attr) attributes.item(3);
@@ -71,7 +69,7 @@ public class TeamTvilsomAttributes {
 			if (lengde != null){
 			String lengdeName = lengde.getNodeName();
 			String lengdeValue = lengde.getNodeValue();
-			System.out.println(lengdeName + " : " + lValue);
+			System.out.println(lengdeName + " : " + lengdeValue);
 			}
 			
 			
