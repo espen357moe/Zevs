@@ -1,33 +1,41 @@
-
 public class MeteorologiData {
-	
-	//Dette er kun placeholders for infotyper
-	private float hoyesteTemperatur;
-	private float lavesteTemperatur;
-	private float vindHastighet;
+		
+	private String stedsNavn;
+	private int hoydeOverHavet;
+	private String koordinater;
 	private float nedbor;
+	private int temperatur;
+	private String vindRetning;
+	private float vindHastighet;
+	private String symbolNummer;
+	private String sistOppdatert;
+	private String nesteOppdatering;
 	
-	public MeteorologiData(float hoyesteTemperatur, float lavesteTemperatur, float vindHastighet, float nedbor) {
-		this.hoyesteTemperatur = hoyesteTemperatur;
-		this.lavesteTemperatur = lavesteTemperatur;
-		this.vindHastighet = vindHastighet;
+	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, int temperatur, String vindRetning, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
+		this.stedsNavn = stedsNavn;
+		this.hoydeOverHavet = hoydeOverHavet;
+		this.koordinater = koordinater;
 		this.nedbor = nedbor;
+		this.temperatur = temperatur;
+		this.vindRetning = vindRetning;
+		this.vindHastighet = vindHastighet;
+		this.symbolNummer = symbolNummer;
+		this.sistOppdatert = sistOppdatert;
+		this.nesteOppdatering = nesteOppdatering;	
 	}
 	
-	public double getHoyesteTemperatur(){
-		return this.hoyesteTemperatur;
+	public String getStedsNavn(){
+		return this.stedsNavn;
 	}
 	
-	public double getLavesteTemperatur(){
-		return this.lavesteTemperatur;
+	public int hoydeOverHavet(){
+		return this.hoydeOverHavet;
 	}
 	
-	public double getVindHastighet(){
-		return this.vindHastighet;
+	public String koordinater(){
+		return this.koordinater;
 	}
 	
-	public double getNedbor(){
-		return this.nedbor;
-	}
+	//Her skal aksessorene til de andre variablene lages etterhvert
 		
 }
