@@ -8,8 +8,7 @@ public class SoekeLogikk {
 	@SuppressWarnings("unused")
 	public void startSoek(String soekeStreng) {
 		
-		TeamTvilsomAttributes link = new TeamTvilsomAttributes();
-
+		XmlParser link = new XmlParser();
 		
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
@@ -26,8 +25,10 @@ public class SoekeLogikk {
 				}
 
 				if (resultatFunnet > -1) {
+					
 					String strArray[] = resultatAvSoek.split("\t");
 					for (int i = 0; i < strArray.length;) {
+						
 						String kommuneNummer 	= strArray[0];
 						String stedsNavn 		= strArray[1];
 						String prioritet 		= strArray[2];
@@ -51,12 +52,10 @@ public class SoekeLogikk {
 						System.out.println("");
 						
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
-						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
-
-						System.out.print(link.sendtLink(urlNorsk));
-
+						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
+								+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
 						System.out.println("SoekeLogikk: Minneadresse til SoekeTreff-objekt: "+soekeTreff);
-
+						System.out.println(link.XmlParser(urlNorsk));
 						break;
 						
 					}
@@ -69,6 +68,7 @@ public class SoekeLogikk {
 	}
 	
 	public SoekeTreff getSoekeTreff() {
+		
 		return(this.soekeTreff);
 	}
 	

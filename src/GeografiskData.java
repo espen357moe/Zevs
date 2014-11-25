@@ -11,7 +11,38 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class TeamTvilsomAttributes {
+public class GeografiskData {
+	
+	public String sendtLink(String urlNorsk) {
+		try {
+			System.out.println(urlNorsk);
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(urlNorsk);
+			doc.getDocumentElement().normalize();
+			NodeList nodeList = doc.getElementsByTagName("location");
+			System.out.println("Root element :"
+					+ doc.getDocumentElement().getNodeName());
+
+			int num = nodeList.getLength();
+
+			for (int i = 0; i < num; i++) {
+				Element node = (Element) nodeList.item(i);
+				listAllAttributes(node);
+			}
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return "Ugyldig";
+
+	}
+	
 
 	public static void listAllAttributes(Element element) throws IOException {
 		NamedNodeMap attributes = element.getAttributes();
@@ -42,36 +73,4 @@ public class TeamTvilsomAttributes {
 		}
 	}
 
-	public char[] sendtLink(String urlNorsk) {
-		try {
-			System.out.println(urlNorsk);
-			DocumentBuilderFactory factory = DocumentBuilderFactory
-					.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse(urlNorsk);
-			doc.getDocumentElement().normalize();
-			NodeList nodeList = doc.getElementsByTagName("location");
-			System.out.println("Root element :"
-					+ doc.getDocumentElement().getNodeName());
-
-			int num = nodeList.getLength();
-
-			for (int i = 0; i < num; i++) {
-				Element node = (Element) nodeList.item(i);
-				listAllAttributes(node);
-			}
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return null;
-
-	}
 }
