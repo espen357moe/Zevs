@@ -1,7 +1,5 @@
 
-
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,9 +20,7 @@ public class TeamTvilsomAttributes {
 				.parse("http://www.yr.no/sted/Norge/Telemark/Sauherad/Gvarv/varsel.xml");
 		doc.getDocumentElement().normalize();
 		NodeList nodeList = doc.getElementsByTagName("location");
-	/*	System.out.println("Root element :"
-				+ doc.getDocumentElement().getNodeName()); */
-		
+
 		int num = nodeList.getLength();
 		
 		for (int i=0; i<num; i++) {
@@ -33,7 +29,7 @@ public class TeamTvilsomAttributes {
 		}
 	}
 
-	public static void listAllAttributes(Element element) {
+	public static void listAllAttributes(Element element) throws IOException {
 		NamedNodeMap attributes = element.getAttributes();
 		int antallAttrs = attributes.getLength();
 		for (int i = 1; i < antallAttrs;){	
@@ -58,9 +54,10 @@ public class TeamTvilsomAttributes {
 			String lengdeValue = lengde.getNodeValue();
 			System.out.println(lengdeName + " : " + lengdeValue);
 			}			
-		 break; 
-		   
+		 break; }
 		}
 	}
 
-}
+
+	
+
