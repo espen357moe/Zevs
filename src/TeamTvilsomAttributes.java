@@ -15,8 +15,6 @@ import org.w3c.dom.NodeList;
 public class TeamTvilsomAttributes {
 	
 	public static void main(String[] args) throws Exception {
-		
-		
 		DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -27,31 +25,18 @@ public class TeamTvilsomAttributes {
 	/*	System.out.println("Root element :"
 				+ doc.getDocumentElement().getNodeName()); */
 		
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		dbf.setValidating(false);
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		
 		int num = nodeList.getLength();
 		
 		for (int i=0; i<num; i++) {
 			Element node = (Element) nodeList.item(i);
 			listAllAttributes(node);
 		}
-		
 	}
 
 	public static void listAllAttributes(Element element) {
-		
-		// get a map containing the attributes of this node 
 		NamedNodeMap attributes = element.getAttributes();
-
-		// get the number of nodes in this map
 		int antallAttrs = attributes.getLength();
-
-		for (int i = 0; i < antallAttrs;) {
-			
-			
-			
+		for (int i = 1; i < antallAttrs;){	
 			Attr høyde = (Attr) attributes.item(0);
 			Attr bredde = (Attr) attributes.item(3);
 			Attr lengde = (Attr) attributes.item(4);
@@ -71,10 +56,8 @@ public class TeamTvilsomAttributes {
 			if (lengde != null){
 			String lengdeName = lengde.getNodeName();
 			String lengdeValue = lengde.getNodeValue();
-			System.out.println(lengdeName + " : " + lValue);
-			}
-			
-			
+			System.out.println(lengdeName + " : " + lengdeValue);
+			}			
 		 break; 
 		   
 		}

@@ -10,7 +10,7 @@ public class SoekeLogikk {
 	public void startSoek(String soekeStreng) {
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
-					"SoekeInfo.txt"));
+					"NoregInfo.txt"));
 
 			String brukerInput = soekeStreng;
 			String resultatAvSoek;
