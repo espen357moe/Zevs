@@ -12,7 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 
-public class TeamTvilsomAtributes {
+public class TeamTvilsomAttributes {
 	
 	public static void main(String[] args) throws Exception {
 		
