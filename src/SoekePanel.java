@@ -44,7 +44,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 			soekeStreng = soekeFelt.getText();
 			System.out.println("Søker etter - " + soekeStreng);
 			soekeLogikk.startSoek(soekeStreng);
-			System.out.println("SoekePanel: Minneadresse til SoekeTreff-objekt: " + soekeLogikk.getSoekeTreff());
 			
 			nedtrekksResultatListe.addItem(soekeStreng);
 		}

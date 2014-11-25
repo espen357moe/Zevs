@@ -29,7 +29,9 @@ public class XmlParser {
 			e.printStackTrace();
 		}
 		try {
-			document = builder.parse(new URL(urlNorsk).openStream());
+			document = builder
+					.parse(new URL(urlNorsk)
+							.openStream());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
@@ -69,17 +71,16 @@ public class XmlParser {
 					.getAttributes().getNamedItem("value").getTextContent();
 			celsiusInt = Integer.parseInt(celsius);
 			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
-			System.out.println(clouds);
+			System.out.print(clouds +" ");
 			System.out.println(symbol);
 			System.out.println("Vind: " + windText + ", " + wind + " m/s");
 			System.out.println("Vindretning: " + windDirection);
-			System.out.println("Temperatur: " + celsius + "¡C / " + fahrenheit
-					+ "¡F");
+			System.out.println("Temperatur: " + celsius + "C");
 			System.out.println("Nedbør: " + precipitation);
 			System.out.println("Sist oppdatert: " + lastUpdate);
 			System.out.println("Neste oppdatering: " + nextUpdate);
 		}
-		return urlNorsk;
+		return "------------------------------------------------------------------";
 	}
 
 	public String getClouds() {
@@ -124,4 +125,7 @@ public class XmlParser {
 		return season;
 	}
 
-}
+
+
+	}
+

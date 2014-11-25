@@ -44,17 +44,10 @@ public class SoekeLogikk {
 						String urlNorsk 		= strArray[12];
 						String urlEngelsk 		= strArray[13];
 
-						System.out.print("Sted: "+stedsNavn+"    ");
-						System.out.print("Kommune: "+kommune +"    ");
-						System.out.println("Fylke: "+fylke);
-						System.out.println("URL: " +urlNorsk);
-						System.out.println("------------------------------------------------------------------");
-						System.out.println("");
 						
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
-						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
-								+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
-						System.out.println("SoekeLogikk: Minneadresse til SoekeTreff-objekt: "+soekeTreff);
+						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
+								+ " " + soekeTreff.getStedsNavn());
 						System.out.println(link.XmlParser(urlNorsk));
 						break;
 						
