@@ -22,7 +22,7 @@ public class TeamTvilsomAttributes {
 	public static void listAllAttributes(Element element) {
 		NamedNodeMap attributes = element.getAttributes();
 		int antallAttrs = attributes.getLength();
-		for (int i = 1; i < antallAttrs;){	
+		for (int i = 0; i < antallAttrs;){	
 			Attr høyde = (Attr) attributes.item(0);
 			Attr bredde = (Attr) attributes.item(3);
 			Attr lengde = (Attr) attributes.item(4);
