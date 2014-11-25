@@ -3,11 +3,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class SoekeLogikk {
-	
 	public SoekeTreff soekeTreff;
 
 	@SuppressWarnings("unused")
 	public void startSoek(String soekeStreng) {
+		
+		TeamTvilsomAttributes link = new TeamTvilsomAttributes();
+
+		
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(
 					"NoregInfo.txt"));
@@ -48,8 +51,8 @@ public class SoekeLogikk {
 						System.out.println("");
 						
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
-						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
-						
+//						System.out.println("Søketreff fra SoekeLogikk : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()+ " " + soekeTreff.getStedsNavn()+ " " + soekeTreff.getUrlNorsk());
+						System.out.print(link.sendtLink(urlNorsk));
 						break;
 						
 					}
