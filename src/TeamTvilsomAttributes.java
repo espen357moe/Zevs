@@ -15,8 +15,6 @@ import org.w3c.dom.NodeList;
 public class TeamTvilsomAttributes {
 	
 	public static void main(String[] args) throws Exception {
-		
-		
 		DocumentBuilderFactory factory = DocumentBuilderFactory
 				.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -37,15 +35,9 @@ public class TeamTvilsomAttributes {
 	}
 
 	public static void listAllAttributes(Element element) {
-		
-		// get a map containing the attributes of this node 
 		NamedNodeMap attributes = element.getAttributes();
-
-		// get the number of nodes in this map
 		int antallAttrs = attributes.getLength();
-
-		for (int i = 1; i < antallAttrs;){
-			
+		for (int i = 1; i < antallAttrs;){	
 			Attr høyde = (Attr) attributes.item(0);
 			Attr bredde = (Attr) attributes.item(3);
 			Attr lengde = (Attr) attributes.item(4);
@@ -66,9 +58,7 @@ public class TeamTvilsomAttributes {
 			String lengdeName = lengde.getNodeName();
 			String lengdeValue = lengde.getNodeValue();
 			System.out.println(lengdeName + " : " + lengdeValue);
-			}
-			
-			
+			}			
 		 break; 
 		   
 		}
