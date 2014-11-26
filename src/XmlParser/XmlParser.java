@@ -14,9 +14,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class XmlParser {
-	public String clouds, celsius, fahrenheit, windText, windDirection, season,
+	public String clouds, celsius, fahrenheit, windText, windDirection,
 			month, nextUpdate, lastUpdate, altitude, latitude, longitude;
-	public int symbol, seasons, celsiusInt;
+	public int symbol, celsiusInt;
 	public Double wind, precipitation;
 
 	public String XmlParser(String urlNorsk, String lengdeGrad) {
@@ -43,7 +43,7 @@ public class XmlParser {
 		document.getDocumentElement().normalize();
 		NodeList nList = document.getElementsByTagName("weatherdata");
 		Node nNode = nList.item(0);
-		// Get relevant data from XML:
+		
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			Element eElement = (Element) nNode;
 			symbol = Integer.parseInt(eElement.getElementsByTagName("symbol")
@@ -56,8 +56,6 @@ public class XmlParser {
 					.getTextContent());
 			nextUpdate = (eElement.getElementsByTagName("nextupdate").item(0)
 					.getTextContent());
-			seasons = Integer.parseInt(month = Character.toString(lastUpdate
-					.charAt(5)) + Character.toString(lastUpdate.charAt(6)));
 			clouds = eElement.getElementsByTagName("symbol").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
 			wind = Double.parseDouble(eElement
@@ -131,21 +129,5 @@ public class XmlParser {
 		return latitude + longitude;
 	}
 
-	public String getSeason() {
-		if ((seasons == 12) || (seasons == 11) || (seasons == 1)
-				|| (seasons == 2) || (seasons == 3)) {
-			season = "winter";
-		} else if ((seasons == 4) || (seasons == 5)) {
-			season = "spring";
-		} else if ((seasons == 6) || (seasons == 7) || (seasons == 8)) {
-			season = "summer";
-		} else if ((seasons == 9) || (seasons == 10)) {
-			season = "fall";
-		}
-		return season;
-	}
-
-
-
-	}
+}
 
