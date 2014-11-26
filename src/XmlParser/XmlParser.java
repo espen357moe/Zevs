@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	public String clouds, celsius, fahrenheit, windText, windDirection, season,
-			month, nextUpdate, lastUpdate;
+			month, nextUpdate, lastUpdate, altitude, latitude, longitude;
 	public int symbol, seasons, celsiusInt;
 	public Double wind, precipitation;
 
@@ -70,6 +70,15 @@ public class XmlParser {
 					.getTextContent();
 			celsius = eElement.getElementsByTagName("temperature").item(0)
 					.getAttributes().getNamedItem("value").getTextContent();
+			altitude = eElement.getElementsByTagName("location")
+					.item(1).getAttributes().getNamedItem("altitude")
+					.getTextContent();
+			longitude = eElement.getElementsByTagName("location")
+					.item(1).getAttributes().getNamedItem("longitude")
+					.getTextContent();
+			latitude = eElement.getElementsByTagName("location")
+					.item(1).getAttributes().getNamedItem("latitude")
+					.getTextContent();
 			celsiusInt = Integer.parseInt(celsius);
 			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
 			System.out.print(clouds +" ");
@@ -80,7 +89,8 @@ public class XmlParser {
 			System.out.println("Nedbør: " + precipitation);
 			System.out.println("Sist oppdatert: " + lastUpdate);
 			System.out.println("Neste oppdatering: " + nextUpdate);
-			System.out.println("Lengdegrad: " +lengdeGrad);
+			System.out.println("Høyde over havet: " + altitude + " meter");
+			System.out.println("Koordinater:  Lengdegrad: " + longitude + "    Breddegrad :" + latitude);
 		}
 		return "------------------------------------------------------------------";
 	}
@@ -111,6 +121,14 @@ public class XmlParser {
 
 	public int getCelsiusInt() {
 		return celsiusInt;
+	}
+	
+	public String getAltitude() {
+		return altitude;
+	}
+	
+	public String getKoordinater() {
+		return latitude + longitude;
 	}
 
 	public String getSeason() {
