@@ -51,7 +51,7 @@ public class SoekeLogikk {
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
 						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
 								+ " " + soekeTreff.getStedsNavn());
-						System.out.println(link.XmlParser(urlNorsk, lengdeGrad));
+						System.out.println(link.parseXml(urlNorsk));
 						
 						break;
 						
