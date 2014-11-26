@@ -1,6 +1,9 @@
+package Logikk;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import XmlParser.XmlParser;
 
 public class SoekeLogikk {
 	public SoekeTreff soekeTreff;
@@ -48,7 +51,8 @@ public class SoekeLogikk {
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
 						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
 								+ " " + soekeTreff.getStedsNavn());
-						System.out.println(link.XmlParser(urlNorsk));
+						System.out.println(link.XmlParser(urlNorsk, lengdeGrad));
+						
 						break;
 						
 					}

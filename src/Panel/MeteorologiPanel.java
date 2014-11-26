@@ -1,3 +1,5 @@
+package Panel;
+
 @SuppressWarnings("serial")
 public class MeteorologiPanel extends DataPanel {
 

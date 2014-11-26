@@ -1,3 +1,4 @@
+package Panel;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -13,7 +14,7 @@ import javax.swing.JMenuItem;
 @SuppressWarnings("serial")
 public class HovedVindu extends JFrame implements ActionListener {
 	
-	HovedVindu() {
+	public HovedVindu() {
 		setSize(500,500);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
@@ -70,9 +71,10 @@ public class HovedVindu extends JFrame implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
 	
 }

@@ -1,10 +1,13 @@
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
+package Diverse;
 import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
  
 public class GeografiNodeTest {
  
@@ -38,7 +41,7 @@ public class GeografiNodeTest {
 			Element eElement = (Element) nNode;
  
 			System.out.println("Location : " + eElement.getAttribute("location"));
-			System.out.println("Høyde over havet : " + eElement.getElementsByTagName("altitude").item(0).getTextContent());
+			System.out.println("Hï¿½yde over havet : " + eElement.getElementsByTagName("altitude").item(0).getTextContent());
 			System.out.println("Latitude : " + eElement.getElementsByTagName("latitude").item(0).getTextContent());
 			System.out.println("Longitude : " + eElement.getElementsByTagName("longitude").item(0).getTextContent());
  

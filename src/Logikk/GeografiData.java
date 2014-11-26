@@ -1,3 +1,4 @@
+package Logikk;
 
 public class GeografiData {
 	

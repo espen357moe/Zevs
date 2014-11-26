@@ -1,3 +1,4 @@
+package XmlParser;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +19,7 @@ public class XmlParser {
 	public int symbol, seasons, celsiusInt;
 	public Double wind, precipitation;
 
-	public String XmlParser(String urlNorsk) {
+	public String XmlParser(String urlNorsk, String lengdeGrad) {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 				.newInstance();
 		DocumentBuilder builder = null;
@@ -79,6 +80,7 @@ public class XmlParser {
 			System.out.println("Nedbør: " + precipitation);
 			System.out.println("Sist oppdatert: " + lastUpdate);
 			System.out.println("Neste oppdatering: " + nextUpdate);
+			System.out.println("Lengdegrad: " +lengdeGrad);
 		}
 		return "------------------------------------------------------------------";
 	}
