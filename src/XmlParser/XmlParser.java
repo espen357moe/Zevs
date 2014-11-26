@@ -1,4 +1,7 @@
 package XmlParser;
+import Logikk.MeteorologiData;
+import Logikk.SoekeTreff;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -14,12 +17,26 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class XmlParser {
-	public String clouds, celsius, fahrenheit, windText, windDirection,
-			month, nextUpdate, lastUpdate, altitude, latitude, longitude;
+	
+//	private String stedsNavn;
+//	private int hoydeOverHavet;
+//	private String koordinater;
+//	private float nedbor;
+//	private int temperatur;
+//	private String vindRetning;
+//	private float vindHastighet;
+//	private String symbolNummer;
+//	private String sistOppdatert;
+//	private String nesteOppdatering;
+	
+	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, latitude, longitude;
 	public int symbol, celsiusInt;
 	public double wind, precipitation;
 
-	public String parseXml(String urlNorsk) {
+	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
+		
+		String urlNorsk = soekeTreff.getUrlNorsk();
+		
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 				.newInstance();
 		DocumentBuilder builder = null;
@@ -90,7 +107,9 @@ public class XmlParser {
 			System.out.println("Høyde over havet: " + altitude + " meter");
 			System.out.println("Koordinater:  Lengdegrad: " + longitude + "    Breddegrad :" + latitude);
 		}
-		return "------------------------------------------------------------------";
+		//MeteorologiData meteorologiData = new MeteorologiData();
+		//return meteorologiData;
+		return null;
 	}
 
 	public String getClouds() {
