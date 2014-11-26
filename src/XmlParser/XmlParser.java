@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
+// Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
 //	private String stedsNavn;
 //	private int hoydeOverHavet;
 //	private String koordinater;
