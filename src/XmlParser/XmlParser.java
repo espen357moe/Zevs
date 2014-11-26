@@ -18,17 +18,17 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-// Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
+//  Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
 //	private String stedsNavn;
-//	private int hoydeOverHavet;
-//	private String koordinater;
-//	private float nedbor;
-//	private int temperatur;
-//	private String vindRetning;
-//	private float vindHastighet;
-//	private String symbolNummer;
-//	private String sistOppdatert;
-//	private String nesteOppdatering;
+//	private int hoydeOverHavet; - altitude
+//	private String koordinater; - longitude + latitude
+//	private float nedbor; - precipitation
+//	private int temperatur; - celsiusInt
+//	private String vindRetning; - windDirection
+//	private float vindHastighet; - wind
+//	private String symbolNummer; - symbol
+//	private String sistOppdatert; - lastUpdate
+//	private String nesteOppdatering; - nestUpdate
 	
 	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, latitude, longitude;
 	public int symbol, celsiusInt;
