@@ -19,7 +19,7 @@ public class XmlParser {
 	public int symbol, celsiusInt;
 	public double wind, precipitation;
 
-	public String XmlParser(String urlNorsk, String lengdeGrad) {
+	public String parseXml(String urlNorsk) {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 				.newInstance();
 		DocumentBuilder builder = null;
