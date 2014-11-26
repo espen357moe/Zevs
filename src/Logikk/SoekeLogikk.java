@@ -2,6 +2,8 @@ package Logikk;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 
 import XmlParser.XmlParser;
 
@@ -14,8 +16,10 @@ public class SoekeLogikk {
 		XmlParser link = new XmlParser();
 		
 		try {
+	        URL viktigeStederINorge = new URL("www.fil.nrk.no/yr/viktigestader/noreg.txt");
+	        URLConnection dw = viktigeStederINorge.openConnection();
 			BufferedReader bf = new BufferedReader(new FileReader(
-					"NoregInfo.txt"));
+					"www.fil.nrk.no/yr/viktigestader/noreg.txt"));
 
 			String brukerInput = soekeStreng;
 			String resultatAvSoek;
