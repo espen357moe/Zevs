@@ -17,7 +17,7 @@ public class XmlParser {
 	public String clouds, celsius, fahrenheit, windText, windDirection,
 			month, nextUpdate, lastUpdate, altitude, latitude, longitude;
 	public int symbol, celsiusInt;
-	public Double wind, precipitation;
+	public double wind, precipitation;
 
 	public String XmlParser(String urlNorsk, String lengdeGrad) {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
@@ -101,11 +101,11 @@ public class XmlParser {
 		return symbol;
 	}
 
-	public Double getWind() {
+	public double getWind() {
 		return wind;
 	}
 
-	public Double getPrecipitation() {
+	public double getPrecipitation() {
 		return precipitation;
 	}
 
