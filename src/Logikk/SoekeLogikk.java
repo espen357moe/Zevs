@@ -16,15 +16,13 @@ public class SoekeLogikk {
 		XmlParser link = new XmlParser();
 		
 		try {
-	        URL viktigeStederINorge = new URL("www.fil.nrk.no/yr/viktigestader/noreg.txt");
-	        URLConnection dw = viktigeStederINorge.openConnection();
-			BufferedReader bf = new BufferedReader(new FileReader(
-					"www.fil.nrk.no/yr/viktigestader/noreg.txt"));
+			BufferedReader dokumentLeser = new BufferedReader(new FileReader(
+					"NoregInfo.txt"));
 
 			String brukerInput = soekeStreng;
 			String resultatAvSoek;
 
-			while ((resultatAvSoek = bf.readLine()) != null) {
+			while ((resultatAvSoek = dokumentLeser.readLine()) != null) {
 				int resultatFunnet = resultatAvSoek.indexOf(brukerInput);
 				if (brukerInput.isEmpty()) {
 					System.out.println("Ingen søk utført");
@@ -63,7 +61,7 @@ public class SoekeLogikk {
 				}
 			}
 
-			bf.close();
+			dokumentLeser.close();
 		} catch (IOException e) {
 			System.out.println("IO Error Occurred: " + e.toString());}
 	}
