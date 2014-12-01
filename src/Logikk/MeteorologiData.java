@@ -7,12 +7,13 @@ public class MeteorologiData {
 	private float nedbor;
 	private int temperatur;
 	private String vindRetning;
+	private String vindBetegnelse;
 	private float vindHastighet;
 	private String symbolNummer;
 	private String sistOppdatert;
 	private String nesteOppdatering;
 	
-	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, int temperatur, String vindRetning, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
+	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, int temperatur, String vindRetning, String vindBetegnelse, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
 		this.stedsNavn = stedsNavn;
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.koordinater = koordinater;
@@ -25,18 +26,48 @@ public class MeteorologiData {
 		this.nesteOppdatering = nesteOppdatering;	
 	}
 	
-	public String getStedsNavn(){
+	public String getStedsNavn() {
 		return this.stedsNavn;
 	}
 	
-	public int hoydeOverHavet(){
+	public int getHoydeOverHavet() {
 		return this.hoydeOverHavet;
 	}
 	
-	public String koordinater(){
+	public String getKoordinater() {
 		return this.koordinater;
 	}
 	
-	//Her skal aksessorene til de andre variablene lages etterhvert
+	public float getNedbor() {
+		return this.nedbor;
+	}
+	
+	public int getTemperatur() {
+		return this.temperatur;
+	}
+	
+	public String getVindRetning() {
+		return this.vindRetning;
+	}
+	
+	public String getVindBetegnelse() {
+		return this.vindBetegnelse;
+	}
+	
+	public float getVindHastighet() {
+		return this.vindHastighet;
+	}
+	
+	public String getSymbolNummer() {
+		return this.symbolNummer;
+	}
+	
+	public String getSistOppdatert() {
+		return this.sistOppdatert;
+	}
+	
+	public String getNesteOppdatering() {
+		return this.nesteOppdatering;
+	}
 		
 }

@@ -19,17 +19,18 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-//  Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
-//	private String stedsNavn;
-//	private int hoydeOverHavet; - altitude
-//	private String koordinater; - longitude + latitude
-//	private float nedbor; - precipitation
-//	private int temperatur; - celsiusInt
-//	private String vindRetning; - windDirection
-//	private float vindHastighet; - wind
-//	private String symbolNummer; - symbol
-//	private String sistOppdatert; - lastUpdate
-//	private String nesteOppdatering; - nestUpdate
+  //Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
+	private String stedsNavn;
+	private int hoydeOverHavet; //- altitude
+	private String koordinater; //- longitude + latitude
+	private float nedbor; //- precipitation
+	private int temperatur; //- celsiusInt
+	private String vindBetegnelse;
+	private String vindRetning; //- windDirection
+	private float vindHastighet; //- wind
+	private String symbolNummer; //- symbol
+	private String sistOppdatert; //- lastUpdate
+	private String nesteOppdatering; //- nextUpdate
 	
 	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, latitude, longitude;
 	public int symbol, celsiusInt;
@@ -42,6 +43,7 @@ public class XmlParser {
 
 		
 		String urlNorsk = soekeTreff.getUrlNorsk();
+		stedsNavn = soekeTreff.getStedsNavn();
 		
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 				.newInstance();
@@ -69,89 +71,100 @@ public class XmlParser {
 		
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			Element eElement = (Element) nNode;
-			symbol = Integer.parseInt(eElement.getElementsByTagName("symbol")
+			
+			symbolNummer = (eElement.getElementsByTagName("symbol")
 					.item(0).getAttributes().getNamedItem("numberEx")
 					.getTextContent());
-			precipitation = Double.parseDouble(eElement
+			
+			nedbor = Float.parseFloat(eElement
 					.getElementsByTagName("precipitation").item(0)
 					.getAttributes().getNamedItem("value").getTextContent());
-			lastUpdate = (eElement.getElementsByTagName("lastupdate").item(0)
+			
+			sistOppdatert = (eElement.getElementsByTagName("lastupdate").item(0)
 					.getTextContent());
-			nextUpdate = (eElement.getElementsByTagName("nextupdate").item(0)
+			
+			nesteOppdatering = (eElement.getElementsByTagName("nextupdate").item(0)
 					.getTextContent());
+			
 			clouds = eElement.getElementsByTagName("symbol").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
-			wind = Double.parseDouble(eElement
+			
+			vindHastighet = Float.parseFloat(eElement
 					.getElementsByTagName("windSpeed").item(0).getAttributes()
 					.getNamedItem("mps").getTextContent());
-			windText = eElement.getElementsByTagName("windSpeed").item(0)
+			
+			vindBetegnelse = eElement.getElementsByTagName("windSpeed").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
-			windDirection = eElement.getElementsByTagName("windDirection")
+			
+			vindRetning = eElement.getElementsByTagName("windDirection")
 					.item(0).getAttributes().getNamedItem("name")
 					.getTextContent();
+			
 			celsius = eElement.getElementsByTagName("temperature").item(0)
-					.getAttributes().getNamedItem("value").getTextContent();
-			altitude = eElement.getElementsByTagName("location")
+					.getAttributes().getNamedItem("value").getTextContent();koordinater = longitude + " " + latitude;koordinater = longitude + " " + latitude;
+			
+			hoydeOverHavet = Integer.parseInt(eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("altitude")
-					.getTextContent();
+					.getTextContent());
+			
 			longitude = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("longitude")
 					.getTextContent();
+			
 			latitude = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("latitude")
 					.getTextContent();
-			celsiusInt = Integer.parseInt(celsius);
+			
+			koordinater = longitude + " " + latitude;
+			
+			temperatur = Integer.parseInt(celsius);
+			
 			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
+			
+			System.out.println(stedsNavn);
 			System.out.print(clouds +" ");
 			System.out.println(symbol);
-			System.out.println("Vind: " + windText + ", " + wind + " m/s");
-			System.out.println("Vindretning: " + windDirection);
-			System.out.println("Temperatur: " + celsius + "C");
-			System.out.println("Nedbør: " + precipitation);
-			System.out.println("Sist oppdatert: " + lastUpdate);
-			System.out.println("Neste oppdatering: " + nextUpdate);
-			System.out.println("Høyde over havet: " + altitude + " meter");
-			System.out.println("Koordinater:  Lengdegrad: " + longitude + "    Breddegrad :" + latitude);
+			System.out.println("Vind: " + vindBetegnelse + ", " + vindHastighet + " m/s");
+			System.out.println("Vindretning: " + vindRetning);
+			System.out.println("Temperatur: " + temperatur + "C");
+			System.out.println("Nedbør: " + nedbor);
+			System.out.println("Sist oppdatert: " + sistOppdatert);
+			System.out.println("Neste oppdatering: " + nesteOppdatering);
+			System.out.println("Høyde over havet: " + hoydeOverHavet + " meter");
+			System.out.println("Koordinater:  " + koordinater);
 		}
-		//MeteorologiData meteorologiData = new MeteorologiData();
-		//return meteorologiData;
-		return null;
+		
+		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
+		return meteorologiData;
+
 	}
 
 	public String getClouds() {
 		return clouds;
 	}
 
-	public int getSymbol() {
-		return symbol;
+	public String getSymbolNummer() {
+		return symbolNummer;
 	}
 
-	public double getWind() {
-		return wind;
+	public String getVindRetning() {
+		return vindRetning;
 	}
 
-	public double getPrecipitation() {
-		return precipitation;
+	public double getNedbor() {
+		return nedbor;
 	}
 
-	public String getCelsius() {
-		return celsius;
-	}
-
-	public String getFahrenheit() {
-		return fahrenheit + "¡F";
-	}
-
-	public int getCelsiusInt() {
-		return celsiusInt;
+	public int getTemperatur() {
+		return temperatur;
 	}
 	
-	public String getAltitude() {
-		return altitude;
+	public int getHoydeOverHavet() {
+		return hoydeOverHavet;
 	}
 	
 	public String getKoordinater() {
-		return latitude + longitude;
+		return koordinater;
 	}
 
 }
