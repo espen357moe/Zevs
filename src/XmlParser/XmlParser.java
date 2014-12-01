@@ -66,40 +66,56 @@ public class XmlParser {
 		
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			Element eElement = (Element) nNode;
+			
 			symbolNummer = (eElement.getElementsByTagName("symbol")
 					.item(0).getAttributes().getNamedItem("numberEx")
 					.getTextContent());
+			
 			nedbor = Float.parseFloat(eElement
 					.getElementsByTagName("precipitation").item(0)
 					.getAttributes().getNamedItem("value").getTextContent());
+			
 			sistOppdatert = (eElement.getElementsByTagName("lastupdate").item(0)
 					.getTextContent());
+			
 			nesteOppdatering = (eElement.getElementsByTagName("nextupdate").item(0)
 					.getTextContent());
+			
 			clouds = eElement.getElementsByTagName("symbol").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
+			
 			vindHastighet = Float.parseFloat(eElement
 					.getElementsByTagName("windSpeed").item(0).getAttributes()
 					.getNamedItem("mps").getTextContent());
+			
 			vindBetegnelse = eElement.getElementsByTagName("windSpeed").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
+			
 			vindRetning = eElement.getElementsByTagName("windDirection")
 					.item(0).getAttributes().getNamedItem("name")
 					.getTextContent();
+			
 			celsius = eElement.getElementsByTagName("temperature").item(0)
-					.getAttributes().getNamedItem("value").getTextContent();
+					.getAttributes().getNamedItem("value").getTextContent();koordinater = longitude + " " + latitude;koordinater = longitude + " " + latitude;
+			
 			hoydeOverHavet = Integer.parseInt(eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("altitude")
 					.getTextContent());
+			
 			longitude = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("longitude")
-					.getTextContent();			
+					.getTextContent();
+			
 			latitude = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("latitude")
 					.getTextContent();
+			
 			koordinater = longitude + " " + latitude;
+			
 			temperatur = Integer.parseInt(celsius);
+			
 			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
+			
 			System.out.println(stedsNavn);
 			System.out.print(clouds +" ");
 			System.out.println(symbol);
@@ -112,6 +128,7 @@ public class XmlParser {
 			System.out.println("Høyde over havet: " + hoydeOverHavet + " meter");
 			System.out.println("Koordinater:  " + koordinater);
 		}
+		
 		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
 		return meteorologiData;
 

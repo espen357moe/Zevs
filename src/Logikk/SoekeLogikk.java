@@ -13,7 +13,7 @@ public class SoekeLogikk {
 	@SuppressWarnings("unused")
 	public void startSoek(String soekeStreng) {
 		
-		XmlParser link = new XmlParser();
+		XmlParser xmlParser = new XmlParser();
 		
 		try {
 			BufferedReader dokumentLeser = new BufferedReader(new FileReader(
@@ -53,7 +53,7 @@ public class SoekeLogikk {
 						soekeTreff = new SoekeTreff(fylke, kommune, stedsNavn, urlNorsk);
 						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
 								+ " " + soekeTreff.getStedsNavn());
-						System.out.println(link.parseXml(soekeTreff));
+						System.out.println(xmlParser.parseXml(soekeTreff));
 						
 						break;
 						
