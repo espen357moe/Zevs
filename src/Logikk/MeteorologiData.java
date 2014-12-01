@@ -25,17 +25,46 @@ public class MeteorologiData {
 		this.nesteOppdatering = nesteOppdatering;	
 	}
 	
-	public String getStedsNavn(){
+	public String getStedsNavn() {
 		return this.stedsNavn;
 	}
 	
-	public int hoydeOverHavet(){
+	public int getHoydeOverHavet() {
 		return this.hoydeOverHavet;
 	}
 	
-	public String koordinater(){
+	public String getKoordinater() {
 		return this.koordinater;
 	}
+	
+	public float getNedbor() {
+		return this.nedbor;
+	}
+	
+	public int getTemperatur() {
+		return this.temperatur;
+	}
+	
+	public String getVindRetning() {
+		return this.vindRetning;
+	}
+	
+	public float getVindHastighet() {
+		return this.vindHastighet;
+	}
+	
+	public String getSymbolNummer() {
+		return this.symbolNummer;
+	}
+	
+	public String getSistOppdatert() {
+		return this.sistOppdatert;
+	}
+	
+	public String getNesteOppdatering() {
+		return this.nesteOppdatering;
+	}
+	
 	
 	//Her skal aksessorene til de andre variablene lages etterhvert
 		
