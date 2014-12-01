@@ -1,6 +1,7 @@
 package XmlParser;
 import Logikk.MeteorologiData;
 import Logikk.SoekeTreff;
+import Panel.MeteorologiPanel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -35,6 +36,10 @@ public class XmlParser {
 	public double wind, precipitation;
 
 	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
+		
+		MeteorologiPanel c2 = new MeteorologiPanel();
+		 c2.Bilde(symbol);
+
 		
 		String urlNorsk = soekeTreff.getUrlNorsk();
 		
