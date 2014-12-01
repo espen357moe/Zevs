@@ -7,12 +7,13 @@ public class MeteorologiData {
 	private float nedbor;
 	private int temperatur;
 	private String vindRetning;
+	private String vindBetegnelse;
 	private float vindHastighet;
 	private String symbolNummer;
 	private String sistOppdatert;
 	private String nesteOppdatering;
 	
-	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, int temperatur, String vindRetning, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
+	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, int temperatur, String vindRetning, String vindBetegnelse, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
 		this.stedsNavn = stedsNavn;
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.koordinater = koordinater;
@@ -47,6 +48,10 @@ public class MeteorologiData {
 	
 	public String getVindRetning() {
 		return this.vindRetning;
+	}
+	
+	public String getVindBetegnelse() {
+		return this.vindBetegnelse;
 	}
 	
 	public float getVindHastighet() {
