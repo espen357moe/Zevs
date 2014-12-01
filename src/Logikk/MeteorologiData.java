@@ -64,8 +64,5 @@ public class MeteorologiData {
 	public String getNesteOppdatering() {
 		return this.nesteOppdatering;
 	}
-	
-	
-	//Her skal aksessorene til de andre variablene lages etterhvert
 		
 }
