@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import view.SoekePanel;
 import model.SoekeTreff;
 
 public class SoekeLogikk {
@@ -14,6 +15,7 @@ public class SoekeLogikk {
 	public void startSoek(String soekeStreng) {
 		
 		XmlParser xmlParser = new XmlParser();
+		SoekePanel sokepanel = new SoekePanel ();
 		
 		try {
 			BufferedReader dokumentLeser = new BufferedReader(new FileReader(
@@ -54,6 +56,7 @@ public class SoekeLogikk {
 						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
 								+ " " + soekeTreff.getStedsNavn());
 						System.out.println(xmlParser.parseXml(soekeTreff));
+						System.out.println(sokepanel.getFullSoekeStreng(soekeTreff));
 						
 						break;
 						
