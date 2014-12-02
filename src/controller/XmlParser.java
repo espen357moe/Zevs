@@ -39,15 +39,16 @@ public class XmlParser {
 		String urlNorsk = soekeTreff.getUrlNorsk();
 		stedsNavn = soekeTreff.getStedsNavn();
 		
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
-				.newInstance();
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
 		Document document = null;
+		
 		try {
 			builder = builderFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		}
+		
 		try {
 			document = builder
 					.parse(new URL(urlNorsk)
@@ -59,8 +60,11 @@ public class XmlParser {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		document.getDocumentElement().normalize();
+		
 		NodeList nList = document.getElementsByTagName("weatherdata");
+		
 		Node nNode = nList.item(0);
 		
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -130,7 +134,6 @@ public class XmlParser {
 		
 		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
 		return meteorologiData;
-
 	}
 
 	public String getClouds() {
