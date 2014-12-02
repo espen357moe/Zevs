@@ -22,6 +22,7 @@ public class XmlParser {
 	private int hoydeOverHavet; //- altitude
 	private String koordinater; //- longitude + latitude
 	private float nedbor; //- precipitation
+	private String skydekke; //- clouds
 	private int temperatur; //- celsiusInt
 	private String vindBetegnelse;
 	private String vindRetning; //- windDirection
@@ -84,7 +85,7 @@ public class XmlParser {
 			nesteOppdatering = (eElement.getElementsByTagName("nextupdate").item(0)
 					.getTextContent());
 			
-			clouds = eElement.getElementsByTagName("symbol").item(0)
+			skydekke = eElement.getElementsByTagName("symbol").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
 			
 			vindHastighet = Float.parseFloat(eElement
@@ -120,7 +121,7 @@ public class XmlParser {
 			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
 			
 			System.out.println(stedsNavn);
-			System.out.print(clouds +" ");
+			System.out.print(skydekke);
 			System.out.println(symbol);
 			System.out.println("Vind: " + vindBetegnelse + ", " + vindHastighet + " m/s");
 			System.out.println("Vindretning: " + vindRetning);
@@ -132,7 +133,7 @@ public class XmlParser {
 			System.out.println("Koordinater:  " + koordinater);
 		}
 		
-		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
+		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, skydekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
 		return meteorologiData;
 	}
 
