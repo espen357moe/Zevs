@@ -1,4 +1,4 @@
-package Logikk;
+package model;
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;

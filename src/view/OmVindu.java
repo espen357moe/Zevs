@@ -1,4 +1,4 @@
-package Panel;
+package view;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;

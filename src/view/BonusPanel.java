@@ -1,4 +1,4 @@
-package Panel;
+package view;
 
 @SuppressWarnings("serial")
 public class BonusPanel extends DataPanel {

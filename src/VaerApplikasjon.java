@@ -1,5 +1,5 @@
 
-import Panel.HovedVindu;
+import view.HovedVindu;
 
 
 public class VaerApplikasjon {

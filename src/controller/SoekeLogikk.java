@@ -1,11 +1,11 @@
-package Logikk;
+package controller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
-import XmlParser.XmlParser;
+import model.SoekeTreff;
 
 public class SoekeLogikk {
 	public SoekeTreff soekeTreff;

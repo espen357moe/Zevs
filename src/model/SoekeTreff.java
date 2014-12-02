@@ -1,4 +1,4 @@
-package Logikk;
+package model;
 public class SoekeTreff {
 	
 	private String fylke;

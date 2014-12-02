@@ -1,4 +1,4 @@
-package Panel;
+package view;
 
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Logikk.SoekeLogikk;
+import controller.SoekeLogikk;
 
 public class SoekePanel extends JPanel implements ActionListener {
 	

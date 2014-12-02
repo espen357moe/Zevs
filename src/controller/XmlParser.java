@@ -1,8 +1,4 @@
-package XmlParser;
-import Logikk.MeteorologiData;
-import Logikk.SoekeTreff;
-import Panel.MeteorologiPanel;
-
+package controller;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -11,11 +7,16 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import model.MeteorologiData;
+import model.SoekeTreff;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import view.MeteorologiPanel;
 
 public class XmlParser {
 	
