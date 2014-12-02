@@ -125,7 +125,7 @@ public class XmlParser {
 			System.out.println("Symbolnummer: " + symbol);
 			System.out.println("Vind: " + vindBetegnelse + ", " + vindHastighet + " m/s");
 			System.out.println("Vindretning: " + vindRetning);
-			System.out.println("Temperatur: " + temperatur + "C");
+			System.out.println("Temperatur: " + temperatur + "°C");
 			System.out.println("Nedbør: " + nedbor);
 			System.out.println("Sist oppdatert: " + sistOppdatert);
 			System.out.println("Neste oppdatering: " + nesteOppdatering);
