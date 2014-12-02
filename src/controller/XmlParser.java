@@ -16,11 +16,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import view.MeteorologiPanel;
-
 public class XmlParser {
 	
-  //Følgende variabler skal benyttes etterhvert når parseXml-metoden skal returnere et MeteorologiData-objekt	
 	private String stedsNavn;
 	private int hoydeOverHavet; //- altitude
 	private String koordinater; //- longitude + latitude
@@ -38,10 +35,6 @@ public class XmlParser {
 	public double wind, precipitation;
 
 	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
-		
-		MeteorologiPanel c2 = new MeteorologiPanel();
-		 c2.Bilde(symbol);
-
 		
 		String urlNorsk = soekeTreff.getUrlNorsk();
 		stedsNavn = soekeTreff.getStedsNavn();
