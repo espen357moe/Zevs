@@ -43,7 +43,7 @@ public class DataPanel extends JPanel {
 		String sistOppdatert = meteorologiData.getSistOppdatert();
 		String nesteOppdatering = meteorologiData.getNesteOppdatering(); 
 	
-		dataTekstFelt.append(stedsNavn+"/n"+skyDekke);
+		dataTekstFelt.append(stedsNavn+"/n"+skyDekke); //test-output foreløpig
 	}
 	
 	public void lagEtikett(String tekst) {

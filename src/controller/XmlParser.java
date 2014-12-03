@@ -134,6 +134,9 @@ public class XmlParser {
 		}
 		
 		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);
+		
+		
+		
 		return meteorologiData;
 	}
 

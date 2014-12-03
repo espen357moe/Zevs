@@ -2,8 +2,6 @@ package controller;
 import java.io.*;
 import java.net.*;
 
-
-import view.SoekePanel;
 import model.SoekeTreff;
 
 public class SoekeLogikk {
