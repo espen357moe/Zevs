@@ -82,7 +82,12 @@ public class SoekePanel extends JPanel implements ActionListener {
 			System.out.println();
 			soekeStreng = soekeFelt.getText();
 			System.out.println("Søker etter - " + soekeStreng);
-			soekeLogikk.startSoek(soekeStreng);
+			try {
+				soekeLogikk.startSoek(soekeStreng);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			nedtrekksResultatListe.addItem(soekeStreng);
 			
 			listeOverSoek.addItem(fullSoekeStreng);

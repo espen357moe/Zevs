@@ -1,9 +1,7 @@
 package controller;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.*;
+import java.net.*;
+
 
 import view.SoekePanel;
 import model.SoekeTreff;
@@ -12,15 +10,15 @@ public class SoekeLogikk {
 	public SoekeTreff soekeTreff;
 
 	@SuppressWarnings("unused")
-	public void startSoek(String soekeStreng) {
+	public void startSoek(String soekeStreng) throws Exception {
 		
 		XmlParser xmlParser = new XmlParser();
 		SoekePanel sokepanel = new SoekePanel ();
 		
 		try {
-			BufferedReader dokumentLeser = new BufferedReader(new FileReader(
-					"NoregInfo.txt"));
-
+			URL noregText = new URL ("http://fil.nrk.no/yr/viktigestader/noreg.txt");
+			BufferedReader dokumentLeser = new BufferedReader(
+			        new InputStreamReader(noregText.openStream()));
 			String brukerInput = soekeStreng;
 			String resultatAvSoek;
 
