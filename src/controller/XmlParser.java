@@ -137,33 +137,6 @@ public class XmlParser {
 		return meteorologiData;
 	}
 
-	public String getSkydekke() {
-		return skyDekke;
-	}
-
-	public String getSymbolNummer() {
-		return symbolNummer;
-	}
-
-	public String getVindRetning() {
-		return vindRetning;
-	}
-
-	public double getNedbor() {
-		return nedbor;
-	}
-
-	public int getTemperatur() {
-		return temperatur;
-	}
 	
-	public int getHoydeOverHavet() {
-		return hoydeOverHavet;
-	}
-	
-	public String getKoordinater() {
-		return koordinater;
-	}
-
 }
 

@@ -3,7 +3,7 @@ package view;
 @SuppressWarnings("serial")
 public class GeografiPanel extends DataPanel {
 
-	GeografiPanel() {
+	public GeografiPanel() {
 		lagEtikett("Geografiske data");
 	}
 	

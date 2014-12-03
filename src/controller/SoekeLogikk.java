@@ -13,7 +13,6 @@ public class SoekeLogikk {
 	public void startSoek(String soekeStreng) throws Exception {
 		
 		XmlParser xmlParser = new XmlParser();
-		SoekePanel sokepanel = new SoekePanel ();
 		
 		try {
 			URL noregText = new URL ("http://fil.nrk.no/yr/viktigestader/noreg.txt");
@@ -54,7 +53,6 @@ public class SoekeLogikk {
 						System.out.println("Søketreff : " +soekeTreff.getFylke()+ " " +soekeTreff.getKommune()
 								+ " " + soekeTreff.getStedsNavn());
 						System.out.println(xmlParser.parseXml(soekeTreff));
-						System.out.println(sokepanel.getFullSoekeStreng(soekeTreff));
 						
 						break;
 						
