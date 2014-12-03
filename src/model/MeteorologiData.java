@@ -1,4 +1,7 @@
 package model;
+
+import java.util.*;
+
 public class MeteorologiData {
 		
 	private String stedsNavn;
@@ -14,7 +17,10 @@ public class MeteorologiData {
 	private String sistOppdatert;
 	private String nesteOppdatering;
 	
+	//private final ArrayList<DataChanged> subscribers;
+	
 	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String koordinater, float nedbor, String skydekke, int temperatur, String vindRetning, String vindBetegnelse, float vindHastighet, String symbolNummer, String sistOppdatert, String nesteOppdatering) {
+//		this.subscribers = new ArrayList<DataChanged>();
 		this.stedsNavn = stedsNavn;
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.koordinater = koordinater;
@@ -26,6 +32,12 @@ public class MeteorologiData {
 		this.sistOppdatert = sistOppdatert;
 		this.nesteOppdatering = nesteOppdatering;	
 	}
+	
+	/*public void UpdateSubscribers() {
+		for(DataChanged subscriber : subscribers) {
+			subscriber.Update(this);
+		}
+	}*/
 	
 	public String getStedsNavn() {
 		return this.stedsNavn;

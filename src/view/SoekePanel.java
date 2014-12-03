@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.MeteorologiData;
 import model.SoekeTreff;
 
 import javax.swing.JButton;
@@ -17,14 +18,17 @@ import javax.swing.event.AncestorListener;
 
 import model.SoekeTreff;
 import controller.SoekeLogikk;
+import controller.XmlParser;
+import model.DataChanged;
 
+import java.util.ArrayList;
 public class SoekePanel extends JPanel implements ActionListener {
 	
 //	public String soekeResultatListe (SoekeTreff soekeTreff) {
 //		String stedsNavn = soekeTreff.getStedsNavn();
 //		System.out.println();
 //		System.out.println();
-//		System.out.println("Søkeresultat som skal inn i droppdown: " +stedsNavn);
+//		System.out.println("SÃ¸keresultat som skal inn i droppdown: " +stedsNavn);
 //		return stedsNavn;
 //		
 //	}
@@ -39,13 +43,26 @@ public class SoekePanel extends JPanel implements ActionListener {
 
 	private String[] fullSoekeStreng = new String [5];
 	private JComboBox listeOverSoek = new JComboBox();
-
+	private JButton soekeKnapp;
+	
+	private final ArrayList<DataChanged> subscribers;
+	
+	public void addSubscriber(DataChanged changed) {
+		subscribers.add(changed);
+	}
+	
+	private void updateSubscribers(MeteorologiData data) {
+		for(DataChanged ch : subscribers) {
+			ch.Update(data);
+		}
+	}
+	
 	public SoekePanel() {
-		
+		subscribers = new ArrayList<DataChanged>();
 		this.soekeFelt = new JTextField(30);
 		this.add(soekeFelt);	
 		
-		JButton soekeKnapp = new JButton("Søk");
+		soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);
 		soekeKnapp.addActionListener(this);
 		
@@ -82,15 +99,19 @@ public class SoekePanel extends JPanel implements ActionListener {
 			System.out.println();
 			soekeStreng = soekeFelt.getText();
 			System.out.println("Søker etter - " + soekeStreng);
-			try {
-				soekeLogikk.startSoek(soekeStreng);
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			nedtrekksResultatListe.addItem(soekeStreng);
+
+			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
 			
-			listeOverSoek.addItem(fullSoekeStreng);
+			XmlParser xmlParser = new XmlParser();
+			
+			MeteorologiData meteorologiData = xmlParser.parseXml(treff);
+			
+			updateSubscribers(meteorologiData);
+			
+			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
+			
+			listeOverSoek.addItem(soekeStreng);
+			
 		}
 		
 	}

@@ -28,22 +28,14 @@ public class DataPanel extends JPanel {
 		this.add(dataTekstFelt, BorderLayout.CENTER);
 	}	
 	
-	public void skrivUtData(MeteorologiData meteorologiData) {
+	public void skrivUtData(String innData) {
 		
-		String stedsNavn = meteorologiData.getStedsNavn();
-		int hoydeOverHavet = meteorologiData.getHoydeOverHavet();
-		String koordinater = meteorologiData.getKoordinater();
-		float nedbor = meteorologiData.getNedbor();
-		String skyDekke = meteorologiData.getSkydekke();
-		int temperatur = meteorologiData.getTemperatur();
-		String vindRetning = meteorologiData.getVindRetning();
-		String vindBetegnelse = meteorologiData.getVindBetegnelse();
-		float vindHastighet = meteorologiData.getVindHastighet();
-		String symbolNummer = meteorologiData.getSymbolNummer();
-		String sistOppdatert = meteorologiData.getSistOppdatert();
-		String nesteOppdatering = meteorologiData.getNesteOppdatering(); 
+		dataTekstFelt.append(innData + "\n");
+		
+	}
 	
-		dataTekstFelt.append(stedsNavn+"/n"+skyDekke); //test-output foreløpig
+	public void fjernData() {
+		dataTekstFelt.setText("");
 	}
 	
 	public void lagEtikett(String tekst) {

@@ -11,6 +11,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import model.MeteorologiData;
+
 @SuppressWarnings("serial")
 public class HovedVindu extends JFrame implements ActionListener {
 	
@@ -54,7 +56,7 @@ public class HovedVindu extends JFrame implements ActionListener {
         }); 
         
         setJMenuBar(menylinje);	
-        
+                
         SoekePanel soekePanel = new SoekePanel();
         hovedContainer.add(soekePanel);
         
@@ -63,6 +65,11 @@ public class HovedVindu extends JFrame implements ActionListener {
         
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
+        
+        soekePanel.addSubscriber(meteorologiPanel.getChanged());
+        soekePanel.addSubscriber(geografiPanel.getChanged());
+        
+        meteorologiPanel.getChanged();
         
         BonusPanel bonusPanel = new BonusPanel();
         hovedContainer.add(bonusPanel);  
