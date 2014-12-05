@@ -38,7 +38,7 @@ public class SoekeLogikk {
 		{
 			noregText = new URL ("http://fil.nrk.no/yr/viktigestader/noreg.txt");
 		}catch(MalformedURLException ex){
-			System.out.println("Missfostret URL!");
+			System.out.println("Misformet URL!");
 			return;
 		}
 		
