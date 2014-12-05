@@ -35,14 +35,14 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 
-	private JTextField soekeFelt;
+	private JComboBox<String> soekeFelt;
 	private String soekeStreng;
 
 	private String[] resultatListe = new String[5];
-	private JComboBox nedtrekksResultatListe = new JComboBox();
+	private JComboBox<String> nedtrekksResultatListe = new JComboBox<String>();
 
 	private String[] fullSoekeStreng = new String [5];
-	private JComboBox listeOverSoek = new JComboBox();
+
 	private JButton soekeKnapp;
 	
 	private final ArrayList<DataChanged> subscribers;
@@ -59,24 +59,18 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	public SoekePanel() {
 		subscribers = new ArrayList<DataChanged>();
-		this.soekeFelt = new JTextField(30);
+		this.soekeFelt = new JComboBox<String>();
 		this.add(soekeFelt);	
+		soekeFelt.setEditable(true);
 		
 		soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);
 		soekeKnapp.addActionListener(this);
 		
-		nedtrekksResultatListe = new JComboBox(resultatListe);
+		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
 		nedtrekksResultatListe.setSelectedIndex(0);
 		//nedtrekksResultatListe.addActionListener(this);
 		this.add(nedtrekksResultatListe);
-
-
-		listeOverSoek = new JComboBox(fullSoekeStreng);
-		listeOverSoek.setSelectedIndex(0);
-		this.add(listeOverSoek);
-
-
 	}	
 	
 	public String getSoekeStreng() {
@@ -97,7 +91,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		if(event.equals("Søk")) {
 			System.out.println();
 			System.out.println();
-			soekeStreng = soekeFelt.getText();
+			soekeStreng = (String) soekeFelt.getSelectedItem();
 			System.out.println("Søker etter - " + soekeStreng);
 
 			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
@@ -110,8 +104,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			
 			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
 			
-			listeOverSoek.addItem(soekeStreng);
-			
+			soekeFelt.addItem(soekeStreng);		
 		}
 		
 	}
