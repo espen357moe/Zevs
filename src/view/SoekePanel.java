@@ -47,11 +47,11 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	private final ArrayList<DataEndret> abonnenter;
 	
-	public void addSubscriber(DataEndret changed) {
+	public void addAbonnent(DataEndret changed) {
 		abonnenter.add(changed);
 	}
 	
-	private void updateSubscribers(MeteorologiData data) {
+	private void oppdaterAbonnenter(MeteorologiData data) {
 		for(DataEndret de : abonnenter) {
 			de.oppdater(data);
 		}
@@ -100,7 +100,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);
 			
-			updateSubscribers(meteorologiData);
+			oppdaterAbonnenter(meteorologiData);
 			
 			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
 			

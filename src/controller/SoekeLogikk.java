@@ -12,19 +12,19 @@ public class SoekeLogikk {
 	private class Rad {
 		// Kommunenummer	Stadnamn Prioritet Stadtype nynorsk Stadtype bokmål	Stadtype engelsk Kommune Fylke Lat	Lon	Høgd	Nynorsk	Bokmål	Engelsk
 		private final String kommune;
-		private final String stadNamn;
+		private final String stedsNavn;
 		private final String varselUrl;
 		private final String fylke;
 		
 		public String getKommune() { return kommune; }
-		public String getStadNamn() { return stadNamn; }
+		public String getStedsNavn() { return stedsNavn; }
 		public String getVarselUrl() { return varselUrl; }
 		public String getFylke() { return fylke; }
 		
-		public Rad(String fylke, String kommune, String stadNamn, String varselUrl) {
+		public Rad(String fylke, String kommune, String stedsNavn, String varselUrl) {
 			this.fylke = fylke;
 			this.kommune = kommune;
-			this.stadNamn = stadNamn;
+			this.stedsNavn = stedsNavn;
 			this.varselUrl = varselUrl;
 		}
 	}
@@ -110,7 +110,7 @@ public class SoekeLogikk {
 			return null;
 		//System.out.println(rad.getVarselUrl());
 		Rad rad = liste.get(0);
-		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStadNamn(), rad.getVarselUrl());
+		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStedsNavn(), rad.getVarselUrl());
 	
 	
 		return soekeTreff;
