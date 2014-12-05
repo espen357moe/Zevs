@@ -6,19 +6,21 @@ import model.MeteorologiData;
 @SuppressWarnings("serial")
 public class GeografiPanel extends DataPanel {
 
-	private final DataEndret changed;
+	private final DataEndret endret;
 	
-	public DataEndret getChanged() { return changed; }
+	public DataEndret getChanged() { return endret; }
 	
 	public GeografiPanel() {
 		lagEtikett("Geografiske data");
 		
-		changed = new DataEndret() {
+		endret = new DataEndret() {
 			
 			@Override
 			public void oppdater(MeteorologiData data) {
-				// TODO Auto-generated method stub
-
+				fjernData();
+				skrivUtData(data.getStedsNavn());
+				skrivUtData(new Integer(data.getHoydeOverHavet()).toString() + "m.o.h.");
+				skrivUtData("Koordinater: " + data.getKoordinater());
 			}
 		};
 	}

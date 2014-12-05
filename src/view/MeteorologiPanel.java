@@ -7,18 +7,18 @@ import model.MeteorologiData;
 @SuppressWarnings("serial")
 public class MeteorologiPanel extends DataPanel {
 
-	private final DataEndret changed; 
+	private final DataEndret endret; 
 	
-	public DataEndret getChanged() { return changed; }
+	public DataEndret getChanged() { return endret; }
 	
 	public MeteorologiPanel() {
 		lagEtikett("Meteorologiske data");
-		changed = new DataEndret() { @Override
+		endret = new DataEndret() { @Override
 		public void oppdater(MeteorologiData data) {
 			fjernData();
-			skrivUtData(new Float(data.getNedbor()).toString());
+			skrivUtData(new Float(data.getNedbor()).toString() + " mm nedbør");
 			skrivUtData(data.getVindBetegnelse());
-			skrivUtData(new Float(data.getVindHastighet()).toString());
+			skrivUtData(new Float(data.getVindHastighet()).toString() + " m/s");
 			skrivUtData(data.getVindRetning());
 			
 		}

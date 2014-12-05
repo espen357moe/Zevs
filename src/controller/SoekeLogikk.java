@@ -45,12 +45,12 @@ public class SoekeLogikk {
 		InputStream stream;
 		try
 		{
-			stream = noregText.openStream(); //Prøver å lese tekstfilen fra yr.no
+			stream = noregText.openStream(); 										//Prøver å lese tekstfilen fra yr.no
 		}
 		catch(IOException ex)
 		{
 			try {
-				stream = new FileInputStream(".\\NoregInfo.txt"); //Prøver å lese tekstfilen lokalt, dersom det feiler å hente fra yr.no
+				stream = new FileInputStream(".\\NoregInfo.txt"); 					//Prøver å lese tekstfilen lokalt, dersom det feiler å hente fra yr.no
 			} catch(IOException ioc) {
 				System.out.println("Kunne ikke finne NoregInfo.txt :(");
 				return;
