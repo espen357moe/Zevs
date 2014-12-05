@@ -19,7 +19,7 @@ public class GeografiPanel extends DataPanel {
 			public void oppdater(MeteorologiData data) {
 				fjernData();
 				skrivUtData(data.getStedsNavn());
-				skrivUtData(new Integer(data.getHoydeOverHavet()).toString() + "m.o.h.");
+				skrivUtData(new Integer(data.getHoydeOverHavet()).toString() + " m.o.h.");
 				skrivUtData("Koordinater: " + data.getKoordinater());
 			}
 		};

@@ -114,7 +114,7 @@ public class XmlParser {
 					.item(1).getAttributes().getNamedItem("latitude")
 					.getTextContent();
 			
-			koordinater = longitude + " " + latitude;
+			koordinater = latitude + ", " + longitude;
 			
 			temperatur = Integer.parseInt(celsius);
 			
