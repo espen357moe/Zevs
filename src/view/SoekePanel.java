@@ -19,7 +19,7 @@ import javax.swing.event.AncestorListener;
 import model.SoekeTreff;
 import controller.SoekeLogikk;
 import controller.XmlParser;
-import model.DataChanged;
+import model.DataEndret;
 
 import java.util.ArrayList;
 public class SoekePanel extends JPanel implements ActionListener {
@@ -45,20 +45,20 @@ public class SoekePanel extends JPanel implements ActionListener {
 
 	private JButton soekeKnapp;
 	
-	private final ArrayList<DataChanged> subscribers;
+	private final ArrayList<DataEndret> abonnenter;
 	
-	public void addSubscriber(DataChanged changed) {
-		subscribers.add(changed);
+	public void addSubscriber(DataEndret changed) {
+		abonnenter.add(changed);
 	}
 	
 	private void updateSubscribers(MeteorologiData data) {
-		for(DataChanged ch : subscribers) {
-			ch.Update(data);
+		for(DataEndret de : abonnenter) {
+			de.oppdater(data);
 		}
 	}
 	
 	public SoekePanel() {
-		subscribers = new ArrayList<DataChanged>();
+		abonnenter = new ArrayList<DataEndret>();
 		this.soekeFelt = new JComboBox<String>();
 		this.add(soekeFelt);	
 		soekeFelt.setEditable(true);

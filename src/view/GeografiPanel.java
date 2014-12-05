@@ -1,22 +1,22 @@
 package view;
 
-import model.DataChanged;
+import model.DataEndret;
 import model.MeteorologiData;
 
 @SuppressWarnings("serial")
 public class GeografiPanel extends DataPanel {
 
-	private final DataChanged changed;
+	private final DataEndret changed;
 	
-	public DataChanged getChanged() { return changed; }
+	public DataEndret getChanged() { return changed; }
 	
 	public GeografiPanel() {
 		lagEtikett("Geografiske data");
 		
-		changed = new DataChanged() {
+		changed = new DataEndret() {
 			
 			@Override
-			public void Update(MeteorologiData data) {
+			public void oppdater(MeteorologiData data) {
 				// TODO Auto-generated method stub
 
 			}
