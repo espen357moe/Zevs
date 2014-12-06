@@ -27,7 +27,7 @@ public class XmlParser {
 	private String vindBetegnelse;
 	private String vindRetning; //- windDirection
 	private float vindHastighet; //- wind
-	private String symbolNummer; //- symbol
+	private int symbolNummer; //- symbol
 	private String sistOppdatert; //- lastUpdate
 	private String nesteOppdatering; //- nextUpdate
 	
@@ -71,9 +71,9 @@ public class XmlParser {
 		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			Element eElement = (Element) nNode;
 			
-			symbolNummer = (eElement.getElementsByTagName("symbol")
+			symbolNummer = Integer.parseInt((eElement.getElementsByTagName("symbol")
 					.item(0).getAttributes().getNamedItem("numberEx")
-					.getTextContent());
+					.getTextContent()));
 			
 			nedbor = Float.parseFloat(eElement
 					.getElementsByTagName("precipitation").item(0)

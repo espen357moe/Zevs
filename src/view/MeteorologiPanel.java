@@ -21,7 +21,7 @@ public class MeteorologiPanel extends DataPanel {
 	
 	public MeteorologiPanel() {
 		JLabel vaerSymbolRute = new JLabel();
-		//this.add(vaerSymbolRute);
+		this.add(vaerSymbolRute);
 		lagEtikett("Meteorologiske data");
 		endret = new DataEndret() { @Override
 		public void oppdater(MeteorologiData data) {
@@ -31,17 +31,17 @@ public class MeteorologiPanel extends DataPanel {
 			skrivUtData(data.getSkydekke());
 			skrivUtData(new Float(data.getVindHastighet()).toString() + " m/s");
 			skrivUtData(data.getVindRetning());
-			skrivUtData(data.getSymbolNummer());
+			skrivUtData(new Integer(data.getSymbolNummer()).toString());
 			
 			FilTilknytning ft = new FilTilknytning();
 			vaerSymbol = ft.knyttSymbolnummerTilBilde(data.getSymbolNummer());	
-			//tegnVaerSymbol(vaerSymbol);	
+			tegnVaerSymbol(vaerSymbol);	
 		}
 		
-//		public void tegnVaerSymbol(Image vaerSymbol) {
-//			ImageIcon icon = new ImageIcon(vaerSymbol);
-//			vaerSymbolRute.setIcon(icon);
-//		}
+		public void tegnVaerSymbol(Image vaerSymbol) {
+			ImageIcon icon = new ImageIcon(vaerSymbol);
+			vaerSymbolRute.setIcon(icon);
+		}
 		
 		};
 		
