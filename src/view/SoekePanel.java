@@ -72,10 +72,10 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeKnapp.addActionListener(this);		
 		soekeKnapp.requestFocusInWindow();
 		
-		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
-		nedtrekksResultatListe.setSelectedIndex(0);
-		//nedtrekksResultatListe.addActionListener(this);
-		this.add(nedtrekksResultatListe);
+//		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
+//		nedtrekksResultatListe.setSelectedIndex(0);
+//		nedtrekksResultatListe.addActionListener(this);
+//		this.add(nedtrekksResultatListe);
 	}	
 	
 	public String getSoekeStreng() {
@@ -91,9 +91,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String event = e.getActionCommand();
-				
-		//if(event.equals("Søk")) {
+		
 			System.out.println();
 			System.out.println();
 			soekeStreng = (String) soekeFelt.getSelectedItem();
@@ -107,10 +105,9 @@ public class SoekePanel extends JPanel implements ActionListener {
 			
 			oppdaterAbonnenter(meteorologiData);
 			
-			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
+//			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
 			
 			soekeFelt.addItem(soekeStreng);		
-		//}
 		
 	}
 
