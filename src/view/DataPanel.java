@@ -11,8 +11,8 @@ import model.MeteorologiData;
 @SuppressWarnings("serial")
 public class DataPanel extends JPanel {
 	
-	public JLabel panelEtikett = new JLabel();
-	
+	public JLabel panelEtikett = new JLabel();	
+	public JPanel dataRute = new JPanel();	
 	public JTextArea dataTekstFelt = new JTextArea();
 	
 	public DataPanel() {
@@ -30,8 +30,7 @@ public class DataPanel extends JPanel {
 	
 	public void skrivUtData(String innData) {
 		
-		dataTekstFelt.append(innData + "\n");
-		
+		dataTekstFelt.append(innData + "\n");	
 	}
 	
 	public void fjernData() {

@@ -32,26 +32,24 @@ public class HovedVindu extends JFrame implements ActionListener {
         meny.setMnemonic(KeyEvent.VK_V);
         m1.setMnemonic(KeyEvent.VK_O);
         m2.setMnemonic(KeyEvent.VK_A);
-
         
         m1.addActionListener(this);
         
         menylinje.add(meny);
         meny.add(m1);
         meny.add(m2);
-        
-        
+              
         m1.addActionListener(new ActionListener(){
         	
-        public void actionPerformed(ActionEvent ev) {
-            new OmVindu();
+        	public void actionPerformed(ActionEvent ev) {
+        		new OmVindu();
         }
         });
         
         m2.addActionListener(new ActionListener() {
         	
             public void actionPerformed(ActionEvent ev) {
-                    System.exit(0);
+            	System.exit(0);
             }
         }); 
         

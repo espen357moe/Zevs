@@ -10,5 +10,7 @@ public class FilTilknytning {
 		if(symbolNummer==0) {
 			return null;
 		}
+		
+		return null;
 	}
 }

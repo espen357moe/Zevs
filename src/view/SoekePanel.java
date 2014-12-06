@@ -64,8 +64,9 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeFelt.setEditable(true);
 		
 		soekeKnapp = new JButton("Søk");
-		this.add(soekeKnapp);
+		this.add(soekeKnapp);				
 		soekeKnapp.addActionListener(this);
+		soekeKnapp.requestFocusInWindow();
 		
 		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
 		nedtrekksResultatListe.setSelectedIndex(0);
@@ -87,7 +88,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
-		
+				
 		if(event.equals("Søk")) {
 			System.out.println();
 			System.out.println();
