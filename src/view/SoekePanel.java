@@ -38,6 +38,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 
 	private JComboBox<String> soekeFelt;
+	
 	private String soekeStreng;
 
 	private String[] resultatListe = new String[5];
@@ -64,6 +65,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		this.soekeFelt = new JComboBox<String>();
 		this.add(soekeFelt);	
 		soekeFelt.setEditable(true);
+		soekeFelt.addActionListener(this);
 		
 		soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);				
@@ -91,7 +93,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
 				
-		if(event.equals("Søk")) {
+		//if(event.equals("Søk")) {
 			System.out.println();
 			System.out.println();
 			soekeStreng = (String) soekeFelt.getSelectedItem();
@@ -108,7 +110,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
 			
 			soekeFelt.addItem(soekeStreng);		
-		}
+		//}
 		
 	}
 
