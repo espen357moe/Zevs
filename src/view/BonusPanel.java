@@ -1,10 +1,13 @@
 package view;
 
+import model.DataEndret;
+
 @SuppressWarnings("serial")
 public class BonusPanel extends DataPanel {
 
-	BonusPanel() {
-		lagEtikett("Tilleggsdata");
+	public BonusPanel() {
+		
+		lagEtikett("Bonusdata");
+		
 	}
-	
 }

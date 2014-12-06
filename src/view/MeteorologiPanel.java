@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -21,7 +22,10 @@ public class MeteorologiPanel extends DataPanel {
 	
 	public MeteorologiPanel() {
 		JLabel vaerSymbolRute = new JLabel();
+		this.setForeground(Color.WHITE);
 		this.add(vaerSymbolRute);
+		vaerSymbolRute.setOpaque(true);
+		vaerSymbolRute.setBackground(Color.DARK_GRAY);
 		lagEtikett("Meteorologiske data");
 		endret = new DataEndret() { @Override
 		public void oppdater(MeteorologiData data) {
