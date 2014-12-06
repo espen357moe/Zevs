@@ -31,6 +31,7 @@ public class OmVindu extends JFrame {
 		setTitle("Zevs");
 		setSize(280, 350);
 		setBackground(Color.LIGHT_GRAY);
+		setResizable(false);
 		String[] navnArray = {"Rune Grønli", "Marianne Løvdok", "Øystein Paulsen", "Thor-Arne Høiland-Hallingrød", "Inger Horn", "Espen Moe"};
 		shuffleArray(navnArray);
 		
