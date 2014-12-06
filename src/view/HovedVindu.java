@@ -20,7 +20,7 @@ public class HovedVindu extends JFrame implements ActionListener {
 		setSize(500,500);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
-		setResizable(false);
+		//setResizable(false);
 		setLocationByPlatform(true);
 		
 		Container hovedContainer = getContentPane();
