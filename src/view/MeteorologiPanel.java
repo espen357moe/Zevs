@@ -18,8 +18,10 @@ public class MeteorologiPanel extends DataPanel {
 			fjernData();
 			skrivUtData(new Float(data.getNedbor()).toString() + " mm nedbør");
 			skrivUtData(data.getVindBetegnelse());
+			skrivUtData(data.getSkydekke());
 			skrivUtData(new Float(data.getVindHastighet()).toString() + " m/s");
 			skrivUtData(data.getVindRetning());
+			skrivUtData(data.getSymbolNummer());
 			
 		}
 		};

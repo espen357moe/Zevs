@@ -22,6 +22,8 @@ public class MeteorologiData {
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.koordinater = koordinater;
 		this.nedbor = nedbor;
+		this.vindBetegnelse = vindBetegnelse;
+		this.skydekke = skydekke;
 		this.temperatur = temperatur;
 		this.vindRetning = vindRetning;
 		this.vindHastighet = vindHastighet;
