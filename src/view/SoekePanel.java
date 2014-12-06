@@ -13,7 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.event.AncestorListener;
 
 import model.SoekeTreff;
@@ -65,7 +67,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		
 		soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);				
-		soekeKnapp.addActionListener(this);
+		soekeKnapp.addActionListener(this);		
 		soekeKnapp.requestFocusInWindow();
 		
 		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
