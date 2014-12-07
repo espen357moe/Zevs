@@ -66,10 +66,10 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
-        soekePanel.addAbonnent(meteorologiPanel.getChanged());
+        soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getChanged());
         
-        meteorologiPanel.getChanged();
+        meteorologiPanel.getEndret();
         
         BonusPanel bonusPanel = new BonusPanel();
         hovedContainer.add(bonusPanel);  

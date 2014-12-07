@@ -18,7 +18,7 @@ public class MeteorologiPanel extends DataPanel {
 	
 	private Image vaerSymbol = null;
 	
-	public DataEndret getChanged() { return endret; }
+	public DataEndret getEndret() { return endret; }
 	
 	public MeteorologiPanel() {
 		JLabel vaerSymbolRute = new JLabel();
