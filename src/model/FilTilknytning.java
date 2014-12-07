@@ -13,7 +13,7 @@ public class FilTilknytning {
 	
 	String symbolFilNavn;
 	
-	public Image knyttSymbolnummerTilBilde(int symbolNummer) {
+	public Image knyttSymbolNummerTilBilde(int symbolNummer) {
 		
 		try {
 			
