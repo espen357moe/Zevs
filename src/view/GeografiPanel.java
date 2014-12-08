@@ -1,15 +1,18 @@
 package view;
 
+import javax.swing.JTextField;
+
 import model.DataEndret;
 import model.MeteorologiData;
 
 @SuppressWarnings("serial")
 public class GeografiPanel extends DataPanel {
 	private final DataEndret endret;	
-	public DataEndret getChanged() { return endret; }
+	public DataEndret getEndret() { return endret; }
 	
 	public GeografiPanel() {
 		lagEtikett("Geografiske data");
+		lagNyttDataTekstFelt();
 		
 		endret = new DataEndret() {	@Override
 			public void oppdater(MeteorologiData data) {

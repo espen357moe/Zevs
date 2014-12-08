@@ -66,13 +66,14 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
-        soekePanel.addAbonnent(meteorologiPanel.getEndret());
-        soekePanel.addAbonnent(geografiPanel.getChanged());
-        
-        meteorologiPanel.getEndret();
-        
         BonusPanel bonusPanel = new BonusPanel();
         hovedContainer.add(bonusPanel);  
+        
+        soekePanel.addAbonnent(meteorologiPanel.getEndret());
+        soekePanel.addAbonnent(geografiPanel.getEndret());
+        soekePanel.addAbonnent(bonusPanel.getEndret());
+        
+        meteorologiPanel.getEndret();
         		
 		setVisible(true);
 	}
@@ -82,6 +83,5 @@ public class HovedVindu extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		
 	}
-
 	
 }
