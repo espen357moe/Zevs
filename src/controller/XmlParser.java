@@ -100,7 +100,7 @@ public class XmlParser {
 					.getTextContent();
 			
 			celsius = eElement.getElementsByTagName("temperature").item(0)
-					.getAttributes().getNamedItem("value").getTextContent();koordinater = longitude + " " + latitude;koordinater = longitude + " " + latitude;
+					.getAttributes().getNamedItem("value").getTextContent();
 			
 			hoydeOverHavet = Integer.parseInt(eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("altitude")
