@@ -26,7 +26,6 @@ public class BonusPanel extends DataPanel {
 		endret = new DataEndret() { @Override
 			public void oppdater(MeteorologiData data) {
 				symbolNummer = data.getSymbolNummer();
-				System.out.println("satan");
 				
 				FilTilknytning ft = new FilTilknytning();
 				vaerSymbol = ft.knyttSymbolNummerTilBilde(symbolNummer);	

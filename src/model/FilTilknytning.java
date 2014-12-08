@@ -187,8 +187,6 @@ public class FilTilknytning {
 							
 			vaerSymbol = ImageIO.read(new File(symbolFilNavn));
 			
-			System.out.println("X"+symbolNummer+"X");
-			System.out.println(symbolFilNavn);
 		} catch (IOException e) {
 			System.out.println("Klarte ikke lese bildefil!");
 			System.out.println(symbolFilNavn);
