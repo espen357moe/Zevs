@@ -30,7 +30,9 @@ public class DataPanel extends JPanel {
 		
 		dataPresentasjonsPanel.setLayout(new GridLayout(0,3));
 		
+		
 		dataTekstFelt.setBackground(Color.GRAY);
+		dataTekstFelt.setEditable(false);
 	}
 	
 	public void lagNyttDataTekstFelt() {

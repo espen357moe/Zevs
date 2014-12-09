@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.event.AncestorListener;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import model.SoekeTreff;
 import controller.SoekeLogikk;
 import controller.XmlParser;
