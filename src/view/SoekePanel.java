@@ -103,9 +103,21 @@ public class SoekePanel extends JPanel implements ActionListener {
 				soekeFelt.addItem(soekeStreng);				
 			}
 			
-			else {
-				FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");				
-				System.out.println("Søkestrengen validerte ikke!");
+			
+			
+			else {	
+				
+				
+				if(soekeStreng==null) {
+					FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
+					System.out.println("Søkestrengen var tom!");
+				}
+				
+				else { 
+					FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");
+					System.out.println("Søkestrengen validerte ikke!");
+				}
+				
 			}
 
 	}
