@@ -101,13 +101,13 @@ public class SoekeLogikk {
 	@SuppressWarnings("unused")
 	public SoekeTreff startSoek(String soekeStreng) {
 		
-		String brukerInput = soekeStreng;
 		String resultatAvSoek;
 
 		ArrayList<Rad> liste = rader.get(soekeStreng);
 		
-		if(liste == null)
-			return null;
+		if(liste == null) {
+			System.out.println("Ingen treff på " +soekeStreng);			
+		}
 		//System.out.println(rad.getVarselUrl());
 		Rad rad = liste.get(0);
 		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStedsNavn(), rad.getVarselUrl());
