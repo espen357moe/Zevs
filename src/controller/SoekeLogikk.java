@@ -101,6 +101,12 @@ public class SoekeLogikk {
 	}
 	
 	public boolean validerSoekeStreng(String soekeStreng) {
+		
+		if(soekeStreng==null) {
+			System.out.println("Ingen treff på " +soekeStreng);
+			return false;
+		}
+		
 		ArrayList<Rad> liste = rader.get(soekeStreng);
 		
 		if(liste == null) {
@@ -108,6 +114,7 @@ public class SoekeLogikk {
 			System.out.println("Ingen treff på " +soekeStreng);
 			return false;
 		}
+		
 		return true;
 		
 	}
