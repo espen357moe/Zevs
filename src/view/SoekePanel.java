@@ -24,25 +24,11 @@ import controller.XmlParser;
 import model.DataEndret;
 
 import java.util.ArrayList;
-public class SoekePanel extends JPanel implements ActionListener {
-	
-//	public String soekeResultatListe (SoekeTreff soekeTreff) {
-//		String stedsNavn = soekeTreff.getStedsNavn();
-//		System.out.println();
-//		System.out.println();
-//		System.out.println("SÃ¸keresultat som skal inn i droppdown: " +stedsNavn);
-//		return stedsNavn;
-//		
-//	}
-	
+public class SoekePanel extends JPanel implements ActionListener {	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
-
-	private JComboBox<String> soekeFelt;
-	
+	private JComboBox<String> soekeFelt;	
 	private String soekeStreng;
-
-	private JButton soekeKnapp;
-	
+	private JButton soekeKnapp;	
 	private final ArrayList<DataEndret> abonnenter;
 	
 	public void addAbonnent(DataEndret changed) {
@@ -65,8 +51,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeKnapp = new JButton("Søk");
 		this.add(soekeKnapp);				
 		soekeKnapp.addActionListener(this);		
-		soekeKnapp.requestFocusInWindow();
-		
+		soekeKnapp.requestFocusInWindow();	
 	}	
 	
 	public String getSoekeStreng() {
@@ -76,48 +61,39 @@ public class SoekePanel extends JPanel implements ActionListener {
 	public String getFullSoekeStreng(SoekeTreff soekeTreff) {	
 		String fullSoekeStreng = soekeTreff.getStedsNavn();
 		System.out.println("Skriver ut til liste boks under : "+fullSoekeStreng );
-
 		return fullSoekeStreng;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-			System.out.println();
-			System.out.println();
-			soekeStreng = (String) soekeFelt.getSelectedItem();
-			System.out.println("Søker etter - " + soekeStreng);
+		System.out.println();
+		System.out.println();
+		soekeStreng = (String) soekeFelt.getSelectedItem();
+		System.out.println("Søker etter - " + soekeStreng);
 			
-			boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
+		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
 			
-			if(validertSoekeStreng==true) {
-
-				SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
-				
-				XmlParser xmlParser = new XmlParser();
-				
-				MeteorologiData meteorologiData = xmlParser.parseXml(treff);
-				
-				oppdaterAbonnenter(meteorologiData);
-				
-				soekeFelt.addItem(soekeStreng);				
+		if(validertSoekeStreng==true) {
+			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);			
+			XmlParser xmlParser = new XmlParser();				
+			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
+			oppdaterAbonnenter(meteorologiData);				
+			soekeFelt.addItem(soekeStreng);				
+		}			
+						
+		else {					
+			if(soekeStreng==null || soekeStreng.isEmpty()) {
+				FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
+				System.out.println("Søkestrengen var tom!");
+			}				
+			else { 
+				FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");
+				System.out.println("Søkestrengen validerte ikke!");
 			}
-			
-			
-			
-			else {					
 				
-				if(soekeStreng==null || soekeStreng.isEmpty()) {
-					FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
-					System.out.println("Søkestrengen var tom!");
-				}
-				
-				else { 
-					FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");
-					System.out.println("Søkestrengen validerte ikke!");
-				}
-				
-			}
+		}
 
 	}
+	
 }
