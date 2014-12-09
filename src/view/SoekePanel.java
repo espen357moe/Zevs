@@ -82,16 +82,14 @@ public class SoekePanel extends JPanel implements ActionListener {
 			soekeFelt.addItem(soekeStreng);				
 		}			
 						
-		else {					
+		else {	
+	
+			
 			if(soekeStreng==null || soekeStreng.isEmpty()) {
 				FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
 				System.out.println("Søkestrengen var tom!");
 			}
-			
-			if (soekeStreng.trim().length() < 1) {
-				FeilDialog feilDialog = new FeilDialog("Du må skrive noe annet enn mellomrom i søkefeltet!");				
-				System.out.println("Søkestrengen bestod av mellomrom!");
-			}
+
 			else { 
 				FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");
 				System.out.println("Søkestrengen validerte ikke!");
