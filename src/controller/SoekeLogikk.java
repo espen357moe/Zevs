@@ -3,6 +3,8 @@ import java.io.*;
 import java.util.*;
 import java.net.*;
 
+import javax.swing.JTextArea;
+
 import model.MeteorologiData;
 import model.SoekeTreff;
 
@@ -98,20 +100,30 @@ public class SoekeLogikk {
 		
 	}
 	
-	@SuppressWarnings("unused")
+	public boolean validerSoekeStreng(String soekeStreng) {
+		ArrayList<Rad> liste = rader.get(soekeStreng);
+		
+		if(liste == null) {
+			
+			System.out.println("Ingen treff på " +soekeStreng);
+			return false;
+		}
+		return true;
+		
+	}
+	
 	public SoekeTreff startSoek(String soekeStreng) {
 		
-		String resultatAvSoek;
+		//String resultatAvSoek;
 
 		ArrayList<Rad> liste = rader.get(soekeStreng);
 		
 		if(liste == null) {
-			System.out.println("Ingen treff på " +soekeStreng);			
+			System.out.println("Ingen treff på " +soekeStreng);	
 		}
 		//System.out.println(rad.getVarselUrl());
 		Rad rad = liste.get(0);
-		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStedsNavn(), rad.getVarselUrl());
-	
+		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStedsNavn(), rad.getVarselUrl());	
 	
 		return soekeTreff;
 	}

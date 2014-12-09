@@ -41,11 +41,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	private String soekeStreng;
 
-	private String[] resultatListe = new String[5];
-	private JComboBox<String> nedtrekksResultatListe = new JComboBox<String>();
-
-	private String[] fullSoekeStreng = new String [5];
-
 	private JButton soekeKnapp;
 	
 	private final ArrayList<DataEndret> abonnenter;
@@ -72,10 +67,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeKnapp.addActionListener(this);		
 		soekeKnapp.requestFocusInWindow();
 		
-//		nedtrekksResultatListe = new JComboBox<String>(resultatListe);
-//		nedtrekksResultatListe.setSelectedIndex(0);
-//		nedtrekksResultatListe.addActionListener(this);
-//		this.add(nedtrekksResultatListe);
 	}	
 	
 	public String getSoekeStreng() {
@@ -96,19 +87,26 @@ public class SoekePanel extends JPanel implements ActionListener {
 			System.out.println();
 			soekeStreng = (String) soekeFelt.getSelectedItem();
 			System.out.println("Søker etter - " + soekeStreng);
+			
+			boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
+			
+			if(validertSoekeStreng==true) {
 
-			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
+				SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
+				
+				XmlParser xmlParser = new XmlParser();
+				
+				MeteorologiData meteorologiData = xmlParser.parseXml(treff);
+				
+				oppdaterAbonnenter(meteorologiData);
+				
+				soekeFelt.addItem(soekeStreng);				
+			}
 			
-			XmlParser xmlParser = new XmlParser();
-			
-			MeteorologiData meteorologiData = xmlParser.parseXml(treff);
-			
-			oppdaterAbonnenter(meteorologiData);
-			
-//			nedtrekksResultatListe.addItem(treff.getUrlNorsk());
-			
-			soekeFelt.addItem(soekeStreng);		
-		
+			else {
+				FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");				
+				System.out.println("Søkestrengen validerte ikke!");
+			}
+
 	}
-
 }
