@@ -129,7 +129,7 @@ public class XmlParser {
 			System.out.println("Neste oppdatering: " + nesteOppdatering);
 			System.out.println("Høyde over havet: " + hoydeOverHavet + " meter");
 			System.out.println("Breddegrad:  " + breddeGrad);
-			System.out.println("Longitude:  " + lengdeGrad);
+			System.out.println("Lengdegrad:  " + lengdeGrad);
 		}
 		
 		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, breddeGrad, lengdeGrad, nedbor, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);	
