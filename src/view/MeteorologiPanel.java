@@ -21,6 +21,9 @@ public class MeteorologiPanel extends DataPanel {
 
 		lagEtikett("Meteorologiske data");
 		lagNyttDataTekstFelt();
+		lagNyttDataTekstFelt();
+		lagNyttDataTekstFelt();
+		
 		
 		dataTekstFelt.setBackground(Color.GRAY);
 		dataTekstFelt.setForeground(Color.DARK_GRAY);
