@@ -105,10 +105,9 @@ public class SoekePanel extends JPanel implements ActionListener {
 			
 			
 			
-			else {	
+			else {					
 				
-				
-				if(soekeStreng==null) {
+				if(soekeStreng==null || soekeStreng.isEmpty()) {
 					FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
 					System.out.println("Søkestrengen var tom!");
 				}
