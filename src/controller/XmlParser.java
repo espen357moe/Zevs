@@ -20,7 +20,7 @@ public class XmlParser {
 	
 	private String stedsNavn;
 	private int hoydeOverHavet; //- altitude
-	private String koordinater; //- longitude + latitude
+	//private String koordinater; //- longitude + latitude
 	private float nedbor; //- precipitation
 	private String skyDekke; //- clouds
 	private int temperatur; //- celsiusInt
@@ -31,7 +31,7 @@ public class XmlParser {
 	private String sistOppdatert; //- lastUpdate
 	private String nesteOppdatering; //- nextUpdate
 	
-	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, latitude, longitude;
+	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, breddeGrad, lengdeGrad;
 	public int symbol, celsiusInt;
 	public double wind, precipitation;
 
@@ -106,15 +106,13 @@ public class XmlParser {
 					.item(1).getAttributes().getNamedItem("altitude")
 					.getTextContent());
 			
-			longitude = eElement.getElementsByTagName("location")
+			lengdeGrad = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("longitude")
 					.getTextContent();
 			
-			latitude = eElement.getElementsByTagName("location")
+			breddeGrad = eElement.getElementsByTagName("location")
 					.item(1).getAttributes().getNamedItem("latitude")
 					.getTextContent();
-			
-			koordinater = latitude + ", " + longitude;
 			
 			temperatur = Integer.parseInt(celsius);
 			
@@ -130,10 +128,11 @@ public class XmlParser {
 			System.out.println("Sist oppdatert: " + sistOppdatert);
 			System.out.println("Neste oppdatering: " + nesteOppdatering);
 			System.out.println("Høyde over havet: " + hoydeOverHavet + " meter");
-			System.out.println("Koordinater:  " + koordinater);
+			System.out.println("Breddegrad:  " + breddeGrad);
+			System.out.println("Lengdegrad:  " + lengdeGrad);
 		}
 		
-		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, koordinater, nedbor, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);	
+		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, breddeGrad, lengdeGrad, nedbor, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering);	
 				
 		return meteorologiData;
 	}

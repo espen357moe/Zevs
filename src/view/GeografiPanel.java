@@ -19,7 +19,8 @@ public class GeografiPanel extends DataPanel {
 				fjernData();
 				skrivUtData(data.getStedsNavn());
 				skrivUtData(new Integer(data.getHoydeOverHavet()).toString() + " m.o.h.");
-				skrivUtData("Koordinater: " + data.getKoordinater());
+				skrivUtData("Lengdegrad: " + data.getLengdegrad());
+				skrivUtData("Breddegrad: " + data.getBreddegrad());
 			}
 		
 		};

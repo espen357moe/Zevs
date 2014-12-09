@@ -35,7 +35,8 @@ public class MeteorologiPanel extends DataPanel {
 				skrivUtData(data.getVindBetegnelse());
 				skrivUtData(data.getSkydekke());
 				skrivUtData(new Float(data.getVindHastighet()).toString() + " m/s");
-				skrivUtData(data.getVindRetning());				
+				skrivUtData(data.getVindRetning());	
+				skrivUtData(new Integer(data.getTemperatur()).toString() + " °");		
 			}	
 		
 		};
