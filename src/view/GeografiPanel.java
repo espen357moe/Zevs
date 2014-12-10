@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.GridLayout;
+
 import javax.swing.JTextField;
 
 import model.DataEndret;

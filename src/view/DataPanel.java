@@ -28,7 +28,7 @@ public class DataPanel extends JPanel {
 		dataPresentasjonsPanel.setBackground(Color.BLUE);
 		this.add(dataPresentasjonsPanel, BorderLayout.CENTER);
 		
-		dataPresentasjonsPanel.setLayout(new GridLayout(0,3));
+		dataPresentasjonsPanel.setLayout(new GridLayout(0,1));
 						
 		dataTekstFelt.setBackground(Color.GRAY);
 		dataTekstFelt.setEditable(false);
