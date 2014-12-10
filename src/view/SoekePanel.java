@@ -88,9 +88,5 @@ public class SoekePanel extends JPanel implements ActionListener {
 
 	}
 
-	private void foreach(JComboBox<String> soekeFelt2) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
