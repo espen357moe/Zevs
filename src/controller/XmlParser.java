@@ -18,23 +18,9 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-	private String stedsNavn;
-	private int hoydeOverHavet; //- altitude
-	//private String koordinater; //- longitude + latitude
-	private float nedbor; //- precipitation
-	private String skyDekke; //- clouds
-	private int temperatur; //- celsiusInt
-	private String vindBetegnelse;
-	private String vindRetning; //- windDirection
-	private float vindHastighet; //- wind
-	private int symbolNummer; //- symbol
-	private String sistOppdatert; //- lastUpdate
-	private String nesteOppdatering; //- nextUpdate
-//	private String vaerVarselData;
-	
-	public String clouds, celsius, fahrenheit, windText, windDirection, month, nextUpdate, lastUpdate, altitude, breddeGrad, lengdeGrad, vaerVarsel;
-	public int symbol, celsiusInt;
-	public double wind, precipitation;
+	private String stedsNavn,skyDekke, celsius, vindBetegnelse, sistOppdatert, vindRetning, nesteOppdatering, breddeGrad, lengdeGrad, vaerVarsel ;
+	private int hoydeOverHavet, temperatur, symbolNummer, symbol;
+	private float nedbor, vindHastighet; 
 
 	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
 		
@@ -119,8 +105,6 @@ public class XmlParser {
 				.getTextContent()).replaceAll("<strong>", "")).replaceAll("</strong>", "");
 			
 			temperatur = Integer.parseInt(celsius);
-			
-			fahrenheit = Double.parseDouble(celsius) * 1.8000 + 32 + "";
 			
 			System.out.println(stedsNavn);
 			System.out.println(skyDekke);

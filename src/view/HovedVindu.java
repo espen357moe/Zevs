@@ -11,13 +11,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import model.MeteorologiData;
 
 @SuppressWarnings("serial")
 public class HovedVindu extends JFrame implements ActionListener {
 	
 	public HovedVindu() {
-		setSize(600,600);
+		setSize(700,700);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		//setResizable(false);
@@ -75,7 +74,7 @@ public class HovedVindu extends JFrame implements ActionListener {
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
         soekePanel.addAbonnent(bonusPanel.getEndret());
-       soekePanel.addAbonnent(vaerVarselPanel.getEndret());
+        soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
         		

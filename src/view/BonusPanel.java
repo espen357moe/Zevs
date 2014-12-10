@@ -3,7 +3,6 @@ package view;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 
 import model.DataEndret;
 import model.FilTilknytning;

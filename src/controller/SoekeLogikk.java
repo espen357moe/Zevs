@@ -2,10 +2,6 @@ package controller;
 import java.io.*;
 import java.util.*;
 import java.net.*;
-
-import javax.swing.JTextArea;
-
-import model.MeteorologiData;
 import model.SoekeTreff;
 
 public class SoekeLogikk {
