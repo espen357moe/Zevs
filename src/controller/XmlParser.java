@@ -115,8 +115,8 @@ public class XmlParser {
 					.item(1).getAttributes().getNamedItem("latitude")
 					.getTextContent();
 			
-			vaerVarsel = eElement.getElementsByTagName("body").item(0)
-				.getTextContent();
+			vaerVarsel = ((eElement.getElementsByTagName("body").item(0)
+				.getTextContent()).replaceAll("<strong>", "")).replaceAll("</strong>", "");
 			
 			temperatur = Integer.parseInt(celsius);
 			
