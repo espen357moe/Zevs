@@ -69,13 +69,13 @@ public class HovedVindu extends JFrame implements ActionListener {
         BonusPanel bonusPanel = new BonusPanel();
         hovedContainer.add(bonusPanel); 
         
-//        VaerVarselPanel vaerVarselPanel = new VaerVarselPanel();
-//        hovedContainer.add(vaerVarselPanel);
+        VaerVarselPanel vaerVarselPanel = new VaerVarselPanel();
+        hovedContainer.add(vaerVarselPanel);
         
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
         soekePanel.addAbonnent(bonusPanel.getEndret());
-//       soekePanel.addAbonnent(vaerVarselPanel.getEndret());
+       soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
         		

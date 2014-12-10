@@ -15,7 +15,7 @@ public class VaerVarselPanel extends DataPanel {
 		endret = new DataEndret () { @Override
 			public void oppdater(MeteorologiData data) {
 				fjernData();
-				skrivUtData(data.getvaerVarsel()); //Her skrives data ut!
+				skrivUtData(data.getvaerVarsel()); 
 				
 			}
 		};
