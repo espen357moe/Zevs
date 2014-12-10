@@ -1,15 +1,11 @@
 package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
-import model.MeteorologiData;
 
 @SuppressWarnings("serial")
 public class DataPanel extends JPanel {	
@@ -29,10 +25,11 @@ public class DataPanel extends JPanel {
 		this.add(dataPresentasjonsPanel, BorderLayout.CENTER);
 		
 		dataPresentasjonsPanel.setLayout(new GridLayout(0,3));
-		
-		
+						
 		dataTekstFelt.setBackground(Color.GRAY);
 		dataTekstFelt.setEditable(false);
+		dataTekstFelt.setLineWrap(true);
+		dataTekstFelt.setWrapStyleWord(true); 
 	}
 	
 	public void lagNyttDataTekstFelt() {

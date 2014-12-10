@@ -16,7 +16,8 @@ import javax.swing.JMenuItem;
 public class HovedVindu extends JFrame implements ActionListener {
 	
 	public HovedVindu() {
-		setSize(700,700);
+
+		setSize(600,650);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		//setResizable(false);
