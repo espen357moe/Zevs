@@ -27,6 +27,7 @@ public class OmVindu extends JFrame {
 	public OmVindu() {
 		setTitle("Zevs");
 		setSize(280, 350);
+		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		setLocationByPlatform(true);
 		setBackground(Color.LIGHT_GRAY);
 		setResizable(false);
