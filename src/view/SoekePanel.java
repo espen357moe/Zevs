@@ -136,6 +136,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 				
 				if(soekeStreng.equalsIgnoreCase(soekeTreffItemsArray[i]))  {
 				    soekeTreffFinnesAllerede=true;
+				    url = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 				    break;
 				}
 			}
