@@ -54,13 +54,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 		this.soekeFelt = new JComboBox<String>();
 		soekeFeltKnappPanel.add(soekeFelt);
 		soekeFelt.setEditable(true);
-<<<<<<< HEAD
-		soekeFelt.addActionListener(this);
-		
-=======
 		// soekeFelt.addActionListener(this);
 
->>>>>>> cdf5bca10aebb14f1d9e8ae0f8102a5fd544cc79
 		soekeKnapp = new JButton("Søk");
 		soekeFeltKnappPanel.add(soekeKnapp);
 		soekeKnapp.addActionListener(this);
