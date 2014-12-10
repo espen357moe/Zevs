@@ -1,31 +1,17 @@
 package view;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import model.MeteorologiData;
 import model.SoekeTreff;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.event.AncestorListener;
-
-import com.sun.xml.internal.ws.util.StringUtils;
-
-import model.SoekeTreff;
 import controller.SoekeLogikk;
 import controller.XmlParser;
 import model.DataEndret;
-
 import java.util.ArrayList;
+
 public class SoekePanel extends JPanel implements ActionListener {	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 	private JComboBox<String> soekeFelt;	
