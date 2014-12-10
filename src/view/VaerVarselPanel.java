@@ -3,7 +3,6 @@ package view;
 import model.DataEndret;
 import model.MeteorologiData;
 
-@SuppressWarnings("serial")
 public class VaerVarselPanel extends DataPanel {
 	private final DataEndret endret;
 	public DataEndret getEndret() {return endret;}
