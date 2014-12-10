@@ -26,8 +26,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 	private JComboBox<String> soekeFelt;	
 	private String soekeStreng;
-	private String url = "http://www.yr.no";
-	private String urlGoogleMaps = "http://maps.google.com";
+	private String yrUrl = "http://www.yr.no";
 	private JButton soekeKnapp;	
 	private JButton yrLenkeKnapp = new JButton("Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
 	private final ArrayList<DataEndret> abonnenter;
@@ -69,7 +68,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			        if(Desktop.isDesktopSupported()){
 			            Desktop desktop = Desktop.getDesktop();
 			            try {
-			                desktop.browse(new URI(url));
+			                desktop.browse(new URI(yrUrl));
 			            } catch (IOException | URISyntaxException e) {
 			                // TODO Auto-generated catch block
 			                e.printStackTrace();
@@ -77,7 +76,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			        }else{
 			            Runtime runtime = Runtime.getRuntime();
 			            try {
-			                runtime.exec("xdg-open " + url);
+			                runtime.exec("xdg-open " + yrUrl);
 			            } catch (IOException e) {
 			                // TODO Auto-generated catch block
 			                e.printStackTrace();
@@ -96,12 +95,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	public String getSoekeStreng() {
 		return soekeStreng;
-	}
-	
-	public String getFullSoekeStreng(SoekeTreff soekeTreff) {	
-		String fullSoekeStreng = soekeTreff.getStedsNavn();
-		System.out.println("Skriver ut til liste boks under : "+fullSoekeStreng );
-		return fullSoekeStreng;
 	}
 	
 	@Override
@@ -137,14 +130,14 @@ public class SoekePanel extends JPanel implements ActionListener {
 				
 				if(soekeStreng.equalsIgnoreCase(soekeTreffItemsArray[i]))  {
 				    soekeTreffFinnesAllerede=true;
-				    url = treff.getUrlNorsk().replaceAll("varsel.xml", "");
+				    yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 				    break;
 				}
 			}
 			
 			if(soekeTreffFinnesAllerede==false){
 				soekeFelt.addItem(soekeStreng);	
-				url = treff.getUrlNorsk().replaceAll("varsel.xml", "");
+				yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 			}
 		
 		
@@ -170,6 +163,5 @@ public class SoekePanel extends JPanel implements ActionListener {
 		}
 
 	}
-
 	
 }
