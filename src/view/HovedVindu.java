@@ -24,7 +24,7 @@ public class HovedVindu extends JFrame implements ActionListener {
 		setLocationByPlatform(true);
 		
 		Container hovedContainer = getContentPane();
-		hovedContainer.setLayout(new GridLayout(4,0));
+		hovedContainer.setLayout(new GridLayout(5,0));
 		
 		JMenuBar menylinje = new JMenuBar();
         JMenu meny = new JMenu("Valg");
@@ -67,11 +67,15 @@ public class HovedVindu extends JFrame implements ActionListener {
         hovedContainer.add(meteorologiPanel);
         
         BonusPanel bonusPanel = new BonusPanel();
-        hovedContainer.add(bonusPanel);  
+        hovedContainer.add(bonusPanel); 
+        
+        VaerVarselPanel vaerVarselPanel = new VaerVarselPanel();
+        hovedContainer.add(vaerVarselPanel);
         
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
         soekePanel.addAbonnent(bonusPanel.getEndret());
+        soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
         		
