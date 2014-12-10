@@ -33,6 +33,7 @@ public class DataPanel extends JPanel {
 		dataTekstFelt.setBackground(Color.GRAY);
 		dataTekstFelt.setEditable(false);
 		dataTekstFelt.setLineWrap(true);
+		dataTekstFelt.setWrapStyleWord(true); 
 	}
 	
 	public void lagNyttDataTekstFelt() {
