@@ -20,7 +20,7 @@ public class HovedVindu extends JFrame implements ActionListener {
 		setSize(420,600);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
-		//setResizable(false);
+		setResizable(false);
 		setLocationByPlatform(true);
 		
 		Container hovedContainer = getContentPane();
@@ -74,7 +74,7 @@ public class HovedVindu extends JFrame implements ActionListener {
         
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
-        //soekePanel.addAbonnent(bonusPanel.getEndret());
+//		soekePanel.addAbonnent(bonusPanel.getEndret());
         soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
