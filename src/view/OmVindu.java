@@ -25,7 +25,7 @@ import javax.swing.border.TitledBorder;
 public class OmVindu extends JFrame {
 	
 	public OmVindu() {
-		setTitle("Zevs");
+		setTitle("Om Zevs");
 		setSize(280, 350);
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		setLocationByPlatform(true);
