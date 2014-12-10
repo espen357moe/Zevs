@@ -1,7 +1,7 @@
 package model;
 
 public class MeteorologiData {
-		
+
 	private String stedsNavn;
 	private int hoydeOverHavet;
 	private String breddeGrad;
@@ -18,8 +18,13 @@ public class MeteorologiData {
 	private String sistOppdatert;
 	private String nesteOppdatering;
 	private String vaerVarsel;
-	
-	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String lengdeGrad, String breddeGrad, float nedbor,float nedbor24,float nedbor48, String skydekke, int temperatur, String vindRetning, String vindBetegnelse, float vindHastighet, int symbolNummer, String sistOppdatert, String nesteOppdatering, String vaerVarsel) {
+
+	public MeteorologiData(String stedsNavn, int hoydeOverHavet,
+			String lengdeGrad, String breddeGrad, float nedbor, float nedbor24,
+			float nedbor48, String skydekke, int temperatur,
+			String vindRetning, String vindBetegnelse, float vindHastighet,
+			int symbolNummer, String sistOppdatert, String nesteOppdatering,
+			String vaerVarsel) {
 		this.stedsNavn = stedsNavn;
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.breddeGrad = breddeGrad;
@@ -34,72 +39,72 @@ public class MeteorologiData {
 		this.vindHastighet = vindHastighet;
 		this.symbolNummer = symbolNummer;
 		this.sistOppdatert = sistOppdatert;
-		this.nesteOppdatering = nesteOppdatering;	
+		this.nesteOppdatering = nesteOppdatering;
 		this.vaerVarsel = vaerVarsel;
 	}
-	
+
 	public String getStedsNavn() {
 		return this.stedsNavn;
 	}
-	
+
 	public int getHoydeOverHavet() {
 		return this.hoydeOverHavet;
 	}
-	
+
 	public String getBreddegrad() {
 		return this.breddeGrad;
 	}
-	
+
 	public String getLengdegrad() {
 		return this.lengdeGrad;
 	}
-	
+
 	public float getNedbor() {
 		return this.nedbor;
 	}
-	
+
 	public float getNedbor24() {
 		return this.nedbor24;
 	}
-	
+
 	public float getNedbor48() {
 		return this.nedbor48;
 	}
-	
+
 	public String getSkydekke() {
 		return this.skydekke;
 	}
-	
+
 	public int getTemperatur() {
 		return this.temperatur;
 	}
-	
+
 	public String getVindRetning() {
 		return this.vindRetning;
 	}
-	
+
 	public String getVindBetegnelse() {
 		return this.vindBetegnelse;
 	}
-	
+
 	public float getVindHastighet() {
 		return this.vindHastighet;
 	}
-	
+
 	public int getSymbolNummer() {
 		return this.symbolNummer;
 	}
-	
+
 	public String getSistOppdatert() {
 		return this.sistOppdatert;
 	}
-	
+
 	public String getNesteOppdatering() {
 		return this.nesteOppdatering;
 	}
-	
+
 	public String getvaerVarsel() {
 		return this.vaerVarsel;
 	}
-		
+
 }

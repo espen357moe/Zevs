@@ -22,146 +22,138 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class SoekePanel extends JPanel implements ActionListener {	
+public class SoekePanel extends JPanel implements ActionListener {
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
-	private JComboBox<String> soekeFelt;	
+	private JComboBox<String> soekeFelt;
 	private String soekeStreng;
 	private String yrUrl = "http://www.yr.no";
-	private JButton soekeKnapp;	
-	private JButton yrLenkeKnapp = new JButton("Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
+	private JButton soekeKnapp;
+	private JButton yrLenkeKnapp = new JButton(
+			"Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
 	private final ArrayList<DataEndret> abonnenter;
-	
+
 	public void addAbonnent(DataEndret changed) {
 		abonnenter.add(changed);
 	}
-	
+
 	private void oppdaterAbonnenter(MeteorologiData data) {
-		for(DataEndret de : abonnenter) {
+		for (DataEndret de : abonnenter) {
 			de.oppdater(data);
 		}
 	}
-	
+
 	public SoekePanel() {
 		this.setLayout(new BorderLayout());
 		abonnenter = new ArrayList<DataEndret>();
-		
+
 		JPanel soekeFeltKnappPanel = new JPanel();
 		soekeFeltKnappPanel.setLayout(new FlowLayout());
 		this.add(soekeFeltKnappPanel, BorderLayout.CENTER);
 		this.add(yrLenkeKnapp, BorderLayout.NORTH);
-		
-		
+
 		this.soekeFelt = new JComboBox<String>();
-		soekeFeltKnappPanel.add(soekeFelt);	
+		soekeFeltKnappPanel.add(soekeFelt);
 		soekeFelt.setEditable(true);
+<<<<<<< HEAD
 		soekeFelt.addActionListener(this);
 		
+=======
+		// soekeFelt.addActionListener(this);
+
+>>>>>>> cdf5bca10aebb14f1d9e8ae0f8102a5fd544cc79
 		soekeKnapp = new JButton("Søk");
-		soekeFeltKnappPanel.add(soekeKnapp);				
-		soekeKnapp.addActionListener(this);		
+		soekeFeltKnappPanel.add(soekeKnapp);
+		soekeKnapp.addActionListener(this);
 		soekeKnapp.requestFocusInWindow();
-		
-		yrLenkeKnapp.addActionListener(new ActionListener(){
-			
+
+		yrLenkeKnapp.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent ev) {
 
-			        if(Desktop.isDesktopSupported()){
-			            Desktop desktop = Desktop.getDesktop();
-			            try {
-			                desktop.browse(new URI(yrUrl));
-			            } catch (IOException | URISyntaxException e) {
-			                // TODO Auto-generated catch block
-			                e.printStackTrace();
-			            }
-			        }else{
-			            Runtime runtime = Runtime.getRuntime();
-			            try {
-			                runtime.exec("xdg-open " + yrUrl);
-			            } catch (IOException e) {
-			                // TODO Auto-generated catch block
-			                e.printStackTrace();
-			            }
-			        }
-			    }
-				
-				
-			
-			
+				if (Desktop.isDesktopSupported()) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(new URI(yrUrl));
+					} catch (IOException | URISyntaxException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else {
+					Runtime runtime = Runtime.getRuntime();
+					try {
+						runtime.exec("xdg-open " + yrUrl);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+
 		});
-		
-		
-		
-	}	
-	
+
+	}
+
 	public String getSoekeStreng() {
 		return soekeStreng;
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		System.out.println();
-		System.out.println();
-		soekeStreng = (String) soekeFelt.getSelectedItem();
-		System.out.println("Søker etter - " + soekeStreng);
-			
-		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
-		int antallItems = soekeFelt.getItemCount();
-			
-		if(validertSoekeStreng==true) {
-			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);			
-			XmlParser xmlParser = new XmlParser();				
-			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
-			oppdaterAbonnenter(meteorologiData);				
 
-		
-			
-			
-			
-			
+		soekeStreng = (String) soekeFelt.getSelectedItem();
+
+		boolean validertSoekeStreng = soekeLogikk
+				.validerSoekeStreng(soekeStreng);
+		int antallItems = soekeFelt.getItemCount();
+
+		if (validertSoekeStreng == true) {
+			SoekeTreff treff = soekeLogikk.startSoek(soekeStreng);
+			XmlParser xmlParser = new XmlParser();
+			MeteorologiData meteorologiData = xmlParser.parseXml(treff);
+			oppdaterAbonnenter(meteorologiData);
+
 			String[] soekeTreffItemsArray = new String[antallItems];
 			boolean soekeTreffFinnesAllerede = false;
-			
-			for(int i=0; i<antallItems; i++){
-				soekeTreffItemsArray[i]=soekeFelt.getItemAt(i);
+
+			for (int i = 0; i < antallItems; i++) {
+				soekeTreffItemsArray[i] = soekeFelt.getItemAt(i);
 			}
-			
-			for(int i=0; i<antallItems; i++){
-				
-				if(soekeStreng.equalsIgnoreCase(soekeTreffItemsArray[i]))  {
-				    soekeTreffFinnesAllerede=true;
-				    yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
-				    break;
+
+			for (int i = 0; i < antallItems; i++) {
+
+				if (soekeStreng.equalsIgnoreCase(soekeTreffItemsArray[i])) {
+					soekeTreffFinnesAllerede = true;
+					yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
+					break;
 				}
 			}
-			
-			if(soekeTreffFinnesAllerede==false){
-				soekeFelt.addItem(soekeStreng);	
+
+			if (soekeTreffFinnesAllerede == false) {
+				soekeFelt.addItem(soekeStreng);
 				yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 			}
-		
-		
-		
-		}			
-	
-			
-		
-			
-		else {	
-	
-			
-			if(soekeStreng==null || soekeStreng.isEmpty() || soekeStreng.trim().length() < 1) {
-				FeilDialog feilDialog = new FeilDialog("Du må skrive noe i søkefeltet!");				
+
+		}
+
+		else {
+
+			if (soekeStreng == null || soekeStreng.isEmpty()
+					|| soekeStreng.trim().length() < 1) {
+				FeilDialog feilDialog = new FeilDialog(
+						"Du må skrive noe i søkefeltet!");
 				System.out.println("Søkestrengen var tom!");
 			}
 
-			else { 
-				FeilDialog feilDialog = new FeilDialog("Ingen treff på \"" + soekeStreng +"\".\n"+"Stedsnavnet må være korrekt stavet og eksistere i databasen.");
-				System.out.println("Søkestrengen validerte ikke!");
+			else {
+				FeilDialog feilDialog = new FeilDialog(
+						"Ingen treff på \""
+								+ soekeStreng
+								+ "\".\n"
+								+ "Stedsnavnet må være korrekt stavet og eksistere i databasen.");
 			}
-				
+
 		}
 
 	}
-	
+
 }

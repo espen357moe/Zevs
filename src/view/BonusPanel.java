@@ -15,28 +15,32 @@ public class BonusPanel extends DataPanel {
 	private Image vaerSymbol;
 	private ImageIcon icon;
 	private int symbolNummer;
-	
-	private final DataEndret endret; 
-	public DataEndret getEndret() { return endret; }
-	
+
+	private final DataEndret endret;
+
+	public DataEndret getEndret() {
+		return endret;
+	}
+
 	public BonusPanel() {
-		this.setLayout(new GridLayout(0,3));
+		this.setLayout(new GridLayout(0, 3));
 		lagEtikett("");
 		lagNyBildeRute();
-		
-		endret = new DataEndret() { @Override
+
+		endret = new DataEndret() {
+			@Override
 			public void oppdater(MeteorologiData data) {
 				symbolNummer = data.getSymbolNummer();
-				
+
 				FilTilknytning ft = new FilTilknytning();
-				vaerSymbol = ft.knyttSymbolNummerTilBilde(symbolNummer);	
+				vaerSymbol = ft.knyttSymbolNummerTilBilde(symbolNummer);
 				icon = new ImageIcon(vaerSymbol);
-				
+
 				bildeRute.setIcon(icon);
 			}
-		
+
 		};
-		
+
 	}
-	
+
 }
