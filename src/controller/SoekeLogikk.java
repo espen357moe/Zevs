@@ -98,6 +98,7 @@ public class SoekeLogikk {
 	
 	public boolean validerSoekeStreng(String soekeStreng) {
 		
+		
 		if(soekeStreng==null) {
 			System.out.println("Ingen treff på " +soekeStreng);
 			return false;

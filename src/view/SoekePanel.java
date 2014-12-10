@@ -29,7 +29,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 	private String url = "http://www.yr.no";
 	private JButton soekeKnapp;	
 	private JButton yrLenkeKnapp = new JButton("Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
-	private JPanel soekeFeltKnappPanel;
 	private final ArrayList<DataEndret> abonnenter;
 	
 	public void addAbonnent(DataEndret changed) {
@@ -55,7 +54,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		this.soekeFelt = new JComboBox<String>();
 		soekeFeltKnappPanel.add(soekeFelt);	
 		soekeFelt.setEditable(true);
-		//soekeFelt.addActionListener(this);
+		soekeFelt.addActionListener(this);
 		
 		soekeKnapp = new JButton("Søk");
 		soekeFeltKnappPanel.add(soekeKnapp);				
@@ -108,7 +107,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		
 		System.out.println();
 		System.out.println();
-		soekeStreng = ((String) soekeFelt.getSelectedItem()).trim();
+		soekeStreng = (String) soekeFelt.getSelectedItem();
 		System.out.println("Søker etter - " + soekeStreng);
 			
 		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
