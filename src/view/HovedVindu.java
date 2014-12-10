@@ -17,14 +17,14 @@ public class HovedVindu extends JFrame implements ActionListener {
 	
 	public HovedVindu() {
 
-		setSize(600,650);
+		setSize(420,600);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		//setResizable(false);
 		setLocationByPlatform(true);
 		
 		Container hovedContainer = getContentPane();
-		hovedContainer.setLayout(new GridLayout(5,0));
+		hovedContainer.setLayout(new GridLayout(4,0));
 		
 		JMenuBar menylinje = new JMenuBar();
         JMenu meny = new JMenu("Valg");
@@ -66,15 +66,15 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
-        BonusPanel bonusPanel = new BonusPanel();
-        hovedContainer.add(bonusPanel); 
+//        BonusPanel bonusPanel = new BonusPanel();
+//        hovedContainer.add(bonusPanel); 
         
         VaerVarselPanel vaerVarselPanel = new VaerVarselPanel();
         hovedContainer.add(vaerVarselPanel);
         
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
-        soekePanel.addAbonnent(bonusPanel.getEndret());
+        //soekePanel.addAbonnent(bonusPanel.getEndret());
         soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
