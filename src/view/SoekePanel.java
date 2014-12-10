@@ -118,10 +118,14 @@ public class SoekePanel extends JPanel implements ActionListener {
 			XmlParser xmlParser = new XmlParser();				
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
 			oppdaterAbonnenter(meteorologiData);				
+
 			soekeFelt.addItem(soekeStreng);	
 			url = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 		}			
-						
+			//soekeFelt.addItem(soekeStreng);	
+			
+		
+			
 		else {	
 	
 			
@@ -138,5 +142,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 		}
 
 	}
+
 	
 }
