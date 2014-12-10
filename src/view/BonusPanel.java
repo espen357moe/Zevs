@@ -19,7 +19,7 @@ public class BonusPanel extends DataPanel {
 	public DataEndret getEndret() { return endret; }
 	
 	public BonusPanel() {	
-		lagEtikett("Værsymboler");
+		lagEtikett("");
 		lagNyBildeRute();
 		
 		endret = new DataEndret() { @Override

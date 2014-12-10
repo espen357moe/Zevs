@@ -1,6 +1,7 @@
 package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JLabel;
@@ -18,7 +19,8 @@ public class DataPanel extends JPanel {
 		setLayout(new BorderLayout());
 		setBackground(Color.DARK_GRAY);				
 		
-		panelEtikett.setForeground(Color.ORANGE);						
+		panelEtikett.setForeground(Color.ORANGE);
+		panelEtikett.setFont(new Font("Sans-Serif", Font.BOLD, 13));
 		this.add(panelEtikett, BorderLayout.NORTH);		
 		
 		dataPresentasjonsPanel.setBackground(Color.BLUE);
@@ -30,6 +32,7 @@ public class DataPanel extends JPanel {
 		dataTekstFelt.setEditable(false);
 		dataTekstFelt.setLineWrap(true);
 		dataTekstFelt.setWrapStyleWord(true); 
+		dataTekstFelt.setFont(new Font("Sans-Serif", Font.BOLD, 12));
 	}
 	
 	public void lagNyttDataTekstFelt() {
