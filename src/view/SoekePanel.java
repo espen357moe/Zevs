@@ -108,7 +108,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		
 		System.out.println();
 		System.out.println();
-		soekeStreng = (String) soekeFelt.getSelectedItem();
+		soekeStreng = ((String) soekeFelt.getSelectedItem()).trim();
 		System.out.println("Søker etter - " + soekeStreng);
 			
 		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
