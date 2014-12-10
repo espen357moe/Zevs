@@ -18,9 +18,9 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-	private String stedsNavn,skyDekke, celsius, vindBetegnelse, sistOppdatert, vindRetning, nesteOppdatering, breddeGrad, lengdeGrad, vaerVarsel ;
-	private int hoydeOverHavet, temperatur, symbolNummer, symbol;
-	private float nedbor, vindHastighet; 
+	private String stedsNavn,skyDekke, skyDekke24, skyDekke48, celsius, celsius24, celsius48, vindBetegnelse, vindBetegnelse24, vindBetegnelse48, sistOppdatert, vindRetning, vindRetning24, vindRetning48, nesteOppdatering, breddeGrad, lengdeGrad, vaerVarsel ;
+	private int hoydeOverHavet, temperatur, symbolNummer,symbolNummer24,symbolNummer48;
+	private float nedbor, nedbor24, nedbor48, vindHastighet, vindHastighet24, vindHastighet48; 
 
 	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
 		
@@ -62,8 +62,24 @@ public class XmlParser {
 					.item(0).getAttributes().getNamedItem("numberEx")
 					.getTextContent()));
 			
+			symbolNummer24 = Integer.parseInt((eElement.getElementsByTagName("symbol")
+					.item(4).getAttributes().getNamedItem("numberEx")
+					.getTextContent()));
+			
+			symbolNummer48 = Integer.parseInt((eElement.getElementsByTagName("symbol")
+					.item(8).getAttributes().getNamedItem("numberEx")
+					.getTextContent()));
+			
 			nedbor = Float.parseFloat(eElement
 					.getElementsByTagName("precipitation").item(0)
+					.getAttributes().getNamedItem("value").getTextContent());
+			
+			nedbor24 = Float.parseFloat(eElement
+					.getElementsByTagName("precipitation").item(4)
+					.getAttributes().getNamedItem("value").getTextContent());
+			
+			nedbor48 = Float.parseFloat(eElement
+					.getElementsByTagName("precipitation").item(8)
 					.getAttributes().getNamedItem("value").getTextContent());
 			
 			sistOppdatert = (eElement.getElementsByTagName("lastupdate").item(0)
@@ -75,18 +91,52 @@ public class XmlParser {
 			skyDekke = eElement.getElementsByTagName("symbol").item(0)
 					.getAttributes().getNamedItem("name").getTextContent();
 			
+			skyDekke24 = eElement.getElementsByTagName("symbol").item(4)
+					.getAttributes().getNamedItem("name").getTextContent();
+			
+			skyDekke48 = eElement.getElementsByTagName("symbol").item(8)
+					.getAttributes().getNamedItem("name").getTextContent();
+			
 			vindHastighet = Float.parseFloat(eElement
 					.getElementsByTagName("windSpeed").item(0).getAttributes()
 					.getNamedItem("mps").getTextContent());
 			
+			vindHastighet24 = Float.parseFloat(eElement
+					.getElementsByTagName("windSpeed").item(4).getAttributes()
+					.getNamedItem("mps").getTextContent());
+			
+			vindHastighet48 = Float.parseFloat(eElement
+					.getElementsByTagName("windSpeed").item(8).getAttributes()
+					.getNamedItem("mps").getTextContent());
+			
 			vindBetegnelse = eElement.getElementsByTagName("windSpeed").item(0)
+					.getAttributes().getNamedItem("name").getTextContent();
+			
+			vindBetegnelse24 = eElement.getElementsByTagName("windSpeed").item(4)
+					.getAttributes().getNamedItem("name").getTextContent();
+			
+			vindBetegnelse48 = eElement.getElementsByTagName("windSpeed").item(8)
 					.getAttributes().getNamedItem("name").getTextContent();
 			
 			vindRetning = eElement.getElementsByTagName("windDirection")
 					.item(0).getAttributes().getNamedItem("name")
 					.getTextContent();
 			
+			vindRetning24 = eElement.getElementsByTagName("windDirection")
+					.item(4).getAttributes().getNamedItem("name")
+					.getTextContent();
+			
+			vindRetning48 = eElement.getElementsByTagName("windDirection")
+					.item(8).getAttributes().getNamedItem("name")
+					.getTextContent();
+			
 			celsius = eElement.getElementsByTagName("temperature").item(0)
+					.getAttributes().getNamedItem("value").getTextContent();
+			
+			celsius24 = eElement.getElementsByTagName("temperature").item(4)
+					.getAttributes().getNamedItem("value").getTextContent();
+			
+			celsius48 = eElement.getElementsByTagName("temperature").item(8)
 					.getAttributes().getNamedItem("value").getTextContent();
 			
 			hoydeOverHavet = Integer.parseInt(eElement.getElementsByTagName("location")
@@ -108,7 +158,7 @@ public class XmlParser {
 			
 			System.out.println(stedsNavn);
 			System.out.println(skyDekke);
-			System.out.println("Symbolnummer: " + symbol);
+			System.out.println("Symbolnummer: " + symbolNummer);
 			System.out.println("Vind: " + vindBetegnelse + ", " + vindHastighet + " m/s");
 			System.out.println("Vindretning: " + vindRetning);
 			System.out.println("Temperatur: " + temperatur + "°C");
@@ -119,9 +169,21 @@ public class XmlParser {
 			System.out.println("Breddegrad:  " + breddeGrad);
 			System.out.println("Lengdegrad:  " + lengdeGrad);
 			System.out.println("Værvarsel:  " + vaerVarsel);
+			System.out.println("Nedbør24: " + nedbor24);
+			System.out.println("Nedbør48: " + nedbor48);
+			System.out.println("Temperatur24: " + celsius24);
+			System.out.println("Temperatur48: " + celsius48);
+			System.out.println("Skydekke 24: " + skyDekke24);
+			System.out.println("Skydekke 48: " + skyDekke48);
+			System.out.println("Vind24: " + vindBetegnelse24 + ", " + vindHastighet24 + " m/s");
+			System.out.println("Vind48: " + vindBetegnelse48 + ", " + vindHastighet48 + " m/s");
+			System.out.println("Vindretning24: " + vindRetning24);
+			System.out.println("Vindretning48: " + vindRetning48);
+			System.out.println("Symbolnummer24: " + symbolNummer24);
+			System.out.println("Symbolnummer48: " + symbolNummer48);
 		}
 		
-		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, breddeGrad, lengdeGrad, nedbor, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering, vaerVarsel);	
+		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn, hoydeOverHavet, breddeGrad, lengdeGrad, nedbor, nedbor24, nedbor48, skyDekke, temperatur, vindRetning, vindBetegnelse, vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering, vaerVarsel );	
 				
 		return meteorologiData;
 	}
