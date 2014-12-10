@@ -17,7 +17,7 @@ import model.MeteorologiData;
 public class HovedVindu extends JFrame implements ActionListener {
 	
 	public HovedVindu() {
-		setSize(500,500);
+		setSize(600,600);
 		setTitle("Zevs");	
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		//setResizable(false);
@@ -75,7 +75,7 @@ public class HovedVindu extends JFrame implements ActionListener {
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
         soekePanel.addAbonnent(bonusPanel.getEndret());
-        soekePanel.addAbonnent(vaerVarselPanel.getEndret());
+       soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
         		
