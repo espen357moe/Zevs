@@ -18,6 +18,7 @@ public class VaerVarselPanel extends DataPanel {
 				skrivUtData(data.getvaerVarsel()); 
 				
 			}
+		
 		};
 		
 	}

@@ -1,8 +1,11 @@
 package view;
 
+<<<<<<< HEAD
 import java.awt.GridLayout;
 
 import javax.swing.JTextField;
+=======
+>>>>>>> cebb8d36d4ed62583464f4251b320f0f71324835
 
 import model.DataEndret;
 import model.MeteorologiData;
@@ -21,8 +24,8 @@ public class GeografiPanel extends DataPanel {
 				fjernData();
 				skrivUtData(data.getStedsNavn());
 				skrivUtData(new Integer(data.getHoydeOverHavet()).toString() + " m.o.h.");
-				skrivUtData("Lengdegrad: " + data.getLengdegrad());
-				skrivUtData("Breddegrad: " + data.getBreddegrad());
+				skrivUtData("Lengdegrad : " + data.getLengdegrad());
+				skrivUtData("Breddegrad : " + data.getBreddegrad());
 			}
 		
 		};

@@ -1,15 +1,11 @@
 package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
-import model.MeteorologiData;
 
 @SuppressWarnings("serial")
 public class DataPanel extends JPanel {	
