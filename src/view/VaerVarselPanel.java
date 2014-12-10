@@ -9,7 +9,7 @@ public class VaerVarselPanel extends DataPanel {
 	public DataEndret getEndret() {return endret;}
 	
 	public VaerVarselPanel() {
-		lagEtikett("Værvarsel info");
+		lagEtikett("Regionsvarsel");
 		lagNyttDataTekstFelt();
 		
 		endret = new DataEndret () { @Override
