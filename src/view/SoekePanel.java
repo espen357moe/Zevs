@@ -1,22 +1,35 @@
 package view;
 
+import java.awt.BorderLayout;
+import java.awt.Desktop;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import model.MeteorologiData;
 import model.SoekeTreff;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+
 import controller.SoekeLogikk;
 import controller.XmlParser;
 import model.DataEndret;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class SoekePanel extends JPanel implements ActionListener {	
 	private SoekeLogikk soekeLogikk = new SoekeLogikk();
 	private JComboBox<String> soekeFelt;	
 	private String soekeStreng;
+	private String url = "http://www.yr.no";
 	private JButton soekeKnapp;	
+	private JButton yrLenkeKnapp = new JButton("Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
+	private JPanel soekeFeltKnappPanel;
 	private final ArrayList<DataEndret> abonnenter;
 	
 	public void addAbonnent(DataEndret changed) {
@@ -30,16 +43,54 @@ public class SoekePanel extends JPanel implements ActionListener {
 	}
 	
 	public SoekePanel() {
+		this.setLayout(new BorderLayout());
 		abonnenter = new ArrayList<DataEndret>();
+		
+		JPanel soekeFeltKnappPanel = new JPanel();
+		soekeFeltKnappPanel.setLayout(new FlowLayout());
+		this.add(soekeFeltKnappPanel, BorderLayout.CENTER);
+		this.add(yrLenkeKnapp, BorderLayout.NORTH);
+		
+		
 		this.soekeFelt = new JComboBox<String>();
-		this.add(soekeFelt);	
+		soekeFeltKnappPanel.add(soekeFelt);	
 		soekeFelt.setEditable(true);
 		//soekeFelt.addActionListener(this);
 		
 		soekeKnapp = new JButton("Søk");
-		this.add(soekeKnapp);				
+		soekeFeltKnappPanel.add(soekeKnapp);				
 		soekeKnapp.addActionListener(this);		
-		soekeKnapp.requestFocusInWindow();	
+		soekeKnapp.requestFocusInWindow();
+		yrLenkeKnapp.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent ev) {
+
+			        if(Desktop.isDesktopSupported()){
+			            Desktop desktop = Desktop.getDesktop();
+			            try {
+			                desktop.browse(new URI(url));
+			            } catch (IOException | URISyntaxException e) {
+			                // TODO Auto-generated catch block
+			                e.printStackTrace();
+			            }
+			        }else{
+			            Runtime runtime = Runtime.getRuntime();
+			            try {
+			                runtime.exec("xdg-open " + url);
+			            } catch (IOException e) {
+			                // TODO Auto-generated catch block
+			                e.printStackTrace();
+			            }
+			        }
+			    }
+				
+				
+			
+			
+		});
+		
+		
+		
 	}	
 	
 	public String getSoekeStreng() {
@@ -67,7 +118,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 			XmlParser xmlParser = new XmlParser();				
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
 			oppdaterAbonnenter(meteorologiData);				
-			soekeFelt.addItem(soekeStreng);				
+			soekeFelt.addItem(soekeStreng);	
+			url = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 		}			
 						
 		else {	
