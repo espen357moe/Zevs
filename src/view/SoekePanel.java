@@ -70,7 +70,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 					try {
 						desktop.browse(new URI(yrUrl));
 					} catch (IOException | URISyntaxException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else {
@@ -78,7 +77,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 					try {
 						runtime.exec("xdg-open " + yrUrl);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -136,15 +134,12 @@ public class SoekePanel extends JPanel implements ActionListener {
 					|| soekeStreng.trim().length() < 1) {
 				FeilDialog feilDialog = new FeilDialog(
 						"Du må skrive noe i søkefeltet!");
-				System.out.println("Søkestrengen var tom!");
 			}
 
 			else {
 				FeilDialog feilDialog = new FeilDialog(
-						"Ingen treff på \""
-								+ soekeStreng
-								+ "\".\n"
-								+ "Stedsnavnet må være korrekt stavet og eksistere i databasen.");
+						"Ingen treff på \""	+ soekeStreng + "\".\n"
+						+ "Stedsnavnet må være korrekt stavet og eksistere i databasen.");
 			}
 
 		}
