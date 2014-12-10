@@ -27,6 +27,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	private JComboBox<String> soekeFelt;	
 	private String soekeStreng;
 	private String url = "http://www.yr.no";
+	private String urlGoogleMaps = "http://maps.google.com";
 	private JButton soekeKnapp;	
 	private JButton yrLenkeKnapp = new JButton("Værvarsel fra yr.no, levert av Meteorologisk institutt og NRK");
 	private final ArrayList<DataEndret> abonnenter;
@@ -60,6 +61,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeFeltKnappPanel.add(soekeKnapp);				
 		soekeKnapp.addActionListener(this);		
 		soekeKnapp.requestFocusInWindow();
+		
 		yrLenkeKnapp.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent ev) {
