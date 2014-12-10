@@ -1,12 +1,5 @@
 package view;
 
-<<<<<<< HEAD
-import java.awt.GridLayout;
-
-import javax.swing.JTextField;
-=======
->>>>>>> cebb8d36d4ed62583464f4251b320f0f71324835
-
 import model.DataEndret;
 import model.MeteorologiData;
 
