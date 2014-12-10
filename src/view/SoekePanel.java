@@ -81,8 +81,9 @@ public class SoekePanel extends JPanel implements ActionListener {
 			XmlParser xmlParser = new XmlParser();				
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
 			oppdaterAbonnenter(meteorologiData);				
-			soekeFelt.addItem(soekeStreng);				
-		}			
+			//soekeFelt.addItem(soekeStreng);	
+			
+		}
 						
 		else {	
 	
@@ -99,6 +100,11 @@ public class SoekePanel extends JPanel implements ActionListener {
 				
 		}
 
+	}
+
+	private void foreach(JComboBox<String> soekeFelt2) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
