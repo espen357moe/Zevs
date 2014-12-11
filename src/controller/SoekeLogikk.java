@@ -8,7 +8,6 @@ public class SoekeLogikk {
 	public SoekeTreff soekeTreff;
 
 	private class Rad {
-		// Kommunenummer	Stadnamn Prioritet Stadtype nynorsk Stadtype bokmål	Stadtype engelsk Kommune Fylke Lat	Lon	Høgd	Nynorsk	Bokmål	Engelsk
 		private final String kommune;
 		private final String stedsNavn;
 		private final String varselUrl;
@@ -43,12 +42,12 @@ public class SoekeLogikk {
 		InputStream stream;
 		try
 		{
-			stream = noregText.openStream(); 										//Prøver å lese tekstfilen fra yr.no
+			stream = noregText.openStream();
 		}
 		catch(IOException ex)
 		{
 			try {
-				stream = new FileInputStream(".\\NoregInfo.txt"); 					//Prøver å lese tekstfilen lokalt, dersom det feiler å hente fra yr.no
+				stream = new FileInputStream(".\\NoregInfo.txt");
 			} catch(IOException ioc) {
 				System.out.println("Kunne ikke finne NoregInfo.txt :(");
 				return;
@@ -66,19 +65,19 @@ public class SoekeLogikk {
 		while ((linje = dokumentLeser.readLine()) != null) {
 			String strArray[] = linje.split("\t");
 				
-			String kommuneNummer 	= strArray[0];
-			String stedsNavn 		= strArray[1];
-			/*String prioritet 		= strArray[2];
-			String stedtypeNynorsk 	= strArray[3];
-			String stedtypeBokmål 	= strArray[4];
-			String stedEngelsk 		= strArray[5];*/
-			String kommune 			= strArray[6];
-			String fylke 			= strArray[7];
-			/*String lengdeGrad 		= strArray[8];
-			String breddeGrad 		= strArray[9];
-			String hoydeOverHavet 	= strArray[10];
-			String urlNyNorsk 		= strArray[11];*/
-			String urlNorsk 		= strArray[12];
+			String kommuneNummer 		= strArray[0];
+			String stedsNavn 			= strArray[1];
+			//String prioritet 			= strArray[2];
+			//String stedtypeNynorsk 	= strArray[3];
+			//String stedtypeBokmål 	= strArray[4];
+			//String stedEngelsk 		= strArray[5];
+			String kommune 				= strArray[6];
+			String fylke 				= strArray[7];
+			//String lengdeGrad 		= strArray[8];
+			//String breddeGrad 		= strArray[9];
+			//String hoydeOverHavet 	= strArray[10];
+			//String urlNyNorsk 		= strArray[11];
+			String urlNorsk 			= strArray[12];
 			//String urlEngelsk 		= strArray[13];
 
 			Rad rad = new Rad(fylke, kommune, stedsNavn, urlNorsk);
@@ -92,13 +91,10 @@ public class SoekeLogikk {
 		}
 		}catch(IOException ex){
 			System.out.println("Kunne ikke lese fra strømmen!");
-		}
-		
+		}	
 	}
 	
-	public boolean validerSoekeStreng(String soekeStreng) {
-		
-		
+	public boolean validerSoekeStreng(String soekeStreng) {		
 		if(soekeStreng==null) {
 			System.out.println("Ingen treff på " +soekeStreng);
 			return false;
@@ -106,34 +102,28 @@ public class SoekeLogikk {
 		
 		ArrayList<Rad> liste = rader.get(soekeStreng);
 		
-		if(liste == null) {
-			
+		if(liste == null) {	
 			System.out.println("Ingen treff på " +soekeStreng);
 			return false;
 		}
 		
-		return true;
-		
+		return true;	
 	}
 	
 	public SoekeTreff startSoek(String soekeStreng) {
-		
-		//String resultatAvSoek;
-
-		ArrayList<Rad> liste = rader.get(soekeStreng);
+		ArrayList<Rad> liste = rader.get(soekeStreng);	
 		
 		if(liste == null) {
 			System.out.println("Ingen treff på " +soekeStreng);	
 		}
-		//System.out.println(rad.getVarselUrl());
+
 		Rad rad = liste.get(0);
 		SoekeTreff soekeTreff = new SoekeTreff(rad.getFylke(), rad.getKommune(), rad.getStedsNavn(), rad.getVarselUrl());	
 	
 		return soekeTreff;
 	}
 	
-	public SoekeTreff getSoekeTreff() {
-		
+	public SoekeTreff getSoekeTreff() {		
 		return(this.soekeTreff);
 	}
 	

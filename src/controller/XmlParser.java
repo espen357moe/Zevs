@@ -23,18 +23,18 @@ public class XmlParser {
 			vindBetegnelse48, sistOppdatert, vindRetning, vindRetning24,
 			vindRetning48, nesteOppdatering, breddeGrad, lengdeGrad,
 			vaerVarsel;
+	
 	private int hoydeOverHavet, temperatur, temperatur24, temperatur48, symbolNummer, 
-	symbolNummer24,symbolNummer48;
+			symbolNummer24,symbolNummer48;
+	
 	private float nedbor, nedbor24, nedbor48, vindHastighet, vindHastighet24,
 			vindHastighet48;
 
 	public MeteorologiData parseXml(SoekeTreff soekeTreff) {
-
 		String urlNorsk = soekeTreff.getUrlNorsk();
 		stedsNavn = soekeTreff.getStedsNavn();
 
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory
-				.newInstance();
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
 		Document document = null;
 
@@ -72,10 +72,8 @@ public class XmlParser {
 				symbolNummer,symbolNummer24, symbolNummer48, sistOppdatert, 
 				nesteOppdatering, vaerVarsel);
 
-		return meteorologiData;
-		
+		return meteorologiData;	
 	}
-	
 
 	private void hentingAvElementer(Element eElement) {
 		symbolNummer = Integer.parseInt((eElement
@@ -172,7 +170,6 @@ public class XmlParser {
 		vaerVarsel = ((eElement.getElementsByTagName("body").item(0)
 				.getTextContent()).replaceAll("<strong>", "")).replaceAll(
 				"</strong>", "");
-
 	}
  
 }

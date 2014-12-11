@@ -67,8 +67,6 @@ public class OmVindu extends JFrame {
 			tekstFelt.append("\n" + navnArray[i]);		
 		}
 
-
-
 		JButton lukkKnapp = new JButton("Lukk");
 		
 		mainContainer.add(ikonPanel, BorderLayout.NORTH);
@@ -89,17 +87,14 @@ public class OmVindu extends JFrame {
 	}
 
 	private void shuffleArray(String[] navnArray) {
-		  {
-		    Random rnd = new Random();
-		    for (int i = navnArray.length - 1; i > 0; i--)
-		    {
-		      int index = rnd.nextInt(i + 1);
-
-		      String a = navnArray[index];
-		      navnArray[index] = navnArray[i];
-		      navnArray[i] = a;
-		    }
-		  }
+		  
+		Random rnd = new Random();
+		for (int i = navnArray.length - 1; i > 0; i--) {
+			int index = rnd.nextInt(i + 1);
+			String a = navnArray[index];
+			navnArray[index] = navnArray[i];
+			navnArray[i] = a;
+		}  
 		  
 	}
 	

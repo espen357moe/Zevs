@@ -10,7 +10,7 @@ import model.FilTilknytning;
 import model.MeteorologiData;
 
 @SuppressWarnings("serial")
-public class BonusPanel extends DataPanel {
+public class SymbolPanel extends DataPanel {
 
 	private Image vaerSymbol;
 	private ImageIcon icon;
@@ -22,7 +22,7 @@ public class BonusPanel extends DataPanel {
 		return endret;
 	}
 
-	public BonusPanel() {
+	public SymbolPanel() {
 		this.setLayout(new GridLayout(0, 3));
 		lagEtikett("");
 		lagNyBildeRute();

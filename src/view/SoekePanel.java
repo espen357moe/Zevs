@@ -49,12 +49,10 @@ public class SoekePanel extends JPanel implements ActionListener {
 		soekeFeltKnappPanel.setLayout(new FlowLayout());
 		this.add(soekeFeltKnappPanel, BorderLayout.CENTER);
 		this.add(yrLenkeKnapp, BorderLayout.NORTH);
-		
-		
+			
 		this.soekeFelt = new JComboBox<String>();
 		soekeFeltKnappPanel.add(soekeFelt);	
 		soekeFelt.setEditable(true);
-		//soekeFelt.addActionListener(this);
 		
 		soekeKnapp = new JButton("Søk");
 		soekeFeltKnappPanel.add(soekeKnapp);				
@@ -64,13 +62,11 @@ public class SoekePanel extends JPanel implements ActionListener {
 		yrLenkeKnapp.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent ev) {
-
 			        if(Desktop.isDesktopSupported()){
 			            Desktop desktop = Desktop.getDesktop();
 			            try {
 			                desktop.browse(new URI(yrUrl));
 			            } catch (IOException | URISyntaxException e) {
-			                // TODO Auto-generated catch block
 			                e.printStackTrace();
 			            }
 			        }else{
@@ -78,24 +74,15 @@ public class SoekePanel extends JPanel implements ActionListener {
 			            try {
 			                runtime.exec("xdg-open " + yrUrl);
 			            } catch (IOException e) {
-			                // TODO Auto-generated catch block
 			                e.printStackTrace();
 			            }
+			            
 			        }
+			        
 			    }
 			
-		
-			
-			//SoekeKnapp listener = new SoekeKnapp(soekeFelt);
-			//soekeFelt.addActionListener(listener);
-			//submit.addKeyListener(listener);
-				
-			
-			
 		});
-		
-		
-		
+			
 	}	
 	
 	public String getSoekeStreng() {
@@ -103,8 +90,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		
+	public void actionPerformed(ActionEvent e) {		
 		soekeStreng = ((String) soekeFelt.getSelectedItem()).trim();
 
 		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
