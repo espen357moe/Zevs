@@ -83,7 +83,12 @@ public class SoekePanel extends JPanel implements ActionListener {
 			            }
 			        }
 			    }
-				
+			
+		
+			
+			//SoekeKnapp listener = new SoekeKnapp(soekeFelt);
+			//soekeFelt.addActionListener(listener);
+			//submit.addKeyListener(listener);
 				
 			
 			
@@ -100,11 +105,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		System.out.println();
-		System.out.println();
-		soekeStreng = (String) soekeFelt.getSelectedItem();
-		System.out.println("Søker etter - " + soekeStreng);
-			
+		soekeStreng = ((String) soekeFelt.getSelectedItem()).trim();
+
 		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
 		int antallItems = soekeFelt.getItemCount();
 			
@@ -113,7 +115,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 			XmlParser xmlParser = new XmlParser();				
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
 			oppdaterAbonnenter(meteorologiData);				
-			
+
 			String[] soekeTreffItemsArray = new String[antallItems];
 			boolean soekeTreffFinnesAllerede = false;
 			
@@ -135,13 +137,8 @@ public class SoekePanel extends JPanel implements ActionListener {
 				yrUrl = treff.getUrlNorsk().replaceAll("varsel.xml", "");
 			}
 		
-		
-		
 		}			
-	
-			
-		
-			
+
 		else {	
 	
 			

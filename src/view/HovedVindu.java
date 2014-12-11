@@ -1,4 +1,5 @@
 package view;
+
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,19 +12,18 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-
-@SuppressWarnings("serial")
 public class HovedVindu extends JFrame implements ActionListener {
-	
-	public HovedVindu() {
 
+	public HovedVindu() {
 		setSize(420,800);
 		setTitle("Zevs");	
+
 		setIconImage(new ImageIcon("Zevs40.png").getImage());
 		setResizable(false);
 		setLocationByPlatform(true);
-		
+
 		Container hovedContainer = getContentPane();
+
 		hovedContainer.setLayout(new GridLayout(6,0));
 		
 		JMenuBar menylinje = new JMenuBar();
@@ -66,23 +66,19 @@ public class HovedVindu extends JFrame implements ActionListener {
         MeteorologiPanel meteorologiPanel = new MeteorologiPanel();
         hovedContainer.add(meteorologiPanel);
         
-        MeteorologiPanel24 morgenDagen = new MeteorologiPanel24();
-        hovedContainer.add(morgenDagen);
+        MeteorologiPanel24 meteorologiPanel24 = new MeteorologiPanel24();
+        hovedContainer.add(meteorologiPanel24);
         
-        MeteorologiPanel48 omToDogn = new MeteorologiPanel48();
-        hovedContainer.add(omToDogn);
-        
-//        BonusPanel bonusPanel = new BonusPanel();
-//        hovedContainer.add(bonusPanel); 
+        MeteorologiPanel48 meteorologiPanel48 = new MeteorologiPanel48();
+        hovedContainer.add(meteorologiPanel48);
         
         VaerVarselPanel vaerVarselPanel = new VaerVarselPanel();
         hovedContainer.add(vaerVarselPanel);
         
         soekePanel.addAbonnent(meteorologiPanel.getEndret());
-        soekePanel.addAbonnent(morgenDagen.getEndret());
-        soekePanel.addAbonnent(omToDogn.getEndret());
+        soekePanel.addAbonnent(meteorologiPanel24.getEndret());
+        soekePanel.addAbonnent(meteorologiPanel48.getEndret());
         soekePanel.addAbonnent(geografiPanel.getEndret());
-//		soekePanel.addAbonnent(bonusPanel.getEndret());
         soekePanel.addAbonnent(vaerVarselPanel.getEndret());
         
         meteorologiPanel.getEndret();
@@ -92,8 +88,7 @@ public class HovedVindu extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 }

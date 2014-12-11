@@ -1,7 +1,7 @@
 package model;
 
 public class MeteorologiData {
-		
+
 	private String stedsNavn;
 	private int hoydeOverHavet;
 	private String breddeGrad;
@@ -31,7 +31,15 @@ public class MeteorologiData {
 	private String nesteOppdatering;
 	private String vaerVarsel;
 	
-	public MeteorologiData(String stedsNavn, int hoydeOverHavet, String lengdeGrad, String breddeGrad, float nedbor,float nedbor24,float nedbor48, String skydekke,String skydekke24, String skydekke48, int temperatur,int temperatur24,int temperatur48, String vindRetning, String vindRetning24, String vindRetning48, String vindBetegnelse, String vindBetegnelse24, String vindBetegnelse48, float vindHastighet, float vindHastighet24, float vindHastighet48, int symbolNummer, int symbolNummer24, int symbolNummer48, String sistOppdatert, String nesteOppdatering, String vaerVarsel) {
+	public 	MeteorologiData(String stedsNavn, int hoydeOverHavet, 
+			String lengdeGrad, String breddeGrad, float nedbor,float nedbor24,
+			float nedbor48, String skydekke,String skydekke24, String skydekke48,
+			int temperatur,int temperatur24,int temperatur48, String vindRetning,
+			String vindRetning24, String vindRetning48, String vindBetegnelse, 
+			String vindBetegnelse24, String vindBetegnelse48, float vindHastighet, 
+			float vindHastighet24, float vindHastighet48, int symbolNummer, int symbolNummer24, 
+			int symbolNummer48, String sistOppdatert, String nesteOppdatering, String vaerVarsel){
+
 		this.stedsNavn = stedsNavn;
 		this.hoydeOverHavet = hoydeOverHavet;
 		this.breddeGrad = breddeGrad;
@@ -58,38 +66,38 @@ public class MeteorologiData {
 		this.symbolNummer24 = symbolNummer24;
 		this.symbolNummer48 = symbolNummer48;
 		this.sistOppdatert = sistOppdatert;
-		this.nesteOppdatering = nesteOppdatering;	
+		this.nesteOppdatering = nesteOppdatering;
 		this.vaerVarsel = vaerVarsel;
 	}
-	
+
 	public String getStedsNavn() {
 		return this.stedsNavn;
 	}
-	
+
 	public int getHoydeOverHavet() {
 		return this.hoydeOverHavet;
 	}
-	
+
 	public String getBreddegrad() {
 		return this.breddeGrad;
 	}
-	
+
 	public String getLengdegrad() {
 		return this.lengdeGrad;
 	}
-	
+
 	public float getNedbor() {
 		return this.nedbor;
 	}
-	
+
 	public float getNedbor24() {
 		return this.nedbor24;
 	}
-	
+
 	public float getNedbor48() {
 		return this.nedbor48;
 	}
-	
+
 	public String getSkydekke() {
 		return this.skydekke;
 	}
@@ -165,13 +173,13 @@ public class MeteorologiData {
 	public String getSistOppdatert() {
 		return this.sistOppdatert;
 	}
-	
+
 	public String getNesteOppdatering() {
 		return this.nesteOppdatering;
 	}
-	
+
 	public String getvaerVarsel() {
 		return this.vaerVarsel;
 	}
-	
+
 }
