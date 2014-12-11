@@ -26,7 +26,7 @@ public class MeteorologiPanel extends DataPanel {
 
 	public MeteorologiPanel() {
 		this.setLayout(new BorderLayout());
-		lagEtikett("Meteorologiske data");
+		lagEtikett("Været nå");
 		lagNyttDataTekstFelt();
 		lagNyBildeRute();
 		lagNyttDataTekstFelt();
