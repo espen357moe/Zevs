@@ -91,7 +91,7 @@ public class SoekePanel extends JPanel implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {		
-		soekeStreng = ((String) soekeFelt.getSelectedItem()).trim();
+		soekeStreng = (String) soekeFelt.getSelectedItem();
 
 		boolean validertSoekeStreng = soekeLogikk.validerSoekeStreng(soekeStreng);
 		int antallItems = soekeFelt.getItemCount();
