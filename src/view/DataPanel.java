@@ -14,6 +14,7 @@ public class DataPanel extends JPanel {
 	public JPanel dataPresentasjonsPanel	= new JPanel();
 	public JTextArea dataTekstFelt 			= new JTextArea();
 	public JLabel bildeRute 				= new JLabel();
+
 	
 	public DataPanel() {
 		setLayout(new BorderLayout());

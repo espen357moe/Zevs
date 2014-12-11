@@ -19,13 +19,12 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 
-	private String stedsNavn, skyDekke, skyDekke24, skyDekke48, celsius,
-			celsius24, celsius48, vindBetegnelse, vindBetegnelse24,
+	private String stedsNavn, skyDekke, skyDekke24, skyDekke48, vindBetegnelse, vindBetegnelse24,
 			vindBetegnelse48, sistOppdatert, vindRetning, vindRetning24,
 			vindRetning48, nesteOppdatering, breddeGrad, lengdeGrad,
 			vaerVarsel;
-	private int hoydeOverHavet, temperatur, symbolNummer, symbolNummer24,
-			symbolNummer48;
+	private int hoydeOverHavet, temperatur, temperatur24, temperatur48, symbolNummer, 
+	symbolNummer24,symbolNummer48;
 	private float nedbor, nedbor24, nedbor48, vindHastighet, vindHastighet24,
 			vindHastighet48;
 
@@ -65,13 +64,18 @@ public class XmlParser {
 		}
 
 		MeteorologiData meteorologiData = new MeteorologiData(stedsNavn,
-				hoydeOverHavet, breddeGrad, lengdeGrad, nedbor, nedbor24,
-				nedbor48, skyDekke, temperatur, vindRetning, vindBetegnelse,
-				vindHastighet, symbolNummer, sistOppdatert, nesteOppdatering,
-				vaerVarsel);
+				hoydeOverHavet, breddeGrad, lengdeGrad, nedbor,nedbor24,
+				nedbor48, skyDekke, skyDekke24, skyDekke48, 
+				temperatur,temperatur24,temperatur48, vindRetning, vindRetning24, vindRetning48,
+				vindBetegnelse,vindBetegnelse24,vindBetegnelse48,
+				vindHastighet, vindHastighet24,vindHastighet48,
+				symbolNummer,symbolNummer24, symbolNummer48, sistOppdatert, 
+				nesteOppdatering, vaerVarsel);
 
 		return meteorologiData;
+		
 	}
+	
 
 	private void hentingAvElementer(Element eElement) {
 		symbolNummer = Integer.parseInt((eElement
@@ -143,15 +147,18 @@ public class XmlParser {
 		vindRetning48 = eElement.getElementsByTagName("windDirection").item(8)
 				.getAttributes().getNamedItem("name").getTextContent();
 
-		celsius = eElement.getElementsByTagName("temperature").item(0)
-				.getAttributes().getNamedItem("value").getTextContent();
+		temperatur = Integer.parseInt((eElement
+				.getElementsByTagName("temperature").item(0).getAttributes()
+				.getNamedItem("value").getTextContent()));
 
-		celsius24 = eElement.getElementsByTagName("temperature").item(4)
-				.getAttributes().getNamedItem("value").getTextContent();
+		temperatur24 = Integer.parseInt((eElement
+				.getElementsByTagName("temperature").item(4).getAttributes()
+				.getNamedItem("value").getTextContent()));
 
-		celsius48 = eElement.getElementsByTagName("temperature").item(8)
-				.getAttributes().getNamedItem("value").getTextContent();
-
+		temperatur48 = Integer.parseInt((eElement
+				.getElementsByTagName("temperature").item(8).getAttributes()
+				.getNamedItem("value").getTextContent()));
+		
 		hoydeOverHavet = Integer.parseInt(eElement
 				.getElementsByTagName("location").item(1).getAttributes()
 				.getNamedItem("altitude").getTextContent());
@@ -166,7 +173,6 @@ public class XmlParser {
 				.getTextContent()).replaceAll("<strong>", "")).replaceAll(
 				"</strong>", "");
 
-		temperatur = Integer.parseInt(celsius);
 	}
-
+ 
 }

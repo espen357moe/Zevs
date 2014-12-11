@@ -43,14 +43,14 @@ public class MeteorologiPanel extends DataPanel {
 		endret = new DataEndret() { @Override
 			public void oppdater(MeteorologiData data) {
 				fjernData();
-				skrivUtData(new Integer(data.getTemperatur()).toString() + " °C");	
+				skrivUtData(new Integer(data.getTemperatur()).toString() + " °C");
 				skrivUtData(new Float(data.getNedbor()).toString() + " mm nedbør");
 				skrivUtData(data.getSkydekke());
 				skrivUtData(data.getVindBetegnelse());
 				skrivUtData(new Float(data.getVindHastighet()).toString() + " m/s");
 				skrivUtData(data.getVindRetning());	
 				
-symbolNummer = data.getSymbolNummer();
+				symbolNummer = data.getSymbolNummer();
 				
 				FilTilknytning ft = new FilTilknytning();
 				vaerSymbol = ft.knyttSymbolNummerTilBilde(symbolNummer);	

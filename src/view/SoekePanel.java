@@ -113,11 +113,6 @@ public class SoekePanel extends JPanel implements ActionListener {
 			XmlParser xmlParser = new XmlParser();				
 			MeteorologiData meteorologiData = xmlParser.parseXml(treff);				
 			oppdaterAbonnenter(meteorologiData);				
-
-		
-			
-			
-			
 			
 			String[] soekeTreffItemsArray = new String[antallItems];
 			boolean soekeTreffFinnesAllerede = false;
